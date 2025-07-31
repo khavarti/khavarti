@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khavarti Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    header { background: #111; color: #fff; padding: 1em 2em; position: sticky; top: 0; z-index: 1000; }
+    nav a { color: #fff; margin-right: 20px; text-decoration: none; font-weight: bold; }
+    section { padding: 4em 2em; }
+    .hero { background: #222; color: #fff; text-align: center; }
+    .hero h1 { font-size: 2.5em; margin-bottom: 0.2em; }
+    .hero p { font-size: 1.2em; font-style: italic; }
+    .about img { max-width: 150px; border-radius: 5px; margin-right: 20px; }
+    .gallery img { max-width: 100%; height: auto; margin-bottom: 10px; }
+    .section-title { font-size: 2em; margin-bottom: 0.5em; border-bottom: 2px solid #ccc; display: inline-block; }
+    footer { background: #eee; text-align: center; padding: 2em; font-size: 0.9em; }
+    .contact-form { max-width: 400px; margin: auto; display: flex; flex-direction: column; gap: 1em; }
+    .contact-form input, .contact-form textarea { padding: 0.7em; border: 1px solid #ccc; border-radius: 5px; }
+    .contact-form button { padding: 0.7em; background: #111; color: white; border: none; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#welcome">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="welcome">
+  <h1>Welcome</h1>
+  <p>خوش آمدی</p>
+  <img src="https://via.placeholder.com/200x250" alt="Welcome photo">
+</section>
+
+<section id="about" class="about">
+  <h2 class="section-title">ABOUT</h2>
+  <div style="display: flex; align-items: flex-start;">
+    <img src="https://via.placeholder.com/150" alt="Portrait">
+    <div>
+      <p>Salam! Mi chiamo Mohammad Khavarti e sono nato nel 1997 in Iran. Sono un fotografo e videomaker con base a Roma. Amo catturare volti, storie e momenti che lasciano un segno. Mi piace sperimentare con bianco e nero, colori e luci naturali.</p>
+      <p>La fotografia per me è un ponte tra ciò che siamo e ciò che potremmo diventare.</p>
+      <p style="text-align: right;">- Mohammad Khavarti</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 class="section-title">B/W Gallery</h2>
+  <img src="https://via.placeholder.com/800x500?text=Black+and+White+1" alt="bw1">
+  <img src="https://via.placeholder.com/800x500?text=Black+and+White+2" alt="bw2">
+
+  <h2 class="section-title">COLOR Gallery</h2>
+  <img src="https://via.placeholder.com/800x500?text=Color+Photo+1" alt="color1">
+  <img src="https://via.placeholder.com/800x500?text=Color+Photo+2" alt="color2">
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <form class="contact-form">
+    <input type="text" name="firstname" placeholder="First name">
+    <input type="text" name="lastname" placeholder="Last name">
+    <input type="email" name="email" placeholder="Email">
+    <textarea name="message" placeholder="Your message..."></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<footer>
+  <p>Khavarti &copy; 2025 | Follow me on
+    <a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">TikTok</a></p>
+</footer>
+
+</body>
+</html>
