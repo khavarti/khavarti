@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Khavarti</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #111;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Khavarti</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Foto</a>
+      <a href="#">Contatti</a>
+    </nav>
+  </header>
+
+  <div class="gallery">
+    <img src="images/foto1.jpg" alt="Foto 1">
+    <img src="images/foto2.jpg" alt="Foto 2">
+    <img src="images/foto3.jpg" alt="Foto 3">
+    <!-- aggiungi altre immagini qui -->
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Khavarti - Tutti i diritti riservati</p>
+  </footer>
+</body>
+</html>
