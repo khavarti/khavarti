@@ -2,46 +2,68 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Khavarti Fotografia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khavarti | Fotografo e Videomaker</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fafafa;
-      color: #333;
       margin: 0;
-      padding: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #111;
+      color: #fff;
       text-align: center;
     }
     header {
-      background-color: #000;
-      color: white;
-      padding: 2em 1em;
+      background: #000;
+      padding: 2rem 1rem;
     }
-    h1 {
+    header h1 {
+      font-size: 3rem;
       margin: 0;
+      letter-spacing: 2px;
     }
-    main {
-      padding: 2em;
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #aaa;
+    }
+    section.gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 10px;
+      padding: 2rem;
+    }
+    section.gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    section.gallery img:hover {
+      transform: scale(1.03);
     }
     footer {
-      background-color: #f2f2f2;
-      padding: 1em;
-      font-size: 0.9em;
+      background: #000;
+      color: #aaa;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Khavarti Fotografia</h1>
-    <p>Portfolio fotografico</p>
+    <h1>Khavarti</h1>
+    <p>Fotografia. Video. Creatività.</p>
   </header>
-  <main>
-    <h2>Benvenuto!</h2>
-    <p>Questo è il mio sito fotografico. A breve caricherò i miei lavori migliori.</p>
-  </main>
+
+  <section class="gallery">
+    <img src="https://via.placeholder.com/600x400?text=Foto+1" alt="foto 1">
+    <img src="https://via.placeholder.com/600x400?text=Foto+2" alt="foto 2">
+    <img src="https://via.placeholder.com/600x400?text=Foto+3" alt="foto 3">
+    <img src="https://via.placeholder.com/600x400?text=Foto+4" alt="foto 4">
+  </section>
+
   <footer>
-    <p>© 2025 Khavarti</p>
+    © 2025 Khavarti. Tutti i diritti riservati. | khavarti.com
   </footer>
 </body>
 </html>
