@@ -59,7 +59,7 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Griglia responsiva */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Due colonne più larghe su mobile */
             gap: 15px; /* Spazio tra le immagini */
             padding: 0 15px;
             width: 100%;
@@ -72,7 +72,7 @@
         }
         .grid-item img {
             width: 100%;
-            height: 200px; /* Altezza fissa per allineamento */
+            height: 200px; /* Altezza aumentata per mobile */
             object-fit: contain; /* Mostra immagini intere senza tagli */
             border: 1px solid #ddd; /* Bordo leggero per visibilità */
         }
@@ -120,14 +120,26 @@
         footer a:hover, #fh5co-aside a:hover {
             text-decoration: underline;
         }
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colonne più larghe su desktop */
+                gap: 20px;
+            }
+            .grid-item img {
+                height: 300px; /* Altezza aumentata per desktop */
+            }
+            .home-button {
+                margin: 40px 0 40px auto; /* Resta a destra */
+            }
+        }
         @media (max-width: 767px) {
             .grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Immagini più piccole su mobile */
-                gap: 10px;
+                grid-template-columns: repeat(2, 1fr); /* Forziamo due colonne su mobile */
+                gap: 15px;
                 padding: 0 10px;
             }
             .grid-item img {
-                height: 150px; /* Altezza ridotta su mobile */
+                height: 200px; /* Altezza aumentata per mobile */
             }
             .home-button {
                 margin: 30px auto; /* Centra su mobile */
