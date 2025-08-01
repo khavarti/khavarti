@@ -65,20 +65,15 @@
             background: #FFFFFF;
             z-index: 1000;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             padding: 0 30px;
         }
         .aside-toggle {
             display: inline-block;
-            margin-left: 30px; /* Margine per "About" a sinistra */
+            margin-left: 30px;
         }
-        .back-to-home {
-            display: inline-block;
-            position: absolute;
-            right: 30px; /* Forzato a destra */
-        }
-        .aside-toggle a, .back-to-home a {
+        .aside-toggle a {
             background: #000;
             color: #fff;
             border-radius: 50%;
@@ -87,10 +82,10 @@
             font-family: 'Varela Round', sans-serif;
             font-size: 14px;
         }
-        .aside-toggle a:hover, .back-to-home a:hover {
+        .aside-toggle a:hover {
             background: #333;
         }
-        .aside-toggle a span, .back-to-home a span {
+        .aside-toggle a span {
             display: none;
         }
         .text-wrap {
@@ -117,7 +112,7 @@
         }
         .album-title {
             position: absolute;
-            top: -30px; /* 3 cm sopra la prima foto */
+            top: -30px;
             left: 50%;
             transform: translateX(-50%);
             font-family: 'Varela Round', sans-serif;
@@ -249,9 +244,6 @@
             .aside-toggle {
                 margin-left: 10px;
             }
-            .back-to-home {
-                right: 10px;
-            }
         }
     </style>
     </head>
@@ -260,9 +252,6 @@
         <header>
             <div class="aside-toggle btn-circle">
                 <a href="#"><span></span><em>About</em></a>
-            </div>
-            <div class="back-to-home btn-circle">
-                <a href="index.html"><span></span><em>Back</em></a>
             </div>
         </header>
 
