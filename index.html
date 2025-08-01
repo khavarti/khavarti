@@ -49,18 +49,26 @@
     <style>
         .cover {
             text-align: center;
-            margin: 200px 0 20px 0; /* Margine superiore aumentato */
+            margin: 200px 0 20px 0; /* Margine superiore per evitare sovrapposizione */
             padding: 0;
         }
         .cover img {
-            max-width: 400px; /* Copertina più piccola */
+            max-width: 200px; /* Copertina più piccola (metà di 400px) */
             height: auto;
             border: 2px solid #333;
-            transition: none !important; /* Disabilita effetti di zoom */
+            transition: opacity 0.3s ease-in-out !important; /* Animazione di dissolvenza */
         }
         .cover img:hover {
-            transform: none !important; /* Disabilita zoom su hover */
+            opacity: 0.8; /* Effetto di dissolvenza al passaggio del mouse */
+            transform: none !important; /* Disabilita zoom */
             scale: 1 !important;
+        }
+        .cover-text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+            font-family: 'Varela Round', sans-serif;
         }
         #fh5co-image-grid {
             padding-top: 0; /* Rimuove padding superiore */
@@ -110,6 +118,10 @@
                 <a href="single.html">
                     <img src="images/img_1.jpg" alt="Cover Photo" class="img-responsive">
                 </a>
+                <div class="cover-text">
+                    <p>Click on the photo or album to view all photos</p>
+                    <p>Clicca sulla foto o sull'album per vedere tutte le foto</p>
+                </div>
             </div>
         </div>
     </div>
