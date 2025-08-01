@@ -49,16 +49,21 @@
     <style>
         .cover {
             text-align: center;
-            margin: 100px 0 20px 0; /* Margine superiore aumentato per spostare la copertina più in basso */
+            margin: 150px 0 20px 0; /* Margine superiore aumentato */
+            padding: 0;
         }
         .cover img {
-            max-width: 600px; /* Copertina più piccola */
+            max-width: 500px; /* Copertina più piccola */
             height: auto;
             border: 2px solid #333;
-            transition: none; /* Rimuove effetti di zoom o transizione */
+            transition: none !important; /* Disabilita effetti di zoom */
         }
         .cover img:hover {
-            transform: none; /* Disabilita zoom su hover */
+            transform: none !important; /* Disabilita zoom su hover */
+            scale: 1 !important;
+        }
+        #fh5co-image-grid {
+            padding-top: 0; /* Rimuove padding superiore */
         }
     </style>
     </head>
