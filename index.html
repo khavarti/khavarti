@@ -62,13 +62,15 @@
         }
         .album-title {
             position: absolute;
-            top: 10px; /* Allineato alla distanza della frase sotto */
-            left: calc((100vw - 200px) / 2);
+            top: 10px; /* 1 cm sopra la copertina */
+            left: calc((100vw - 200px) / 2); /* Allineato al bordo sinistro della copertina */
             font-family: 'Varela Round', sans-serif;
             font-weight: bold;
             font-size: 20px;
             color: #333;
             z-index: 2;
+            margin: 0; /* Rimuove margini extra */
+            padding: 0; /* Rimuove padding extra */
         }
         @media (min-width: 768px) {
             .cover img {
