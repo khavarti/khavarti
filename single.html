@@ -49,10 +49,13 @@
         #fh5co-image-grid {
             margin-top: 150px; /* Sposta la galleria più in basso */
             padding-top: 0;
+            padding-bottom: 40px; /* Spazio per il footer */
             display: flex;
             justify-content: center; /* Centra la griglia orizzontalmente */
             flex-direction: column;
             align-items: center;
+            position: relative;
+            z-index: 1; /* Sopra il footer */
         }
         .grid {
             display: grid;
@@ -100,12 +103,15 @@
         }
         footer {
             text-align: center;
-            padding: 20px 0;
+            height: 20px; /* 2 cm */
+            line-height: 20px; /* Allinea il testo verticalmente */
             background: #f8f8f8;
             color: #333;
             font-family: 'Varela Round', sans-serif;
             font-size: 14px;
             width: 100%;
+            position: relative;
+            z-index: 0; /* Sotto il contenuto */
         }
         footer a, #fh5co-aside a {
             color: #333;
@@ -366,9 +372,15 @@
     <script src="js/main.js"></script>
 
     <script>
-        // Disabilita Isotope per evitare il layout masonry
+        // Disabilita Isotope per evitare conflitti di layout
         $(document).ready(function() {
             $('.grid').isotope('destroy');
+            // Verifica caricamento immagini
+            $('.grid-item img').each(function() {
+                if (!this.complete || this.naturalWidth === 0) {
+                    console.log('Errore caricamento immagine: ' + $(this).attr('src'));
+                }
+            });
         });
     </script>
     </body>
