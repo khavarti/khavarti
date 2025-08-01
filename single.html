@@ -51,7 +51,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.15; /* Bassa opacità per lo sfondo */
+            opacity: 0.08; /* Opacità ridotta */
             z-index: -1; /* Sotto tutto il contenuto */
         }
         .text-wrap {
@@ -65,9 +65,9 @@
             display: none !important; /* Nasconde titolo e contatore nei popup */
         }
         #fh5co-image-grid {
-            margin-top: 150px; /* Sposta la galleria più in basso */
+            margin-top: 150px; /* Spazio per il titolo */
             padding-top: 0;
-            padding-bottom: 40px; /* Spazio per il footer */
+            padding-bottom: 60px; /* Più spazio per il footer con immagini più grandi */
             display: flex;
             justify-content: center; /* Centra la griglia orizzontalmente */
             flex-direction: column;
@@ -75,13 +75,23 @@
             position: relative;
             z-index: 1; /* Sopra lo sfondo e il footer */
         }
+        .album-title {
+            position: absolute;
+            top: 20px;
+            left: calc((100vw - 95vw) / 2); /* Allinea al bordo sinistro della griglia su mobile */
+            font-family: 'Varela Round', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            color: #333;
+            z-index: 2; /* Sopra la griglia */
+        }
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Due colonne su tutte le risoluzioni */
             gap: 15px; /* Spazio tra le immagini */
             padding: 0 10px;
             width: 100%;
-            max-width: 90vw; /* Occupa più schermo su mobile */
+            max-width: 95vw; /* Occupa quasi tutto lo schermo su mobile */
         }
         .grid-item {
             display: flex;
@@ -90,7 +100,7 @@
         }
         .grid-item img {
             width: 100%;
-            height: 300px; /* Altezza aumentata per mobile (200px × 1.5) */
+            height: 400px; /* Altezza aumentata per mobile (300px → 400px) */
             object-fit: contain; /* Mostra immagini intere senza tagli */
             border: 1px solid #ddd; /* Bordo leggero per visibilità */
         }
@@ -139,13 +149,17 @@
             text-decoration: underline;
         }
         @media (min-width: 768px) {
+            .album-title {
+                left: calc((100vw - 1400px) / 2); /* Allinea al bordo sinistro della griglia su desktop */
+                font-size: 24px; /* Dimensione maggiore su desktop */
+            }
             .grid {
                 grid-template-columns: repeat(2, 1fr); /* Due colonne anche su desktop */
                 gap: 20px;
-                max-width: 1200px; /* Limita la larghezza su desktop */
+                max-width: 1400px; /* Griglia più ampia su desktop */
             }
             .grid-item img {
-                height: 450px; /* Altezza aumentata per desktop (300px × 1.5) */
+                height: 600px; /* Altezza aumentata per desktop (450px → 600px) */
             }
             .home-button {
                 margin: 40px 0 40px auto; /* Resta a destra */
@@ -158,7 +172,7 @@
                 padding: 0 10px;
             }
             .grid-item img {
-                height: 300px; /* Altezza aumentata per mobile */
+                height: 400px; /* Altezza aumentata per mobile */
             }
             .home-button {
                 margin: 30px auto; /* Centra su mobile */
@@ -208,6 +222,7 @@
         </div>
 
         <div class="container-fluid" id="fh5co-image-grid">
+            <h1 class="album-title">Valleranello</h1>
             <div class="grid">
                 <div class="grid-sizer"></div>
                 <!-- Immagine 1 -->
