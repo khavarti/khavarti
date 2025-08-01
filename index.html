@@ -66,7 +66,9 @@
             align-items: center; /* Centra verticalmente */
             min-height: calc(100vh - 100px); /* Altezza minima per centramento verticale */
             padding-top: 200px; /* Mantiene l’altezza attuale */
-            padding-bottom: 20px;
+            padding-bottom: 40px; /* Spazio per il footer */
+            position: relative;
+            z-index: 1; /* Sopra il footer */
         }
         @media (min-width: 768px) {
             .cover img {
@@ -78,14 +80,15 @@
         }
         footer {
             text-align: center;
-            padding: 20px 0;
+            height: 20px; /* 2 cm */
+            line-height: 20px; /* Allinea il testo verticalmente */
             background: #f8f8f8;
             color: #333;
             font-family: 'Varela Round', sans-serif;
             font-size: 14px;
-            position: relative;
-            bottom: 0;
             width: 100%;
+            position: relative;
+            z-index: 0; /* Sotto il contenuto */
         }
         footer a, #fh5co-aside a {
             color: #333;
