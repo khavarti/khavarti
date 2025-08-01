@@ -61,7 +61,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 110px; /* Aumentato di 1 cm (10px) */
+            height: 110px;
             background: #FFFFFF;
             z-index: 1000;
             display: flex;
@@ -69,9 +69,13 @@
             align-items: center;
             padding: 0 30px;
         }
-        .aside-toggle, .back-to-home {
+        .aside-toggle {
             display: inline-block;
-            margin: 0 15px; /* Margine aumentato per evitare sovrapposizioni */
+            margin-left: 20px; /* Margine per "About" a sinistra */
+        }
+        .back-to-home {
+            display: inline-block;
+            margin-right: 20px; /* Margine per "Back" a destra */
         }
         .aside-toggle a, .back-to-home a {
             background: #000;
@@ -241,8 +245,11 @@
             header {
                 padding: 0 15px;
             }
-            .aside-toggle, .back-to-home {
-                margin: 0 5px;
+            .aside-toggle {
+                margin-left: 10px;
+            }
+            .back-to-home {
+                margin-right: 10px;
             }
         }
     </style>
