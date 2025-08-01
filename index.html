@@ -65,14 +65,28 @@
             justify-content: center; /* Centra orizzontalmente */
             align-items: center; /* Centra verticalmente */
             min-height: calc(100vh - 100px); /* Altezza minima per centramento verticale */
-            padding-top: 200px; /* Mantiene l’altezza attuale */
+            padding-top: 200px; /* Spazio per il titolo */
             padding-bottom: 40px; /* Spazio per il footer */
             position: relative;
             z-index: 1; /* Sopra il footer */
         }
+        .album-title {
+            position: absolute;
+            top: 20px;
+            left: calc((100vw - 200px) / 2); /* Allinea al bordo sinistro della copertina su mobile */
+            font-family: 'Varela Round', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            color: #333;
+            z-index: 2; /* Sopra la copertina */
+        }
         @media (min-width: 768px) {
             .cover img {
                 max-width: 400px; /* Dimensione più grande per desktop */
+            }
+            .album-title {
+                left: calc((100vw - 400px) / 2); /* Allinea al bordo sinistro della copertina su desktop */
+                font-size: 24px; /* Dimensione maggiore su desktop */
             }
             #fh5co-image-grid {
                 padding-top: 200px; /* Mantiene l’altezza su desktop */
@@ -138,6 +152,7 @@
         </div>
 
         <div class="container-fluid" id="fh5co-image-grid">
+            <h1 class="album-title">Valleranello</h1>
             <div class="cover">
                 <a href="single.html">
                     <img src="images/img_1.jpg" alt="Cover Photo" class="img-responsive">
