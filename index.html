@@ -49,8 +49,9 @@
     <style>
         .cover {
             text-align: center;
-            margin: 200px 0 20px 0; /* Margine superiore per evitare sovrapposizione */
+            margin: 200px auto 20px auto; /* Centra orizzontalmente e mantiene margine superiore */
             padding: 0;
+            max-width: 400px; /* Limita la larghezza del contenitore */
         }
         .cover img {
             max-width: 200px; /* Dimensione base per mobile */
@@ -77,6 +78,8 @@
         }
         #fh5co-image-grid {
             padding-top: 0; /* Rimuove padding superiore */
+            display: flex;
+            justify-content: center; /* Centra il contenuto orizzontalmente */
         }
     </style>
     </head>
