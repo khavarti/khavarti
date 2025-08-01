@@ -36,6 +36,24 @@
     <![endif]-->
 
     <style>
+        body {
+            position: relative;
+            background-color: #f8f8f8; /* Fallback */
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/img_5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15; /* Bassa opacità per lo sfondo */
+            z-index: -1; /* Sotto tutto il contenuto */
+        }
         .text-wrap {
             display: none !important; /* Nasconde il testo sotto le immagini */
         }
@@ -55,15 +73,15 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            z-index: 1; /* Sopra il footer */
+            z-index: 1; /* Sopra lo sfondo e il footer */
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Due colonne più larghe su mobile */
+            grid-template-columns: repeat(2, 1fr); /* Due colonne su tutte le risoluzioni */
             gap: 15px; /* Spazio tra le immagini */
-            padding: 0 15px;
+            padding: 0 10px;
             width: 100%;
-            max-width: 1200px; /* Limita la larghezza massima su desktop */
+            max-width: 90vw; /* Occupa più schermo su mobile */
         }
         .grid-item {
             display: flex;
@@ -72,7 +90,7 @@
         }
         .grid-item img {
             width: 100%;
-            height: 200px; /* Altezza aumentata per mobile */
+            height: 300px; /* Altezza aumentata per mobile (200px × 1.5) */
             object-fit: contain; /* Mostra immagini intere senza tagli */
             border: 1px solid #ddd; /* Bordo leggero per visibilità */
         }
@@ -122,11 +140,12 @@
         }
         @media (min-width: 768px) {
             .grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colonne più larghe su desktop */
+                grid-template-columns: repeat(2, 1fr); /* Due colonne anche su desktop */
                 gap: 20px;
+                max-width: 1200px; /* Limita la larghezza su desktop */
             }
             .grid-item img {
-                height: 300px; /* Altezza aumentata per desktop */
+                height: 450px; /* Altezza aumentata per desktop (300px × 1.5) */
             }
             .home-button {
                 margin: 40px 0 40px auto; /* Resta a destra */
@@ -139,7 +158,7 @@
                 padding: 0 10px;
             }
             .grid-item img {
-                height: 200px; /* Altezza aumentata per mobile */
+                height: 300px; /* Altezza aumentata per mobile */
             }
             .home-button {
                 margin: 30px auto; /* Centra su mobile */
