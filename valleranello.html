@@ -67,7 +67,7 @@
         }
         .album-title {
             position: absolute;
-            top: 10px;
+            top: -10px; /* 10px sopra l'immagine di sfondo */
             left: 50%; /* Centrato orizzontalmente */
             transform: translateX(-50%); /* Sposta a sinistra del 50% della larghezza del titolo */
             font-family: 'Varela Round', sans-serif;
@@ -126,15 +126,12 @@
             height: 40px;
             line-height: 40px;
             background: #f8f8f8;
-            color: #000000; /* Nero per tutto il footer */
+            color: #000000; /* Nero per il footer */
             font-family: 'Varela Round', sans-serif;
             font-size: 14px;
             width: 100%;
             position: relative;
             z-index: 0;
-        }
-        footer .copyright-extra {
-            font-size: 12px; /* Testo Designed by... più piccolo */
         }
         footer a, #fh5co-aside a {
             color: #000000; /* Link in nero */
@@ -147,9 +144,17 @@
         #fh5co-bio p {
             color: #FFFFFF; /* Testo About Me in bianco */
         }
+        #fh5co-bio .copyright {
+            color: #FFFFFF; /* Copyright in bianco */
+            font-size: 14px;
+        }
+        #fh5co-bio .copyright-extra {
+            color: #000000; /* Designed by... in nero */
+            font-size: 12px; /* Più piccolo */
+        }
         @media (min-width: 768px) {
             .album-title {
-                top: 10px;
+                top: -10px;
                 font-size: 24px;
             }
             .grid {
@@ -211,6 +216,7 @@
                                 <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
                             </div>
                             <div class="col-md-12" style="margin-top: 40px;">
+                                <p class="copyright">&copy; 2025 KHAVARTI. All Rights Reserved.</p>
                                 <p class="copyright-extra">Designed by <a href="http://gettemplates.co/">GetTemplates</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></p>
                             </div>
                         </div>
@@ -369,7 +375,6 @@
             </div>
             <footer>
                 <p>&copy; 2025 KHAVARTI. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><i class="icon-instagram"></i></a></p>
-                <p class="copyright-extra">Designed by <a href="http://gettemplates.co/">GetTemplates</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></p>
             </footer>
         </div>
     </div>
