@@ -67,7 +67,7 @@
         }
         .album-title {
             position: absolute;
-            top: -10px; /* 10px sopra l'immagine di sfondo */
+            top: -20px; /* Spostato 2 cm (20px) sopra l'immagine di sfondo */
             left: 50%; /* Centrato orizzontalmente */
             transform: translateX(-50%); /* Sposta a sinistra del 50% della larghezza del titolo */
             font-family: 'Varela Round', sans-serif;
@@ -78,7 +78,7 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr; /* Singola colonna */
             gap: 20px;
             padding: 0 10px;
             width: 100%;
@@ -141,6 +141,12 @@
         footer a:hover, #fh5co-aside a:hover {
             text-decoration: underline;
         }
+        footer img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
         #fh5co-bio p {
             color: #FFFFFF; /* Testo About Me in bianco */
         }
@@ -149,16 +155,16 @@
             font-size: 14px;
         }
         #fh5co-bio .copyright-extra {
-            color: #000000; /* Designed by... in nero */
-            font-size: 12px; /* Più piccolo */
+            color: #FFFFFF; /* Designed by... in bianco */
+            font-size: 14px;
         }
         @media (min-width: 768px) {
             .album-title {
-                top: -10px;
+                top: -20px;
                 font-size: 24px;
             }
             .grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr; /* Singola colonna */
                 gap: 30px;
                 max-width: 900px;
             }
@@ -174,7 +180,7 @@
         }
         @media (max-width: 767px) {
             .grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr; /* Singola colonna */
                 gap: 20px;
                 padding: 0 10px;
             }
@@ -374,7 +380,7 @@
                 <a href="index.html" class="btn-circle"><span></span><em>Home</em></a>
             </div>
             <footer>
-                <p>&copy; 2025 KHAVARTI. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><i class="icon-instagram"></i></a></p>
+                <p>&copy; 2025 KHAVARTI. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a></p>
             </footer>
         </div>
     </div>
