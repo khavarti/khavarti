@@ -38,7 +38,7 @@
     <style>
         body {
             position: relative;
-            background-color: #f8f8f8; /* Fallback */
+            background-color: #f8f8f8;
         }
         body::before {
             content: '';
@@ -51,72 +51,73 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.08; /* Opacità ridotta */
-            z-index: -1; /* Sotto tutto il contenuto */
+            opacity: 0.08;
+            z-index: -1;
         }
         .text-wrap {
-            display: none !important; /* Nasconde il testo sotto le immagini */
+            display: none !important;
         }
         .grid-item img {
             max-width: 100%;
             height: auto;
         }
         .mfp-title, .mfp-counter {
-            display: none !important; /* Nasconde titolo e contatore nei popup */
+            display: none !important;
         }
         #fh5co-image-grid {
-            margin-top: 150px; /* Spazio per il titolo */
+            margin-top: 150px;
             padding-top: 0;
-            padding-bottom: 60px; /* Più spazio per il footer con immagini più grandi */
+            padding-bottom: 100px;
             display: flex;
-            justify-content: center; /* Centra la griglia orizzontalmente */
+            justify-content: center;
             flex-direction: column;
             align-items: center;
             position: relative;
-            z-index: 1; /* Sopra lo sfondo e il footer */
+            z-index: 1;
         }
         .album-title {
             position: absolute;
-            top: 20px;
-            left: calc((100vw - 95vw) / 2); /* Allinea al bordo sinistro della griglia su mobile */
+            top: 10px;
+            left: calc((100vw - 95vw) / 2);
             font-family: 'Varela Round', sans-serif;
             font-weight: bold;
             font-size: 20px;
             color: #333;
-            z-index: 2; /* Sopra la griglia */
+            z-index: 2;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Due colonne su tutte le risoluzioni */
-            gap: 15px; /* Spazio tra le immagini */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             padding: 0 10px;
             width: 100%;
-            max-width: 95vw; /* Occupa quasi tutto lo schermo su mobile */
+            max-width: 100vw;
         }
         .grid-item {
             display: flex;
             justify-content: center;
             align-items: center;
+            min-width: 600px;
         }
         .grid-item img {
             width: 100%;
-            height: 400px; /* Altezza aumentata per mobile (300px → 400px) */
-            object-fit: contain; /* Mostra immagini intere senza tagli */
-            border: 1px solid #ddd; /* Bordo leggero per visibilità */
+            height: 800px;
+            object-fit: contain;
+            border: 1px solid #ddd;
         }
         .grid-sizer {
-            display: none; /* Disabilita il sizer di Isotope */
+            display: none;
         }
         .home-button {
-            margin: 40px 0 40px auto; /* Sposta a destra */
+            margin: 40px 0 40px auto;
             padding-bottom: 20px;
             width: fit-content;
-            margin-right: 20px; /* Leggermente a destra */
+            margin-right: 20px;
         }
         .home-button .btn-circle {
-            display: inline-block; /* Assicura che il pulsante sia centrato */
-            background: #000; /* Cerchio nero */
-            color: #fff; /* Testo bianco */
+            display: inline-block;
+            background: #000;
+            color: #fff;
             border-radius: 50%;
             padding: 10px 20px;
             text-decoration: none;
@@ -124,22 +125,22 @@
             font-size: 14px;
         }
         .home-button .btn-circle:hover {
-            background: #333; /* Hover più scuro */
+            background: #333;
         }
         .home-button .btn-circle span {
-            display: none; /* Nasconde span per uniformità */
+            display: none;
         }
         footer {
             text-align: center;
-            height: 20px; /* 2 cm */
-            line-height: 20px; /* Allinea il testo verticalmente */
+            height: 20px;
+            line-height: 20px;
             background: #f8f8f8;
             color: #333;
             font-family: 'Varela Round', sans-serif;
             font-size: 14px;
             width: 100%;
             position: relative;
-            z-index: 0; /* Sotto il contenuto */
+            z-index: 0;
         }
         footer a, #fh5co-aside a {
             color: #333;
@@ -150,32 +151,39 @@
         }
         @media (min-width: 768px) {
             .album-title {
-                left: calc((100vw - 1400px) / 2); /* Allinea al bordo sinistro della griglia su desktop */
-                font-size: 24px; /* Dimensione maggiore su desktop */
+                top: 10px;
+                left: calc((100vw - 1800px) / 2);
+                font-size: 24px;
             }
             .grid {
-                grid-template-columns: repeat(2, 1fr); /* Due colonne anche su desktop */
-                gap: 20px;
-                max-width: 1400px; /* Griglia più ampia su desktop */
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                max-width: 1800px;
+            }
+            .grid-item {
+                min-width: 1000px;
             }
             .grid-item img {
-                height: 600px; /* Altezza aumentata per desktop (450px → 600px) */
+                height: 1200px;
             }
             .home-button {
-                margin: 40px 0 40px auto; /* Resta a destra */
+                margin: 40px 0 40px auto;
             }
         }
         @media (max-width: 767px) {
             .grid {
-                grid-template-columns: repeat(2, 1fr); /* Forziamo due colonne su mobile */
-                gap: 15px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
                 padding: 0 10px;
             }
+            .grid-item {
+                min-width: 600px;
+            }
             .grid-item img {
-                height: 400px; /* Altezza aumentata per mobile */
+                height: 800px;
             }
             .home-button {
-                margin: 30px auto; /* Centra su mobile */
+                margin: 30px auto;
             }
         }
     </style>
@@ -186,12 +194,12 @@
             <a href="#"><span></span><em>About</em></a>
         </div>
         <div class="back-to-home btn-circle">
-            <a href="index.html"><span></span><em>Back</em></a>
+            <a href="home"><span></span><em>Back</em></a>
         </div>
 
         <div id="fh5co-aside">
             <div class="image-bg"></div>
-            <div class="overlay"></div> 
+            <div class="overlay"></div>
             <div class="row">
                 <div class="col-md-12">
                     <div id="fh5co-aside-inner">
@@ -388,7 +396,7 @@
             </div>
             <!-- Pulsante Home -->
             <div class="home-button">
-                <a href="index.html" class="btn-circle"><span></span><em>Home</em></a>
+                <a href="home" class="btn-circle"><span></span><em>Home</em></a>
             </div>
             <footer>
                 <p>&copy; 2025 KHAVARTI. All Rights Reserved.</p>
