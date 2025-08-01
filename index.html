@@ -14,17 +14,6 @@
     <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
     <meta name="author" content="gettemplates.co" />
 
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content=""/>
-    <meta property="og:image" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:site_name" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
-
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
@@ -49,7 +38,7 @@
     <style>
         .cover {
             text-align: center;
-            margin: 200px auto 20px auto; /* Centra orizzontalmente e mantiene margine superiore */
+            margin: 0 auto; /* Centra orizzontalmente */
             padding: 0;
             max-width: 400px; /* Limita la larghezza del contenitore */
         }
@@ -64,11 +53,6 @@
             transform: none !important; /* Disabilita zoom */
             scale: 1 !important;
         }
-        @media (min-width: 768px) {
-            .cover img {
-                max-width: 400px; /* Dimensione più grande per desktop */
-            }
-        }
         .cover-text {
             text-align: center;
             margin-top: 10px;
@@ -77,9 +61,31 @@
             font-family: 'Varela Round', sans-serif;
         }
         #fh5co-image-grid {
-            padding-top: 0; /* Rimuove padding superiore */
             display: flex;
-            justify-content: center; /* Centra il contenuto orizzontalmente */
+            justify-content: center; /* Centra orizzontalmente */
+            align-items: center; /* Centra verticalmente */
+            min-height: calc(100vh - 100px); /* Altezza minima per centramento verticale */
+            padding-top: 200px; /* Mantiene l’altezza attuale */
+            padding-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            .cover img {
+                max-width: 400px; /* Dimensione più grande per desktop */
+            }
+            #fh5co-image-grid {
+                padding-top: 200px; /* Mantiene l’altezza su desktop */
+            }
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #f8f8f8;
+            color: #333;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
     </head>
@@ -113,7 +119,7 @@
                                 <a href="#"><i class="icon-google-plus"></i></a>
                             </div>
                             <div class="col-md-12" style="margin-top: 40px;">
-                                <p>&copy; 2025 KHAVARTI. All Rights Reserved. Designed by <a href="http://gettemplates.co/">GetTemplates</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></p>
+                                <p>&copy; 2025 KHAVARTI. All Rights Reserved.</p>
                             </div>
                         </div>
                     </div>
@@ -132,6 +138,10 @@
                 </div>
             </div>
         </div>
+
+        <footer>
+            <p>&copy; 2025 KHAVARTI. All Rights Reserved.</p>
+        </footer>
     </div>
 
     <!-- jQuery -->
