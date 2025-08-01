@@ -49,12 +49,16 @@
     <style>
         .cover {
             text-align: center;
-            margin: 20px 0;
+            margin: 100px 0 20px 0; /* Margine superiore aumentato per spostare la copertina più in basso */
         }
         .cover img {
-            max-width: 800px;
+            max-width: 600px; /* Copertina più piccola */
             height: auto;
             border: 2px solid #333;
+            transition: none; /* Rimuove effetti di zoom o transizione */
+        }
+        .cover img:hover {
+            transform: none; /* Disabilita zoom su hover */
         }
     </style>
     </head>
