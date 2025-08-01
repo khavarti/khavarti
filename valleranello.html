@@ -61,17 +61,17 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100px; /* Aumentato per coprire interamente i pulsanti */
+            height: 110px; /* Aumentato di 1 cm (10px) */
             background: #FFFFFF;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 30px; /* Aumentato padding per maggiore spazio */
+            padding: 0 30px;
         }
         .aside-toggle, .back-to-home {
             display: inline-block;
-            margin: 0 10px; /* Margine per evitare sovrapposizioni */
+            margin: 0 15px; /* Margine aumentato per evitare sovrapposizioni */
         }
         .aside-toggle a, .back-to-home a {
             background: #000;
@@ -112,7 +112,7 @@
         }
         .album-title {
             position: absolute;
-            top: -30px; /* 3 cm più in alto */
+            top: -30px; /* 3 cm sopra la prima foto */
             left: 50%;
             transform: translateX(-50%);
             font-family: 'Varela Round', sans-serif;
@@ -239,10 +239,10 @@
                 margin: 30px auto;
             }
             header {
-                padding: 0 15px; /* Padding ridotto per schermi piccoli */
+                padding: 0 15px;
             }
             .aside-toggle, .back-to-home {
-                margin: 0 5px; /* Margine ridotto per schermi piccoli */
+                margin: 0 5px;
             }
         }
     </style>
