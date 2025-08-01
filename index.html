@@ -62,8 +62,9 @@
         }
         .album-title {
             position: absolute;
-            top: 10px; /* 1 cm sopra la copertina */
-            left: calc((100vw - 200px) / 2); /* Allineato al bordo sinistro della copertina */
+            top: 1px; /* 1px sopra la copertina */
+            left: 50%; /* Centrato orizzontalmente */
+            transform: translateX(-50%); /* Sposta a sinistra del 50% della larghezza del titolo */
             font-family: 'Varela Round', sans-serif;
             font-weight: bold;
             font-size: 20px;
@@ -77,7 +78,6 @@
                 max-width: 400px;
             }
             .album-title {
-                left: calc((100vw - 400px) / 2);
                 font-size: 24px;
             }
             #fh5co-image-grid {
