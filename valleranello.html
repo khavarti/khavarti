@@ -56,19 +56,50 @@
             opacity: 0.08;
             z-index: -1;
         }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #FFFFFF;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .aside-toggle, .back-to-home {
+            display: inline-block;
+        }
+        .aside-toggle a, .back-to-home a {
+            background: #000;
+            color: #fff;
+            border-radius: 50%;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 14px;
+        }
+        .aside-toggle a:hover, .back-to-home a:hover {
+            background: #333;
+        }
+        .aside-toggle a span, .back-to-home a span {
+            display: none;
+        }
         .text-wrap {
             display: none !important;
         }
         .grid-item img {
             max-width: 100%;
             height: auto;
-            border: none; /* Rimossa cornice nera */
+            border: none;
         }
         .mfp-title, .mfp-counter {
             display: none !important;
         }
         #fh5co-image-grid {
-            margin-top: 200px; /* 5 cm più in basso (150px + 50px) */
+            margin-top: 200px;
             padding-top: 0;
             padding-bottom: 100px;
             display: flex;
@@ -80,7 +111,7 @@
         }
         .album-title {
             position: absolute;
-            top: 0px; /* 2 cm in più rispetto alla foto */
+            top: -30px; /* 3 cm più in alto */
             left: 50%;
             transform: translateX(-50%);
             font-family: 'Varela Round', sans-serif;
@@ -175,7 +206,7 @@
         }
         @media (min-width: 768px) {
             .album-title {
-                top: 0px;
+                top: -30px;
                 font-size: 24px;
             }
             .grid {
@@ -211,12 +242,14 @@
     </head>
     <body>
     <div id="fh5co-page">
-        <div class="aside-toggle btn-circle">
-            <a href="#"><span></span><em>About</em></a>
-        </div>
-        <div class="back-to-home btn-circle">
-            <a href="index.html"><span></span><em>Back</em></a>
-        </div>
+        <header>
+            <div class="aside-toggle btn-circle">
+                <a href="#"><span></span><em>About</em></a>
+            </div>
+            <div class="back-to-home btn-circle">
+                <a href="index.html"><span></span><em>Back</em></a>
+            </div>
+        </header>
 
         <div id="fh5co-aside">
             <div class="image-bg"></div>
