@@ -61,17 +61,16 @@
             z-index: 1;
         }
         .album-title {
-            position: absolute;
-            top: 1px; /* 1px sopra la copertina */
-            left: 50%; /* Centrato orizzontalmente */
-            transform: translateX(-50%); /* Sposta a sinistra del 50% della larghezza del titolo */
+            text-align: center;
+            margin: 10px auto; /* 10px dalla copertina, 10px dalla frase */
             font-family: 'Varela Round', sans-serif;
             font-weight: bold;
             font-size: 20px;
             color: #333;
             z-index: 2;
-            margin: 0; /* Rimuove margini extra */
-            padding: 0; /* Rimuove padding extra */
+        }
+        #fh5co-bio p {
+            color: #FFFFFF; /* Testo About Me in bianco */
         }
         @media (min-width: 768px) {
             .cover img {
@@ -86,8 +85,8 @@
         }
         footer {
             text-align: center;
-            height: 20px;
-            line-height: 20px;
+            height: 40px;
+            line-height: 40px;
             background: #f8f8f8;
             color: #333;
             font-family: 'Varela Round', sans-serif;
@@ -99,6 +98,7 @@
         footer a, #fh5co-aside a {
             color: #333;
             text-decoration: none;
+            margin-left: 10px;
         }
         footer a:hover, #fh5co-aside a:hover {
             text-decoration: underline;
@@ -127,13 +127,6 @@
                             <div class="col-md-6">
                                 <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
                             </div>
-                            <div class="col-md-12 fh5co-social">
-                                <a href="#"><i class="icon-envelope"></i></a>
-                                <a href="#"><i class="icon-twitter"></i></a>
-                                <a href="#"><i class="icon-linkedin"></i></a>
-                                <a href="#"><i class="icon-instagram"></i></a>
-                                <a href="#"><i class="icon-google-plus"></i></a>
-                            </div>
                             <div class="col-md-12" style="margin-top: 40px;">
                                 <p>&copy; 2025 KHAVARTI. All Rights Reserved. Designed by <a href="http://gettemplates.co/">GetTemplates</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></p>
                             </div>
@@ -144,11 +137,11 @@
         </div>
 
         <div class="container-fluid" id="fh5co-image-grid">
-            <h1 class="album-title">Valleranello</h1>
             <div class="cover">
                 <a href="valleranello.html">
                     <img src="images/img_1.jpg" alt="Cover Photo" class="img-responsive">
                 </a>
+                <h1 class="album-title">Valleranello</h1>
                 <div class="cover-text">
                     <p>Click to view more photos</p>
                     <p>Clicca per vedere altre foto</p>
@@ -157,7 +150,7 @@
         </div>
 
         <footer>
-            <p>&copy; 2025 KHAVARTI. All Rights Reserved.</p>
+            <p>&copy; 2025 KHAVARTI. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><i class="icon-instagram"></i></a></p>
         </footer>
     </div>
 
