@@ -3,15 +3,30 @@
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>No Pulizie - KHAVARTI Photography</title>
+    <title>KHAVARTI Photography</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Photography from No Pulizie by KHAVARTI, capturing raw and unfiltered moments." />
-    <meta name="keywords" content="photography, Afghan artist, KHAVARTI, No Pulizie" />
+    <meta name="description" content="Photography and videography by KHAVARTI, capturing unseen moments." />
+    <meta name="keywords" content="photography, videography, Afghan artist, KHAVARTI" />
     <meta name="author" content="KHAVARTI" />
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="KHAVARTI Photography" />
+    <meta property="og:description" content="Photography and videography by KHAVARTI, capturing unseen moments." />
+    <meta property="og:image" content="https://khavarti.com/images/cop.jpg" />
+    <meta property="og:url" content="https://khavarti.com/no-pulizie.html" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="KHAVARTI Photography" />
+    <meta name="twitter:description" content="Photography and videography by KHAVARTI, capturing unseen moments." />
+    <meta name="twitter:image" content="https://khavarti.com/images/cop.jpg" />
+    <meta name="twitter:site" content="@khavarti" />
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
 
     <link rel="shortcut icon" href="favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/animate postures.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
@@ -23,191 +38,446 @@
     <![endif]-->
 
     <style>
-        .gallery {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        body {
+            position: relative;
+            background-color: #f8f8f8;
         }
-        .gallery-item {
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 300px;
-            margin: 10px;
+            height: 100%;
+            background-image: url('images/cop.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.08;
+            z-index: -1;
+        }
+        .nav-buttons {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+        .aside-toggle {
             display: inline-block;
-            vertical-align: top;
         }
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border: 2px solid #333;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .gallery-item img:hover {
-            opacity: 0.8;
-        }
-        .home-button {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .home-button a {
+        .back-to-home {
             display: inline-block;
-            padding: 10px 20px;
-            background: #333;
+        }
+        .aside-toggle a, .back-to-home a {
+            background: #000;
             color: #fff;
+            border-radius: 50%;
+            padding: 10px 20px;
             text-decoration: none;
             font-family: 'Varela Round', sans-serif;
             font-size: 14px;
-            transition: background 0.3s ease;
         }
-        .home-button a:hover {
-            background: #555;
+        .aside-toggle a:hover, .back-to-home a:hover {
+            background: #333;
+        }
+        .aside-toggle a span, .back-to-home a span {
+            display: none;
+        }
+        .text-wrap {
+            display: none !important;
+        }
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            border: none;
+        }
+        .mfp-title, .mfp-counter {
+            display: none !important;
+        }
+        #fh5co-image-grid {
+            margin-top: 100px;
+            padding-top: 0;
+            padding-bottom: 100px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .album-title {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Varela Round', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            color: #333;
+            z-index: 2;
+        }
+        .grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 0;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-width: 300px;
+        }
+        .grid-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+        }
+        .grid-sizer {
+            display: none;
+        }
+        .home-button {
+            margin: 40px auto;
+            padding-bottom: 20px;
+            width: fit-content;
+        }
+        .home-button .btn-circle {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            border-radius: 50%;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 14px;
+        }
+        .home-button .btn-circle:hover {
+            background: #333;
+        }
+        .home-button .btn-circle span {
+            display: none;
+        }
+        footer {
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            background: #f8f8f8;
+            color: #000000;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 14px;
+            width: 100%;
+            position: relative;
+            z-index: 0;
+        }
+        footer a, #fh5co-aside a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        footer a:hover, #fh5co-aside a:hover {
+            text-decoration: underline;
+        }
+        footer img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        #fh5co-bio p {
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+        #fh5co-bio .copyright {
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+        #fh5co-bio .copyright-extra {
+            color: #000000;
+            font-size: 12px;
         }
         @media (min-width: 768px) {
-            .gallery-item {
-                width: 30%;
+            .album-title {
+                top: -30px;
+                font-size: 24px;
+            }
+            .grid {
+                gap: 30px;
+                max-width: 900px;
+            }
+            .grid-item {
+                min-width: 500px;
+            }
+            .grid-item img {
+                height: 600px;
+            }
+            .home-button {
+                margin: 40px auto;
+            }
+        }
+        @media (max-width: 767px) {
+            .grid {
+                gap: 20px;
+                max-width: 400px;
+            }
+            .grid-item {
+                min-width: 300px;
+            }
+            .grid-item img {
+                height: 400px;
+            }
+            .home-button {
+                margin: 30px auto;
+            }
+            .nav-buttons {
+                top: 15px;
+                right: 15px;
+                gap: 10px;
+            }
+            .aside-toggle a, .back-to-home a {
+                padding: 8px 15px;
+                font-size: 12px;
             }
         }
     </style>
     </head>
     <body>
-    <div class="container-fluid">
-        <div class="home-button">
-            <a href="index.html">Home</a>
-        </div>
-        <div class="gallery" id="gallery">
-            <div class="gallery-item">
-                <a href="images/no-pulizie/1p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/1p.jpg" alt="No Pulizie Photo 1" class="img-responsive">
-                </a>
+    <div id="fh5co-page">
+        <div class="nav-buttons">
+            <div class="aside-toggle btn-circle">
+                <a href="#"><span></span><em>About</em></a>
             </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/2p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/2p.jpg" alt="No Pulizie Photo 2" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/3p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/3p.jpg" alt="No Pulizie Photo 3" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/4p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/4p.jpg" alt="No Pulizie Photo 4" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/5p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/5p.jpg" alt="No Pulizie Photo 5" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/6p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/6p.jpg" alt="No Pulizie Photo 6" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/7p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/7p.jpg" alt="No Pulizie Photo 7" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/8p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/8p.jpg" alt="No Pulizie Photo 8" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/9p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/9p.jpg" alt="No Pulizie Photo 9" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/10p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/10p.jpg" alt="No Pulizie Photo 10" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/11p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/11p.jpg" alt="No Pulizie Photo 11" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/12p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/12p.jpg" alt="No Pulizie Photo 12" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/13p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/13p.jpg" alt="No Pulizie Photo 13" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/14p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/14p.jpg" alt="No Pulizie Photo 14" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/15p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/15p.jpg" alt="No Pulizie Photo 15" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/16p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/16p.jpg" alt="No Pulizie Photo 16" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/17p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/17p.jpg" alt="No Pulizie Photo 17" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/18p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/18p.jpg" alt="No Pulizie Photo 18" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/19p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/19p.jpg" alt="No Pulizie Photo 19" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/20p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/20p.jpg" alt="No Pulizie Photo 20" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/21p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/21p.jpg" alt="No Pulizie Photo 21" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/22p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/22p.jpg" alt="No Pulizie Photo 22" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/23p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/23p.jpg" alt="No Pulizie Photo 23" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/24p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/24p.jpg" alt="No Pulizie Photo 24" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/25p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/25p.jpg" alt="No Pulizie Photo 25" class="img-responsive">
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="images/no-pulizie/26p.jpg" class="image-popup">
-                    <img src="images/no-pulizie/26p.jpg" alt="No Pulizie Photo 26" class="img-responsive">
-                </a>
+            <div class="back-to-home btn-circle">
+                <a href="index.html"><span></span><em>Back</em></a>
             </div>
         </div>
-        <footer>
-            <p>&copy; 2025 KHAVARTI. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a></p>
-        </footer>
+
+        <div id="fh5co-aside">
+            <div class="image-bg"></div>
+            <div class="overlay"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="fh5co-aside-inner">
+                        <div class="row" id="fh5co-bio">
+                            <div class="col-md-12">
+                                <h2>About Me</h2>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Born when there was war, raised while the war continued, I still live in a time when the war hasn't ended. I am an Afghan photographer and videomaker. My dream is to transform into images what others don't see.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
+                            </div>
+                            <div class="col-md-12" style="margin-top: 40px;">
+                                <p class="copyright">&copy; 2025 KHAVARTI. All Rights Reserved.</p>
+                                <p class="copyright-extra">Designed by <a href="http://gettemplates.co/">GetTemplates</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="fh5co-image-grid">
+            <h1 class="album-title">No Pulizie</h1>
+            <div class="grid">
+                <div class="grid-sizer"></div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/1p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/1p.jpg" alt="Photo 1" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/2p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/2p.jpg" alt="Photo 2" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/3p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/3p.jpg" alt="Photo 3" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/4p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/4p.jpg" alt="Photo 4" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/5p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/5p.jpg" alt="Photo 5" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/6p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/6p.jpg" alt="Photo 6" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/7p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/7p.jpg" alt="Photo 7" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/8p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/8p.jpg" alt="Photo 8" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/9p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/9p.jpg" alt="Photo 9" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/10p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/10p.jpg" alt="Photo 10" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/11p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/11p.jpg" alt="Photo 11" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/12p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/12p.jpg" alt="Photo 12" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/13p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/13p.jpg" alt="Photo 13" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/14p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/14p.jpg" alt="Photo 14" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/15p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/15p.jpg" alt="Photo 15" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/16p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/16p.jpg" alt="Photo 16" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/17p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/17p.jpg" alt="Photo 17" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/18p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/18p.jpg" alt="Photo 18" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/19p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/19p.jpg" alt="Photo 19" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/20p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/20p.jpg" alt="Photo 20" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/21p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/21p.jpg" alt="Photo 21" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/22p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/22p.jpg" alt="Photo 22" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/23p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/23p.jpg" alt="Photo 23" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/24p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/24p.jpg" alt="Photo 24" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/25p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/25p.jpg" alt="Photo 25" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
+                    <a href="images/26p.jpg" class="image-popup">
+                        <div class="img-wrap">
+                            <img src="images/26p.jpg" alt="Photo 26" class="img-responsive">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="home-button">
+                <a href="index.html" class="btn-circle"><span></span><em>Home</em></a>
+            </div>
+            <footer>
+                <p>&copy; 2025 KHAVARTI. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a></p>
+            </footer>
+        </div>
     </div>
 
     <script src="js/jquery.min.js"></script>
@@ -222,16 +492,13 @@
     <script src="js/CSSPlugin.min.js"></script>
     <script src="js/EasePack.min.js"></script>
     <script src="js/main.js"></script>
+
     <script>
-        $(document).ready(function(){
-            $('#gallery').isotope({
-                itemSelector: '.gallery-item',
-                layoutMode: 'masonry'
-            });
-            $('.image-popup').magnificPopup({
-                type: 'image',
-                gallery: {
-                    enabled: true
+        $(document).ready(function() {
+            $('.grid').isotope('destroy');
+            $('.grid-item img').each(function() {
+                if (!this.complete || this.naturalWidth === 0) {
+                    console.log('Errore caricamento immagine: ' + $(this).attr('src'));
                 }
             });
         });
