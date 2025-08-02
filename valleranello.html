@@ -64,11 +64,12 @@
         left: 0;
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end; /* Allinea i pulsanti a destra */
         align-items: center;
         padding: 10px 20px;
         background-color: rgba(255, 255, 255, 0.8);
         z-index: 999;
+        gap: 10px; /* Spazio tra i pulsanti */
     }
 
     .back-to-home,
@@ -90,12 +91,19 @@
 
     @media (max-width: 767px) {
         header {
-            flex-direction: row;
+            justify-content: flex-end; /* Mantiene l'allineamento a destra */
+            padding: 10px;
         }
 
         .back-to-home,
         .aside-toggle {
             margin: 0 5px;
+        }
+
+        .back-to-home a,
+        .aside-toggle a {
+            padding: 6px 10px; /* Pulsanti più piccoli su mobile */
+            min-width: 50px;
         }
     }
 </style>
