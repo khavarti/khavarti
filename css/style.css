@@ -93,10 +93,11 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 0;
   height: 100%;
   width: 100%;
-  background-size: contain;
+  background-color: #000;
+  background-image: url("../images/khavarti-portrait.jpg");
   background-repeat: no-repeat;
-  background-position: center top;
-  background: #000 url("../images/khavarti-portrait.jpg") no-repeat;
+  background-position: top center;
+  background-size: contain;
   z-index: 1;
 }
 #fh5co-aside > .row {
@@ -454,6 +455,13 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .js .animate-box {
   opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  #fh5co-aside .image-bg {
+    background-size: contain;
+    background-position: top center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
