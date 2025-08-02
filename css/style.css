@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center top;
-  background: #000 url("../images/khavarti-portrait") no-repeat;
+  background: #000 url("../images/khavarti-portrait.jpg") no-repeat;
   z-index: 1;
 }
 #fh5co-aside > .row {
