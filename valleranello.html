@@ -37,222 +37,238 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-        body {
-            position: relative;
-            background-color: #f8f8f8;
-        }
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('images/img_5.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.08;
-            z-index: -1;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 110px;
-            background: #FFFFFF;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 30px;
-        }
-        .aside-toggle {
-            display: inline-block;
-            margin-left: 30px;
-        }
-        .back-to-home {
-            display: inline-block;
-            margin-right: 30px;
-        }
-        .aside-toggle a, .back-to-home a {
-            background: #000;
-            color: #fff;
-            border-radius: 50%;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-family: 'Varela Round', sans-serif;
-            font-size: 14px;
-        }
-        .aside-toggle a:hover, .back-to-home a:hover {
-            background: #333;
-        }
-        .aside-toggle a span, .back-to-home a span {
-            display: none;
-        }
-        .text-wrap {
-            display: none !important;
-        }
-        .grid-item img {
-            max-width: 100%;
-            height: auto;
-            border: none;
-        }
-        .mfp-title, .mfp-counter {
-            display: none !important;
-        }
-        #fh5co-image-grid {
-            margin-top: 200px;
-            padding-top: 0;
-            padding-bottom: 100px;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
+<style>
+    body {
+        position: relative;
+        background-color: #f8f8f8;
+    }
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/img_5.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.08;
+        z-index: -1;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 110px;
+        background: #FFFFFF;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+    }
+    .aside-toggle {
+        display: inline-block;
+        margin-left: 30px;
+    }
+    .back-to-home {
+        display: inline-block;
+        margin-right: 30px;
+    }
+    .aside-toggle a, .back-to-home a {
+        background: #000;
+        color: #fff;
+        border-radius: 50%;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 14px;
+    }
+    .aside-toggle a:hover, .back-to-home a:hover {
+        background: #333;
+    }
+    .aside-toggle a span, .back-to-home a span {
+        display: none;
+    }
+    .text-wrap {
+        display: none !important;
+    }
+    .grid-item img {
+        max-width: 100%;
+        height: auto;
+        border: none;
+    }
+    .mfp-title, .mfp-counter {
+        display: none !important;
+    }
+    #fh5co-image-grid {
+        margin-top: 200px;
+        padding-top: 0;
+        padding-bottom: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+    .album-title {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'Varela Round', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        color: #333;
+        z-index: 2;
+    }
+    .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-width: 300px;
+    }
+    .grid-item img {
+        width: 100%;
+        height: 400px;
+        object-fit: contain;
+    }
+    .grid-sizer {
+        display: none;
+    }
+    .home-button {
+        margin: 40px auto;
+        padding-bottom: 20px;
+        width: fit-content;
+    }
+    .home-button .btn-circle {
+        display: inline-block;
+        background: #000;
+        color: #fff;
+        border-radius: 50%;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 14px;
+    }
+    .home-button .btn-circle:hover {
+        background: #333;
+    }
+    .home-button .btn-circle span {
+        display: none;
+    }
+    footer {
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        background: #f8f8f8;
+        color: #000000;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 14px;
+        width: 100%;
+        position: relative;
+        z-index: 0;
+    }
+    footer a, #fh5co-aside a {
+        color: #000000;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+    footer a:hover, #fh5co-aside a:hover {
+        text-decoration: underline;
+    }
+    footer img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    #fh5co-bio p {
+        color: #FFFFFF;
+        font-size: 14px;
+    }
+    #fh5co-bio .copyright {
+        color: #FFFFFF;
+        font-size: 14px;
+    }
+    #fh5co-bio .copyright-extra {
+        color: #000000;
+        font-size: 12px;
+    }
+
+    @media (min-width: 768px) {
         .album-title {
-            position: absolute;
             top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Varela Round', sans-serif;
-            font-weight: bold;
-            font-size: 20px;
-            color: #333;
-            z-index: 2;
+            font-size: 24px;
         }
         .grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding: 0;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
+            gap: 30px;
+            max-width: 900px;
         }
         .grid-item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            min-width: 300px;
+            min-width: 500px;
         }
         .grid-item img {
-            width: 100%;
-            height: 400px;
-            object-fit: contain;
-        }
-        .grid-sizer {
-            display: none;
+            height: 600px;
         }
         .home-button {
             margin: 40px auto;
-            padding-bottom: 20px;
-            width: fit-content;
         }
-        .home-button .btn-circle {
-            display: inline-block;
-            background: #000;
-            color: #fff;
-            border-radius: 50%;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-family: 'Varela Round', sans-serif;
-            font-size: 14px;
+    }
+
+    @media (max-width: 767px) {
+        .grid {
+            gap: 20px;
+            max-width: 400px;
         }
-        .home-button .btn-circle:hover {
-            background: #333;
+        .grid-item {
+            min-width: 300px;
         }
-        .home-button .btn-circle span {
-            display: none;
+        .grid-item img {
+            height: 400px;
         }
-        footer {
+        .home-button {
+            margin: 30px auto;
+        }
+        header {
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        .aside-toggle {
+            margin-left: 10px;
+        }
+        .back-to-home {
+            margin-right: 10px;
+        }
+        .aside-toggle,
+        .back-to-home {
+            flex: 0 0 auto;
+        }
+        .aside-toggle a,
+        .back-to-home a {
+            min-width: 70px;
             text-align: center;
-            height: 40px;
-            line-height: 40px;
-            background: #f8f8f8;
-            color: #000000;
-            font-family: 'Varela Round', sans-serif;
-            font-size: 14px;
-            width: 100%;
-            position: relative;
-            z-index: 0;
         }
-        footer a, #fh5co-aside a {
-            color: #000000;
-            text-decoration: none;
-            margin-left: 10px;
-        }
-        footer a:hover, #fh5co-aside a:hover {
-            text-decoration: underline;
-        }
-        footer img {
-            width: 20px;
-            height: 20px;
-            vertical-align: middle;
-            margin-left: 10px;
-        }
-        #fh5co-bio p {
-            color: #FFFFFF;
-            font-size: 14px;
-        }
-        #fh5co-bio .copyright {
-            color: #FFFFFF;
-            font-size: 14px;
-        }
-        #fh5co-bio .copyright-extra {
-            color: #000000;
-            font-size: 12px;
-        }
-        @media (min-width: 768px) {
-            .album-title {
-                top: -30px;
-                font-size: 24px;
-            }
-            .grid {
-                gap: 30px;
-                max-width: 900px;
-            }
-            .grid-item {
-                min-width: 500px;
-            }
-            .grid-item img {
-                height: 600px;
-            }
-            .home-button {
-                margin: 40px auto;
-            }
-        }
-        @media (max-width: 767px) {
-            .grid {
-                gap: 20px;
-                max-width: 400px;
-            }
-            .grid-item {
-                min-width: 300px;
-            }
-            .grid-item img {
-                height: 400px;
-            }
-            .home-button {
-                margin: 30px auto;
-            }
-            header {
-                padding: 0 15px;
-            }
-            .aside-toggle {
-                margin-left: 10px;
-            }
-            .back-to-home {
-                margin-right: 10px;
-            }
-        }
-    </style>
+    }
+</style>
+
     </head>
     <body>
     <div id="fh5co-page">
