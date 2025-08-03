@@ -138,7 +138,7 @@
         .grid-item img {
             width: 100%;
             height: auto;
-            max-height: 720px; /* Proporzionale a 1280px per 16:9 */
+            max-height: 720px; /* Adatto per foto orizzontali */
             object-fit: contain;
         }
         .grid-sizer {
@@ -203,6 +203,26 @@
             color: #000000;
             font-size: 12px;
         }
+        .intro-text, .project-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 15px;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+        .intro-text p {
+            margin: 5px 0;
+        }
+        .project-text h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+        }
+        .project-text p {
+            margin: 10px 0;
+        }
         @media (min-width: 768px) {
             .album-title {
                 top: -30px;
@@ -221,13 +241,13 @@
         @media (max-width: 767px) {
             .grid {
                 gap: 20px;
-                max-width: 640px; /* Ottimizzato per 16:9 */
+                max-width: 480px;
             }
             .grid-item {
                 min-width: 300px;
             }
             .grid-item img {
-                max-height: 360px; /* Proporzionale a 640px per 16:9 */
+                max-height: 480px;
             }
             .home-button {
                 margin: 30px auto;
@@ -283,6 +303,11 @@
 
         <div class="container-fluid" id="fh5co-image-grid">
             <h1 class="album-title">No Pulizie</h1>
+            <!-- Frase introduttiva -->
+            <div class="intro-text">
+                <p>Text available at the end of the photographic sequence.</p>
+                <p>Testo disponibile alla fine della sequenza fotografica.</p>
+            </div>
             <div class="grid">
                 <div class="grid-sizer"></div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
@@ -467,6 +492,30 @@
                         </div>
                     </a>
                 </div>
+            </div>
+            <!-- Testo del progetto -->
+            <div class="project-text">
+                <h2>The Valleranello Residence</h2>
+                <p>The Valleranello residence was where I lived during the quarantine.</p>
+                <p>It’s located in a district of Rome that feels distant from everything and everyone—just like I felt.</p>
+                <p>Far from home, far from my loved ones, my family... and now, far from any human contact at all.</p>
+                <p>Those were difficult days.</p>
+                <p>It felt like living in one of those films where the main character wakes up each morning and relives the same day, stuck in a time loop.</p>
+                <p>You try to look on the bright side, telling yourself you finally have time for hobbies and things you wouldn’t normally do with the pace of everyday life.</p>
+                <p>Then, suddenly, I felt less alone.</p>
+                <p>If you ask me today, "Who is the Other to you?"—I immediately think of them.</p>
+                <p>The Other is something, or someone, you can’t live without—even if you only realize it when their absence becomes impossible to ignore.</p>
+                <p>Photographic project No Pulizie, created between 2020 and 2022.</p>
+                <h2>🇮🇹 Versione italiana</h2>
+                <p>La residenza Valleranello è stato il luogo in cui ho vissuto la quarantena.</p>
+                <p>È situata in un quartiere di Roma che sembra essere lontano da tutto e da tutti, la stessa sensazione che provavo io.</p>
+                <p>Lontano da casa mia, dagli affetti, dai parenti... ora ero lontano anche da qualsiasi altro contatto umano.</p>
+                <p>Sono stati giorni difficili, mi sembrava di vivere in quei film nei quali il personaggio si sveglia la mattina e rivive la stessa giornata in un loop temporale.</p>
+                <p>Cerchi di prendere il lato positivo perché puoi dedicare tempo agli hobby e alle cose che non avresti fatto per reggere i ritmi della vita quotidiana.</p>
+                <p>A un tratto mi sono sentito meno solo.</p>
+                <p>Se mi chiedono oggi "chi è per te l'altro?", di certo mi vengono in mente loro.</p>
+                <p>L'altro è qualcosa o qualcuno di cui non puoi fare a meno, anche se spesso ci se ne rende conto solo nel momento in cui se ne avverte l'assenza.</p>
+                <p>Progetto fotografico No Pulizie, realizzato tra il 2020 e il 2022.</p>
             </div>
             <div class="home-button">
                 <a href="index.html" class="btn-circle"><span></span><em>Home</em></a>
