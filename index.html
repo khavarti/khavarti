@@ -41,40 +41,19 @@
         .video-container {
             text-align: center;
             margin: 0 auto;
-            padding: 0 15px; /* Padding laterale per evitare bordi */
-            max-width: 1200px; /* Aumentato da 960px */
+            padding: 0 15px;
+            max-width: 1200px;
             margin-bottom: 60px;
-            position: relative; /* Per posizionare l'overlay dell'icona */
         }
         .video-container iframe {
             width: 100%;
-            max-width: 1200px; /* Aumentato da 960px */
+            max-width: 1200px;
             height: auto;
             aspect-ratio: 16 / 9;
             border: 2px solid #333;
             display: block;
             margin-left: auto;
             margin-right: auto;
-        }
-        .mute-icon {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 50%;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        .mute-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: #fff;
-        }
-        .mute-icon.hidden {
-            display: none;
         }
         .cover {
             text-align: center;
@@ -239,11 +218,6 @@
             <!-- Vimeo Video -->
             <div class="video-container">
                 <iframe title="vimeo-player" src="https://player.vimeo.com/video/432534671?h=ba7c212fa3&autoplay=1&muted=1" width="1200" height="675" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-                <div class="mute-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4L9.91 6.09 12 8.18V4zm-7 8c0 3.31 2.69 6 6 6 1.01 0 1.97-.3 2.79-.82L3.82 7.21C3.3 8.03 3 8.99 3 10v2zm9 0c0-1.1-.45-2.1-1.18-2.82L10.18 11H14v2h-3.82l-2.64 2.64C8.45 14.9 9 13.9 9 12.82V10h2v-.18L13.82 7c.52.82.82 1.78.82 2.82 0 3.31-2.69 6-6 6v2c4.42 0 8-3.58 8-8s-3.58-8-8-8v2zm-2 0c0 1.1.45 2.1 1.18 2.82L15.82 13H12v-2h3.82l2.64-2.64C17.55 9.1 17 10.1 17 11.18V14h-2v.18L12.18 17c-.52-.82-.82-1.78-.82-2.82 0-3.31 2.69-6 6-6v-2c-4.42 0-8 3.58-8 8z"/>
-                    </svg>
-                </div>
             </div>
             <!-- Album Valleranello -->
             <div class="cover">
@@ -297,32 +271,5 @@
         <script src="js/EasePack.min.js"></script>
         <script src="js/main.js"></script>
         <script async src="//www.instagram.com/embed.js"></script>
-        <script>
-            $(document).ready(function() {
-                const video = $('iframe[src*="vimeo"]')[0];
-                const muteIcon = $('.mute-icon');
-                const player = new Vimeo.Player(video);
-
-                // Mostra l'icona di mute all'inizio
-                muteIcon.show();
-
-                // Nasconde l'icona quando l'audio è attivo
-                video.addEventListener('volumechange', function() {
-                    player.getMuted().then(function(muted) {
-                        if (!muted) {
-                            muteIcon.addClass('hidden');
-                        } else {
-                            muteIcon.removeClass('hidden');
-                        }
-                    });
-                });
-
-                // Clic sull'icona per attivare l'audio
-                muteIcon.on('click', function() {
-                    player.setMuted(false);
-                    muteIcon.addClass('hidden');
-                });
-            });
-        </script>
     </body>
 </html>
