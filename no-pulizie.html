@@ -125,7 +125,7 @@
             gap: 20px;
             padding: 0;
             width: 100%;
-            max-width: 800px; /* Aumentato per immagini 16:9 */
+            max-width: 1280px; /* Ottimizzato per 16:9 */
             margin: 0 auto;
         }
         .grid-item {
@@ -137,8 +137,8 @@
         }
         .grid-item img {
             width: 100%;
-            height: auto; /* Rimosso height fisso per adattamento proporzionale */
-            max-height: 450px; /* Limite massimo per evitare immagini troppo grandi su schermi piccoli */
+            height: auto;
+            max-height: 720px; /* Proporzionale a 1280px per 16:9 */
             object-fit: contain;
         }
         .grid-sizer {
@@ -210,13 +210,9 @@
             }
             .grid {
                 gap: 30px;
-                max-width: 1200px; /* Aumentato per immagini 16:9 su schermi grandi */
             }
             .grid-item {
                 min-width: 500px;
-            }
-            .grid-item img {
-                max-height: 675px; /* Proporzionale a 1200px di larghezza per rapporto 16:9 */
             }
             .home-button {
                 margin: 40px auto;
@@ -225,13 +221,13 @@
         @media (max-width: 767px) {
             .grid {
                 gap: 20px;
-                max-width: 500px; /* Adattato per schermi piccoli */
+                max-width: 640px; /* Ottimizzato per 16:9 */
             }
             .grid-item {
                 min-width: 300px;
             }
             .grid-item img {
-                max-height: 281px; /* Proporzionale a 500px di larghezza per rapporto 16:9 */
+                max-height: 360px; /* Proporzionale a 640px per 16:9 */
             }
             .home-button {
                 margin: 30px auto;
