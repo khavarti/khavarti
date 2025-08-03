@@ -125,7 +125,7 @@
             gap: 20px;
             padding: 0;
             width: 100%;
-            max-width: 900px;
+            max-width: 960px; /* Ottimizzato per 720x960 e 960x720 */
             margin: 0 auto;
         }
         .grid-item {
@@ -138,7 +138,7 @@
         .grid-item img {
             width: 100%;
             height: auto;
-            max-height: 600px;
+            max-height: 960px; /* Adatto per foto verticali */
             object-fit: contain;
         }
         .grid-sizer {
@@ -221,13 +221,13 @@
         @media (max-width: 767px) {
             .grid {
                 gap: 20px;
-                max-width: 400px;
+                max-width: 480px; /* Ottimizzato per schermi piccoli */
             }
             .grid-item {
                 min-width: 300px;
             }
             .grid-item img {
-                max-height: 400px;
+                max-height: 480px; /* Adatto per foto verticali su schermi piccoli */
             }
             .home-button {
                 margin: 30px auto;
