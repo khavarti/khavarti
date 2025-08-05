@@ -53,17 +53,17 @@
             background: transparent;
             color: #fff;
         }
-        .dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a {
-            color: #ccc;
+        .dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a, .dark-mode .equipment a {
+            color: #1e90ff;
         }
         .dark-mode .album-title, .dark-mode .cover-text, .dark-mode .instagram-feed h2, .dark-mode .instagram-feed .arrow {
             color: #fff;
         }
-        .dark-mode #fh5co-testimonials, .dark-mode #fh5co-contact {
+        .dark-mode #fh5co-testimonials, .dark-mode #fh5co-contact, .dark-mode #fh5co-equipment {
             background: #333;
             color: #fff;
         }
-        .dark-mode #fh5co-testimonials h2, .dark-mode #fh5co-contact h2 {
+        .dark-mode #fh5co-testimonials h2, .dark-mode #fh5co-contact h2, .dark-mode #fh5co-equipment h2 {
             color: #fff;
         }
         .dark-mode .testimonial {
@@ -104,15 +104,10 @@
         .dark-mode .navbar {
             background: #333;
         }
-        .navbar .logo {
-            margin-left: 0;
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            flex-grow: 1;
-        }
-        .dark-mode .navbar .logo {
-            color: #fff;
+        .navbar .logo img {
+            height: 24px; /* Stessa altezza del testo Khavarti */
+            width: auto;
+            vertical-align: middle;
         }
         .navbar ul {
             list-style: none;
@@ -312,6 +307,49 @@
             color: #555;
         }
 
+        /* Foto singole */
+        .single-photo {
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 400px;
+            margin-bottom: 60px;
+        }
+        .single-photo img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .photo-text {
+            text-align: left;
+            max-width: 400px;
+            margin: 10px auto 0;
+            font-size: 14px;
+            color: #333;
+        }
+        .photo-text h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .photo-text p.subtitle {
+            font-size: 14px;
+            margin: 2px 0;
+        }
+        .photo-text p {
+            margin: 5px 0;
+        }
+        .photo-text a {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+        .photo-text a:hover {
+            color: #005566;
+        }
+
         /* Griglia portfolio */
         #fh5co-image-grid {
             display: flex;
@@ -331,6 +369,43 @@
             font-size: 20px;
             color: #333;
             z-index: 2;
+        }
+
+        /* Sezione attrezzatura */
+        #fh5co-equipment {
+            text-align: left;
+            padding: 40px 15px;
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+            background: #f8f8f8;
+        }
+        #fh5co-equipment h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #fh5co-equipment ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #fh5co-equipment ul li {
+            margin-bottom: 10px;
+        }
+        #fh5co-equipment a {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+        #fh5co-equipment a:hover {
+            color: #005566;
+        }
+        #fh5co-equipment .disclaimer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #555;
+        }
+        .dark-mode #fh5co-equipment .disclaimer {
+            color: #ccc;
         }
 
         /* Sezione contatti */
@@ -407,7 +482,7 @@
             text-align: center;
             height: 60px;
             line-height: 60px;
-            background: #333; /* Sfondo lungo da destra a sinistra */
+            background: #333;
             color: #fff;
             font-size: 14px;
             width: 100%;
@@ -454,7 +529,7 @@
 
         /* Responsive */
         @media (min-width: 768px) {
-            .cover img {
+            .cover img, .single-photo img {
                 max-width: 400px;
             }
             .album-title {
@@ -514,7 +589,7 @@
     <div id="fh5co-page">
         <!-- Barra di navigazione -->
         <nav class="navbar">
-            <div class="logo">Khavarti</div>
+            <div class="logo"><img src="images/khavarti_logo.avif" alt="Khavarti Logo"></div>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="#" onclick="toggleAbout()">About</a></li>
@@ -570,6 +645,21 @@
                 </div>
             </div>
 
+            <!-- Foto Khavarti & Leica -->
+            <div class="single-photo">
+                <img src="images/khavarti_leica.avif" alt="Khavarti & Leica" loading="lazy">
+            </div>
+
+            <!-- Foto Piazza di Spagna -->
+            <div class="single-photo">
+                <img src="images/piazza_di_spagna.avif" alt="Piazza di Spagna, Roma" loading="lazy">
+                <div class="photo-text">
+                    <h3>Roma</h3>
+                    <p class="subtitle">Piazza di Spagna</p>
+                    <p>used Sony 14mm 1.8 gm for this photo. <a href="https://amzn.to/3Al1ME0" target="_blank">link</a></p>
+                </div>
+            </div>
+
             <!-- Instagram Posts -->
             <div class="instagram-feed">
                 <h2>From Instagram</h2>
@@ -596,6 +686,64 @@
                     <p>"Working with Khavarti was a pleasure. Unmatched professionalism and creativity."</p>
                     <cite>– Luca B., Event Organizer</cite>
                 </div>
+            </section>
+
+            <!-- Sezione Attrezzatura -->
+            <section id="fh5co-equipment">
+                <h2>WHAT DO I USE FOR PHOTOGRAPHY AND VIDEO?</h2>
+                <h2>COSA USO PER FOTOGRAFIA E VIDEO?</h2>
+                <ul>
+                    <li><a href="http://www.amazon.it/provaprime?tag=khavarti-21" target="_blank">Amazon Prime</a></li>
+                    <li>1. Sony A7iik: <a href="https://amzn.to/3zP3Ovi" target="_blank">https://amzn.to/3zP3Ovi</a></li>
+                    <li>2. Sony A7R III: <a href="https://amzn.to/3KUJbC2" target="_blank">https://amzn.to/3KUJbC2</a></li>
+                    <li>3. Sony 24-105 f4: <a href="https://amzn.to/3BUADrN" target="_blank">https://amzn.to/3BUADrN</a> | Sony 24-240mm: <a href="https://amzn.to/3JR2WsP" target="_blank">https://amzn.to/3JR2WsP</a></li>
+                    <li>4. Sony 90mm macro: <a href="https://amzn.to/3Ekjg4a" target="_blank">https://amzn.to/3Ekjg4a</a></li>
+                    <li>5. DJI RS 3 Pro Combo: <a href="https://amzn.to/3dxeUO6" target="_blank">https://amzn.to/3dxeUO6</a></li>
+                    <li>6. Batteria per Sony A7ii: <a href="https://amzn.to/3Eq1jRB" target="_blank">https://amzn.to/3Eq1jRB</a> | <a href="https://amzn.to/3mnwIQ2" target="_blank">https://amzn.to/3mnwIQ2</a></li>
+                    <li>7. Batteria per Sony A7R III: <a href="https://amzn.to/3uPd68Y" target="_blank">https://amzn.to/3uPd68Y</a></li>
+                    <li>8. SanDisk Extreme PRO 64GB: <a href="https://amzn.to/3xGjsbE" target="_blank">https://amzn.to/3xGjsbE</a> | Lexar 128GB: <a href="https://amzn.to/406SdCM" target="_blank">https://amzn.to/406SdCM</a> | SABRENT Scheda SD 128GB v60: <a href="https://amzn.to/3QYTbiN" target="_blank">https://amzn.to/3QYTbiN</a></li>
+                    <li>9. Flash V1-S: <a href="https://amzn.to/3M284f8" target="_blank">https://amzn.to/3M284f8</a></li>
+                    <li>10. Godox X2T-S TTL: <a href="https://amzn.to/3Lwt0Mf" target="_blank">https://amzn.to/3Lwt0Mf</a></li>
+                    <li>11. Filtro ND (72mm): <a href="https://amzn.to/3rwlMiD" target="_blank">https://amzn.to/3rwlMiD</a></li>
+                    <li>12. Microfono Lavalier Wireless Hollyland Lark 150: <a href="https://amzn.to/40WOlW3" target="_blank">https://amzn.to/40WOlW3</a></li>
+                    <li>13. Treppiede: <a href="https://amzn.to/3vqmhvv" target="_blank">https://amzn.to/3vqmhvv</a> | <a href="https://amzn.to/40U6m7k" target="_blank">https://amzn.to/40U6m7k</a></li>
+                    <li>14. Mini proiettore portatile Wi-Fi: <a href="https://amzn.to/3qRkrSP" target="_blank">https://amzn.to/3qRkrSP</a></li>
+                    <li>15. Sgancio Rapido con Base per fotocamera: <a href="https://amzn.to/3C6N9FK" target="_blank">https://amzn.to/3C6N9FK</a> | <a href="https://amzn.to/3DOgZ2Y" target="_blank">https://amzn.to/3DOgZ2Y</a></li>
+                    <li>16. Laptop-Pc gaming potente: <a href="https://amzn.to/3yKvykI" target="_blank">https://amzn.to/3yKvykI</a></li>
+                    <li>17. Zaino: <a href="https://amzn.to/3MfK2i9" target="_blank">https://amzn.to/3MfK2i9</a></li>
+                    <li>18. Tablet 10': <a href="https://amzn.to/3FdApPv" target="_blank">https://amzn.to/3FdApPv</a></li>
+                    <li>19. Set Attrezzi: <a href="https://amzn.to/3DuhHQS" target="_blank">https://amzn.to/3DuhHQS</a></li>
+                    <li>20. Proiettore 4K Supporta 340 ANSI, Artlii: <a href="https://amzn.to/3Fky8Si" target="_blank">https://amzn.to/3Fky8Si</a></li>
+                    <li>21. Adattatore Attivo S/B per Apple Cinema Displays: <a href="https://amzn.to/3utS3aR" target="_blank">https://amzn.to/3utS3aR</a></li>
+                    <li>22. Ultra Wide-Angle Lens: <a href="https://amzn.to/3TZOpAo" target="_blank">https://amzn.to/3TZOpAo</a></li>
+                    <li>23. K&F Concept Nano-X Filtro ND2-32 Variabile (5 Stop): <a href="https://amzn.to/3HXG4ui" target="_blank">https://amzn.to/3HXG4ui</a></li>
+                    <li>24. MacBook Pro M2 display 13": <a href="https://amzn.to/3WRFGC0" target="_blank">https://amzn.to/3WRFGC0</a></li>
+                    <li>25. Mini Matte Box per DSLR mirrorless: <a href="https://amzn.to/3hNcrBg" target="_blank">https://amzn.to/3hNcrBg</a></li>
+                    <li>26. iPhone 14 Pro Max 128GB: <a href="https://amzn.to/3BI6CeC" target="_blank">https://amzn.to/3BI6CeC</a> | <a href="https://amzn.to/40wGCgc" target="_blank">https://amzn.to/40wGCgc</a></li>
+                    <li>27. Apple USB-C Power Adapter 20W White: <a href="https://amzn.to/3KeOGOf" target="_blank">https://amzn.to/3KeOGOf</a></li>
+                    <li>28. Triplo Monitor Portatile FHD 1080P 13.3": <a href="https://amzn.to/3KJf2rP" target="_blank">https://amzn.to/3KJf2rP</a></li>
+                    <li>29. MSI Notebook Gaming, 15.6" Intel I7 RAM 16GB DDR4, 512GB SSD: <a href="https://amzn.to/3xWAfqH" target="_blank">https://amzn.to/3xWAfqH</a></li>
+                    <li>30. Insta360 x3: <a href="https://amzn.to/44WG8U8" target="_blank">https://amzn.to/44WG8U8</a>
+                        <ul>
+                            <li>Protezione lenti: <a href="https://amzn.to/42zDvGd" target="_blank">https://amzn.to/42zDvGd</a></li>
+                            <li>Adesivi per lenti: <a href="https://amzn.to/3W2Gapr" target="_blank">https://amzn.to/3W2Gapr</a></li>
+                            <li>SD 128GB: <a href="https://amzn.to/3I6gbaZ" target="_blank">https://amzn.to/3I6gbaZ</a></li>
+                        </ul>
+                    </li>
+                    <li>31. Apple 2022 iPad 10.9" (Wi-Fi, 64GB) - Azzurro (10ª generazione): <a href="https://amzn.to/3rGdZ54" target="_blank">https://amzn.to/3rGdZ54</a></li>
+                    <li>32. DJI RSC 2 - Stabilizzatore Gimbal a 3 Assi: <a href="https://amzn.to/45qKstO" target="_blank">https://amzn.to/45qKstO</a></li>
+                    <li>33. SMALLRIG, Softbox a Griglia a Sgancio Rapido da 85 cm: <a href="https://amzn.to/48RuPib" target="_blank">https://amzn.to/48RuPib</a></li>
+                    <li>34. 7artisans, Cine Lens per Sony FULL FRAME, 50mm T2.0: <a href="https://amzn.to/47dFvGA" target="_blank">https://amzn.to/47dFvGA</a> | 35mm T2.0: <a href="https://amzn.to/46fVNNC" target="_blank">https://amzn.to/46fVNNC</a></li>
+                    <li>35. Zaino fotografico: <a href="https://amzn.to/49JlvNy" target="_blank">https://amzn.to/49JlvNy</a></li>
+                    <li>36. Sony FE 50mm f/1.4 Zeiss: <a href="https://amzn.to/3R8yoZl" target="_blank">https://amzn.to/3R8yoZl</a></li>
+                    <li>37. Monitor portatile per DSLR: <a href="https://amzn.to/47X8OwO" target="_blank">https://amzn.to/47X8OwO</a></li>
+                    <li>38. DJI Focus Pro Creator Combo: <a href="https://amzn.to/3LetUxG" target="_blank">https://amzn.to/3LetUxG</a></li>
+                    <li>39. Godox X3-S TTL Trigger Flash Wireless: <a href="https://amzn.to/4csymVB" target="_blank">https://amzn.to/4csymVB</a></li>
+                    <li>40. Godox V1Pro-S Speedlite flash: <a href="https://amzn.to/3We5Q40" target="_blank">https://amzn.to/3We5Q40</a></li>
+                </ul>
+                <p class="disclaimer">Using these links, "As an Amazon Affiliate I earn income from eligible purchases"</p>
+                <p class="disclaimer">Usando questi link, "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei"</p>
+                <p class="disclaimer">استفاده از این لینک ها, "به عنوان یک شرکت وابسته به آمازون، من از خریدهای واجد شرایط درآمد کسب می کنم"</p>
             </section>
 
             <!-- Sezione Contatti -->
