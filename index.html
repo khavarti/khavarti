@@ -26,6 +26,7 @@
 
     <link rel="shortcut icon" href="favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -95,7 +96,7 @@
             background: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
-            padding: 15px 0;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -104,17 +105,18 @@
             background: #333;
         }
         .navbar .logo {
-            margin-left: 20px;
+            margin-left: 0;
             font-size: 24px;
             font-weight: bold;
             color: #333;
+            flex-grow: 1;
         }
         .dark-mode .navbar .logo {
             color: #fff;
         }
         .navbar ul {
             list-style: none;
-            margin: 0 20px 0 0;
+            margin: 0;
             padding: 0;
             display: flex;
         }
@@ -141,7 +143,8 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
-            margin-right: 20px;
+            margin-right: 0;
+            flex-shrink: 0;
         }
 
         /* Dropdown About */
@@ -167,6 +170,7 @@
             padding: 20px;
             border-radius: 4px;
             position: relative;
+            text-align: center;
         }
         .dark-mode .about-content {
             background: #333;
@@ -186,6 +190,24 @@
         }
         .dark-mode .about-content p {
             color: #fff;
+        }
+        .close-about {
+            display: block;
+            margin: 20px auto 0;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+        }
+        .dark-mode .close-about {
+            color: #fff;
+        }
+        .close-about:hover {
+            color: #555;
+        }
+        .dark-mode .close-about:hover {
+            color: #ccc;
         }
 
         /* Dropdown Galleria */
@@ -222,6 +244,14 @@
         .dark-mode .gallery-dropdown a:hover {
             background: #444;
             color: #ccc;
+        }
+        .gallery-dropdown a.valleranello {
+            font-family: 'Varela Round', sans-serif;
+            font-weight: normal;
+        }
+        .gallery-dropdown a.no-pulizie {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
         }
 
         /* Contenitore video */
@@ -308,7 +338,7 @@
             text-align: center;
             padding: 40px 15px;
             max-width: 1200px;
-            margin: 0 auto 60px auto; /* Aggiunto margine inferiore */
+            margin: 0 auto 60px auto;
             background: #f8f8f8;
         }
         #fh5co-contact h2 {
@@ -346,7 +376,7 @@
             text-align: center;
             padding: 40px 15px;
             max-width: 1200px;
-            margin: 0 auto 60px auto; /* Aggiunto margine inferiore */
+            margin: 0 auto 60px auto;
             background: #f8f8f8;
         }
         #fh5co-testimonials h2 {
@@ -377,16 +407,16 @@
             text-align: center;
             height: 60px;
             line-height: 60px;
-            background: #f8f8f8;
-            color: #000000;
+            background: #333; /* Sfondo lungo da destra a sinistra */
+            color: #fff;
             font-size: 14px;
             width: 100%;
             position: relative;
             z-index: 0;
-            margin-top: 60px; /* Aggiunto margine superiore */
+            margin-top: 60px;
         }
         footer a, #fh5co-aside a {
-            color: #000000;
+            color: #ccc;
             text-decoration: none;
             margin-left: 10px;
         }
@@ -405,7 +435,7 @@
             max-width: 350px;
             margin: 60px auto;
             text-align: center;
-            background: transparent; /* Rimosso sfondo */
+            background: transparent;
         }
         .instagram-feed h2 {
             font-size: 16px;
@@ -419,7 +449,7 @@
             margin-bottom: 20px;
         }
         .instagram-feed .instagram-media {
-            margin: 20px auto !important; /* Distanza tra i post */
+            margin: 20px auto !important;
         }
 
         /* Responsive */
@@ -437,12 +467,12 @@
         @media (max-width: 767px) {
             .navbar {
                 justify-content: space-between;
-                padding: 15px 30px; /* Aumentata spaziatura interna */
+                padding: 15px 30px;
             }
             .navbar .logo {
                 margin-left: 0;
                 text-align: left;
-                flex-grow: 1; /* Spinge il logo verso sinistra */
+                flex-grow: 1;
             }
             .navbar ul {
                 display: none;
@@ -470,7 +500,12 @@
             .hamburger {
                 display: block;
                 margin-right: 0;
-                flex-shrink: 0; /* Impedisce al pulsante di ridursi */
+                flex-shrink: 0;
+            }
+            .gallery-dropdown {
+                position: static;
+                box-shadow: none;
+                background: none;
             }
         }
     </style>
@@ -485,8 +520,8 @@
                 <li><a href="#" onclick="toggleAbout()">About</a></li>
                 <li><a href="#" onclick="toggleGallery()">Gallery</a>
                     <div class="gallery-dropdown">
-                        <a href="valleranello.html">Valleranello</a>
-                        <a href="no-pulizie.html">No Pulizie</a>
+                        <a href="valleranello.html" class="valleranello">Valleranello</a>
+                        <a href="no-pulizie.html" class="no-pulizie">No Pulizie</a>
                     </div>
                 </li>
                 <li><a href="#fh5co-contact">Contact</a></li>
@@ -495,13 +530,14 @@
         </nav>
 
         <!-- Dropdown About -->
-        <div class="about-dropdown" id="aboutDropdown" onclick="toggleAbout()">
+        <div class="about-dropdown" id="aboutDropdown">
             <div class="about-content">
                 <h2>About Me</h2>
                 <p>Born when there was war, raised while the war continued, I still live in a time when the war hasn't ended. I am an Afghan photographer and videomaker. My dream is to transform into images what others don't see.</p>
                 <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
                 <p class="copyright">&copy; 2025 Khavarti. All Rights Reserved.</p>
                 <p class="copyright-extra">Designed by <a href="http://gettemplates.co/">GetTemplates</a></p>
+                <span class="close-about" onclick="toggleAbout()">✕</span>
             </div>
         </div>
 
@@ -529,8 +565,8 @@
                 </a>
                 <h1 class="album-title">No Pulizie</h1>
                 <div class="cover-text">
-                    <p><a href="no-pulizie.html">Click to view more photos from No Pulizie</a></p>
-                    <p><a href="no-pulizie.html">Guarda altre foto di No Pulizie</a></p>
+                    <p><a href="no-pulizie.html">Click to view more photos from the No Pulizie project</a></p>
+                    <p><a href="no-pulizie.html">Guarda altre foto del progetto No Pulizie</a></p>
                 </div>
             </div>
 
@@ -620,11 +656,16 @@
                 const hamburger = document.querySelector('.hamburger');
                 const galleryDropdown = document.querySelector('.gallery-dropdown');
                 const galleryLink = document.querySelector('.navbar ul li a[onclick="toggleGallery()"]');
+                const aboutDropdown = document.getElementById('aboutDropdown');
+                const aboutContent = document.querySelector('.about-content');
                 if (!menu.contains(event.target) && event.target !== hamburger) {
                     menu.classList.remove('active');
                 }
                 if (!galleryDropdown.contains(event.target) && event.target !== galleryLink) {
                     galleryDropdown.classList.remove('active');
+                }
+                if (aboutDropdown.classList.contains('active') && !aboutContent.contains(event.target) && event.target !== document.querySelector('a[onclick="toggleAbout()"]')) {
+                    aboutDropdown.classList.remove('active');
                 }
             });
         </script>
