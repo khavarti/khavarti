@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>KHAVARTI Photography</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Photography and videography by KHAVARTI, capturing unseen moments." />
-    <meta name="keywords" content="photography, videography, Afghan artist, KHAVARTI" />
+    <meta name="description" content="Photography and videography by KHAVARTI, capturing unseen moments with artistic vision." />
+    <meta name="keywords" content="Afghan photographer, wedding photography, artistic videography, KHAVARTI, portrait photography, landscape photography" />
     <meta name="author" content="KHAVARTI" />
     <!-- Open Graph Tags -->
     <meta property="og:title" content="KHAVARTI Photography" />
-    <meta property="og:description" content="Photography and videography by KHAVARTI, capturing unseen moments." />
+    <meta property="og:description" content="Photography and videography by KHAVARTI, capturing unseen moments with artistic vision." />
     <meta property="og:image" content="https://khavarti.com/images/valleranello/img_1.jpg" />
     <meta property="og:url" content="https://khavarti.com" />
     <meta property="og:type" content="website" />
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="KHAVARTI Photography" />
-    <meta name="twitter:description" content="Photography and videography by KHAVARTI, capturing unseen moments." />
+    <meta name="twitter:description" content="Photography and videography by KHAVARTI, capturing unseen moments with artistic vision." />
     <meta name="twitter:image" content="https://khavarti.com/images/valleranello/img_1.jpg" />
     <meta name="twitter:site" content="@khavarti" />
     <meta http-equiv="cache-control" content="no-cache">
@@ -38,6 +38,73 @@
     <![endif]-->
 
     <style>
+        /* Stili generali aggiornati */
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background: #f8f8f8;
+            transition: background 0.3s ease;
+        }
+        .dark-mode {
+            background: #222;
+            color: #fff;
+        }
+        .dark-mode #fh5co-aside, .dark-mode footer, .dark-mode .instagram-feed {
+            background: #333;
+            color: #fff;
+        }
+        .dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a {
+            color: #ccc;
+        }
+        .dark-mode .album-title, .dark-mode .cover-text, .dark-mode .instagram-feed h2, .dark-mode .instagram-feed .arrow {
+            color: #fff;
+        }
+
+        /* Barra di navigazione */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo {
+            margin-left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0 20px 0 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin-left: 20px;
+        }
+        .navbar ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .navbar ul li a:hover {
+            color: #555;
+            text-decoration: underline;
+        }
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+
+        /* Contenitore video */
         .video-container {
             text-align: center;
             margin: 0 auto;
@@ -55,6 +122,8 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        /* Copertine album */
         .cover {
             text-align: center;
             margin: 0 auto;
@@ -63,25 +132,23 @@
             margin-bottom: 60px;
         }
         .cover img {
-            max-width: 200px;
+            max-width: 100%;
             height: auto;
             border: 2px solid #333;
-            transition: opacity 0.3s ease-in-out !important;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease;
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
         .cover img:hover {
             opacity: 0.8;
-            transform: none !important;
-            scale: 1 !important;
+            transform: scale(1.05);
         }
         .cover-text {
             text-align: center;
             margin-top: 10px;
             font-size: 14px;
             color: #333;
-            font-family: 'Varela Round', sans-serif;
         }
         .cover-text p {
             margin: 2px 0;
@@ -94,6 +161,8 @@
         .cover-text a:hover {
             color: #555;
         }
+
+        /* Griglia portfolio */
         #fh5co-image-grid {
             display: flex;
             justify-content: center;
@@ -108,12 +177,13 @@
         .album-title {
             text-align: center;
             margin: 10px auto;
-            font-family: 'Varela Round', sans-serif;
             font-weight: bold;
             font-size: 20px;
             color: #333;
             z-index: 2;
         }
+
+        /* Sezione bio */
         #fh5co-bio p {
             color: #FFFFFF;
             font-size: 14px;
@@ -126,24 +196,81 @@
             color: #000000;
             font-size: 12px;
         }
-        @media (min-width: 768px) {
-            .cover img {
-                max-width: 400px;
-            }
-            .album-title {
-                font-size: 24px;
-            }
-            #fh5co-image-grid {
-                padding-top: 100px;
-            }
+
+        /* Sezione contatti */
+        #fh5co-contact {
+            text-align: center;
+            padding: 40px 15px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+        #fh5co-contact h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #fh5co-contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #fh5co-contact input, #fh5co-contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            border-radius: 4px;
+            font-family: 'Varela Round', sans-serif;
+        }
+        #fh5co-contact button {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #fh5co-contact button:hover {
+            background: #555;
+        }
+
+        /* Sezione testimonianze */
+        #fh5co-testimonials {
+            text-align: center;
+            padding: 40px 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #fh5co-testimonials h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .testimonial {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+        }
+        .testimonial cite {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            height: 40px;
-            line-height: 40px;
+            height: 60px;
+            line-height: 60px;
             background: #f8f8f8;
             color: #000000;
-            font-family: 'Varela Round', sans-serif;
             font-size: 14px;
             width: 100%;
             position: relative;
@@ -163,13 +290,14 @@
             vertical-align: middle;
             margin-left: 10px;
         }
+
+        /* Instagram feed */
         .instagram-feed {
             max-width: 350px;
             margin: 60px auto;
             text-align: center;
         }
         .instagram-feed h2 {
-            font-family: 'Varela Round', sans-serif;
             font-size: 16px;
             color: #333;
             margin-bottom: 10px;
@@ -180,13 +308,57 @@
             color: #333;
             margin-bottom: 20px;
         }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 20px 0;
+            transition: background 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #555;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .cover img {
+                max-width: 400px;
+            }
+            .album-title {
+                font-size: 24px;
+            }
+            #fh5co-image-grid {
+                padding-top: 120px;
+            }
+        }
+        @media (max-width: 767px) {
+            .navbar ul {
+                display: none;
+            }
+            .navbar .logo {
+                font-size: 20px;
+            }
+        }
     </style>
     </head>
     <body>
     <div id="fh5co-page">
-        <div class="aside-toggle btn-circle">
-            <a href="#"><span></span><em>About</em></a>
-        </div>
+        <!-- Barra di navigazione -->
+        <nav class="navbar">
+            <div class="logo">KHAVARTI Photography</div>
+            <ul>
+                <li><a href="#fh5co-image-grid">Home</a></li>
+                <li><a href="#fh5co-aside">About</a></li>
+                <li><a href="#fh5co-contact">Contatti</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </nav>
 
         <div id="fh5co-aside">
             <div class="image-bg"></div>
@@ -196,7 +368,7 @@
                     <div id="fh5co-aside-inner">
                         <div class="row" id="fh5co-bio">
                             <div class="col-md-12">
-                                <h2>About Me</h2>
+                                <h2>Chi Sono</h2>
                             </div>
                             <div class="col-md-6">
                                 <p>Born when there was war, raised while the war continued, I still live in a time when the war hasn't ended. I am an Afghan photographer and videomaker. My dream is to transform into images what others don't see.</p>
@@ -215,33 +387,51 @@
         </div>
 
         <div class="container-fluid" id="fh5co-image-grid">
-            <!-- Vimeo Video -->
+            <!-- Video Vimeo -->
             <div class="video-container">
                 <iframe title="vimeo-player" src="https://player.vimeo.com/video/432534671?h=ba7c212fa3&autoplay=1&muted=1" width="1200" height="675" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
             </div>
+
+            <!-- CTA Button -->
+            <a href="#fh5co-contact" class="cta-button">Contattami</a>
+
             <!-- Album Valleranello -->
             <div class="cover">
                 <a href="valleranello.html">
-                    <img src="images/valleranello/img_1.jpg" alt="Valleranello Cover Photo" class="img-responsive">
+                    <img src="images/valleranello/img_1.jpg" alt="Paesaggio di Valleranello, fotografia artistica" class="img-responsive" loading="lazy">
                 </a>
                 <h1 class="album-title">Valleranello</h1>
                 <div class="cover-text">
-                    <p><a href="valleranello.html">Click to view more photos from Valleranello</a></p>
+                    <p><a href="valleranello.html">Guarda altre foto di Valleranello</a></p>
                 </div>
             </div>
             <!-- Album No Pulizie -->
             <div class="cover">
                 <a href="no-pulizie.html">
-                    <img src="images/no-pulizie/cop.jpg" alt="No Pulizie Cover Photo" class="img-responsive">
+                    <img src="images/no-pulizie/cop.jpg" alt="No Pulizie, fotografia urbana" class="img-responsive" loading="lazy">
                 </a>
                 <h1 class="album-title">No Pulizie</h1>
                 <div class="cover-text">
-                    <p><a href="no-pulizie.html">Click to view more photos from No Pulizie</a></p>
+                    <p><a href="no-pulizie.html">Guarda altre foto di No Pulizie</a></p>
                 </div>
             </div>
+
+            <!-- Sezione Testimonianze -->
+            <section id="fh5co-testimonials">
+                <h2>Testimonianze</h2>
+                <div class="testimonial">
+                    <p>"Le foto di KHAVARTI catturano emozioni che non si possono descrivere a parole. Un vero artista!"</p>
+                    <cite>– Maria R., Cliente</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Collaborare con KHAVARTI è stato un piacere. Professionalità e creatività senza pari."</p>
+                    <cite>– Luca B., Organizzatore di eventi</cite>
+                </div>
+            </section>
+
             <!-- Instagram Posts -->
             <div class="instagram-feed">
-                <h2>From Instagram</h2>
+                <h2>Dal mio Instagram</h2>
                 <span class="arrow">↓</span>
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: #f8f8f8; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15); margin: 60px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
                     <!-- Instagram embed code unchanged -->
@@ -253,8 +443,22 @@
                     <!-- Instagram embed code unchanged -->
                 </blockquote>
             </div>
+
+            <!-- Sezione Contatti -->
+            <section id="fh5co-contact">
+                <h2>Contattami</h2>
+                <p>Per collaborazioni o richieste, scrivimi!</p>
+                <form action="submit-form.php" method="POST">
+                    <input type="text" name="name" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Messaggio" required></textarea>
+                    <button type="submit">Invia</button>
+                </form>
+                <p><a href="mailto:khavarti@yahoo.com">khavarti@yahoo.com</a> | <a href="https://www.instagram.com/khavarti" target="_blank">Instagram</a></p>
+            </section>
+
             <footer>
-                <p>&copy; 2025 KHAVARTI. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a></p>
+                <p>&copy; 2025 KHAVARTI. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Icona Instagram" loading="lazy"></a></p>
             </footer>
         </div>
 
@@ -271,5 +475,11 @@
         <script src="js/EasePack.min.js"></script>
         <script src="js/main.js"></script>
         <script async src="//www.instagram.com/embed.js"></script>
+        <script>
+            // Toggle modalità chiaro/scuro
+            function toggleTheme() {
+                document.body.classList.toggle('dark-mode');
+            }
+        </script>
     </body>
 </html>
