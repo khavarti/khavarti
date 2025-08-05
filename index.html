@@ -38,7 +38,7 @@
     <![endif]-->
 
     <style>
-        /* Stili generali aggiornati */
+        /* Stili generali */
         body {
             font-family: 'Varela Round', sans-serif;
             background: #f8f8f8;
@@ -58,6 +58,34 @@
         .dark-mode .album-title, .dark-mode .cover-text, .dark-mode .instagram-feed h2, .dark-mode .instagram-feed .arrow {
             color: #fff;
         }
+        .dark-mode #fh5co-testimonials, .dark-mode #fh5co-contact {
+            background: #333;
+            color: #fff;
+        }
+        .dark-mode #fh5co-testimonials h2, .dark-mode #fh5co-contact h2 {
+            color: #fff;
+        }
+        .dark-mode .testimonial {
+            background: #444;
+            color: #fff;
+        }
+        .dark-mode .testimonial p {
+            color: #ccc;
+        }
+        .dark-mode .testimonial cite {
+            color: #fff;
+        }
+        .dark-mode #fh5co-contact input, .dark-mode #fh5co-contact textarea {
+            background: #444;
+            color: #fff;
+            border: 1px solid #555;
+        }
+        .dark-mode #fh5co-contact button {
+            background: #555;
+        }
+        .dark-mode #fh5co-contact button:hover {
+            background: #777;
+        }
 
         /* Barra di navigazione */
         .navbar {
@@ -72,11 +100,17 @@
             justify-content: space-between;
             align-items: center;
         }
+        .dark-mode .navbar {
+            background: #333;
+        }
         .navbar .logo {
             margin-left: 20px;
             font-size: 24px;
             font-weight: bold;
             color: #333;
+        }
+        .dark-mode .navbar .logo {
+            color: #fff;
         }
         .navbar ul {
             list-style: none;
@@ -86,15 +120,22 @@
         }
         .navbar ul li {
             margin-left: 20px;
+            position: relative;
         }
         .navbar ul li a {
             color: #333;
             text-decoration: none;
             font-size: 16px;
         }
+        .dark-mode .navbar ul li a {
+            color: #fff;
+        }
         .navbar ul li a:hover {
             color: #555;
             text-decoration: underline;
+        }
+        .dark-mode .navbar ul li a:hover {
+            color: #ccc;
         }
         .theme-toggle {
             background: none;
@@ -102,6 +143,86 @@
             cursor: pointer;
             font-size: 16px;
             margin-right: 20px;
+        }
+
+        /* Dropdown About */
+        .about-dropdown {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .about-dropdown.active {
+            display: block;
+        }
+        .about-content {
+            background: #fff;
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 20px;
+            border-radius: 4px;
+            position: relative;
+        }
+        .dark-mode .about-content {
+            background: #333;
+            color: #fff;
+        }
+        .about-content h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .dark-mode .about-content h2 {
+            color: #fff;
+        }
+        .about-content p {
+            font-size: 14px;
+            color: #333;
+        }
+        .dark-mode .about-content p {
+            color: #fff;
+        }
+
+        /* Dropdown Galleria */
+        .gallery-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1001;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .dark-mode .gallery-dropdown {
+            background: #333;
+        }
+        .gallery-dropdown.active {
+            display: block;
+        }
+        .gallery-dropdown a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .dark-mode .gallery-dropdown a {
+            color: #fff;
+        }
+        .gallery-dropdown a:hover {
+            background: #f8f8f8;
+            color: #555;
+        }
+        .dark-mode .gallery-dropdown a:hover {
+            background: #444;
+            color: #ccc;
         }
 
         /* Contenitore video */
@@ -183,26 +304,13 @@
             z-index: 2;
         }
 
-        /* Sezione bio */
-        #fh5co-bio p {
-            color: #FFFFFF;
-            font-size: 14px;
-        }
-        #fh5co-bio .copyright {
-            color: #FFFFFF;
-            font-size: 14px;
-        }
-        #fh5co-bio .copyright-extra {
-            color: #000000;
-            font-size: 12px;
-        }
-
         /* Sezione contatti */
         #fh5co-contact {
             text-align: center;
             padding: 40px 15px;
             max-width: 1200px;
             margin: 0 auto;
+            background: #f8f8f8;
         }
         #fh5co-contact h2 {
             font-size: 24px;
@@ -240,6 +348,7 @@
             padding: 40px 15px;
             max-width: 1200px;
             margin: 0 auto;
+            background: #f8f8f8;
         }
         #fh5co-testimonials h2 {
             font-size: 24px;
@@ -353,36 +462,27 @@
         <nav class="navbar">
             <div class="logo">KHAVARTI Photography</div>
             <ul>
-                <li><a href="#fh5co-image-grid">Home</a></li>
-                <li><a href="#fh5co-aside">About</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="#" onclick="toggleAbout()">About</a></li>
+                <li><a href="#" onclick="toggleGallery()">Galleria</a>
+                    <div class="gallery-dropdown">
+                        <a href="valleranello.html">Valleranello</a>
+                        <a href="no-pulizie.html">No Pulizie</a>
+                    </div>
+                </li>
                 <li><a href="#fh5co-contact">Contatti</a></li>
             </ul>
             <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
         </nav>
 
-        <div id="fh5co-aside">
-            <div class="image-bg"></div>
-            <div class="overlay"></div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="fh5co-aside-inner">
-                        <div class="row" id="fh5co-bio">
-                            <div class="col-md-12">
-                                <h2>Chi Sono</h2>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Born when there was war, raised while the war continued, I still live in a time when the war hasn't ended. I am an Afghan photographer and videomaker. My dream is to transform into images what others don't see.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
-                            </div>
-                            <div class="col-md-12" style="margin-top: 40px;">
-                                <p class="copyright">&copy; 2025 KHAVARTI. All Rights Reserved.</p>
-                                <p class="copyright-extra">Designed by <a href="http://gettemplates.co/">GetTemplates</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Dropdown About -->
+        <div class="about-dropdown" id="aboutDropdown" onclick="toggleAbout()">
+            <div class="about-content">
+                <h2>Chi Sono</h2>
+                <p>Born when there was war, raised while the war continued, I still live in a time when the war hasn't ended. I am an Afghan photographer and videomaker. My dream is to transform into images what others don't see.</p>
+                <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
+                <p class="copyright">&copy; 2025 KHAVARTI. All Rights Reserved.</p>
+                <p class="copyright-extra">Designed by <a href="http://gettemplates.co/">GetTemplates</a></p>
             </div>
         </div>
 
@@ -402,6 +502,7 @@
                 </a>
                 <h1 class="album-title">Valleranello</h1>
                 <div class="cover-text">
+                    <p><a href="valleranello.html">Click to view more photos from Valleranello</a></p>
                     <p><a href="valleranello.html">Guarda altre foto di Valleranello</a></p>
                 </div>
             </div>
@@ -412,22 +513,10 @@
                 </a>
                 <h1 class="album-title">No Pulizie</h1>
                 <div class="cover-text">
+                    <p><a href="no-pulizie.html">Click to view more photos from No Pulizie</a></p>
                     <p><a href="no-pulizie.html">Guarda altre foto di No Pulizie</a></p>
                 </div>
             </div>
-
-            <!-- Sezione Testimonianze -->
-            <section id="fh5co-testimonials">
-                <h2>Testimonianze</h2>
-                <div class="testimonial">
-                    <p>"Le foto di KHAVARTI catturano emozioni che non si possono descrivere a parole. Un vero artista!"</p>
-                    <cite>– Maria R., Cliente</cite>
-                </div>
-                <div class="testimonial">
-                    <p>"Collaborare con KHAVARTI è stato un piacere. Professionalità e creatività senza pari."</p>
-                    <cite>– Luca B., Organizzatore di eventi</cite>
-                </div>
-            </section>
 
             <!-- Instagram Posts -->
             <div class="instagram-feed">
@@ -443,6 +532,19 @@
                     <!-- Instagram embed code unchanged -->
                 </blockquote>
             </div>
+
+            <!-- Sezione Testimonianze -->
+            <section id="fh5co-testimonials">
+                <h2>Testimonianze</h2>
+                <div class="testimonial">
+                    <p>"Le foto di KHAVARTI catturano emozioni che non si possono descrivere a parole. Un vero artista!"</p>
+                    <cite>– Maria R., Cliente</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Collaborare con KHAVARTI è stato un piacere. Professionalità e creatività senza pari."</p>
+                    <cite>– Luca B., Organizzatore di eventi</cite>
+                </div>
+            </section>
 
             <!-- Sezione Contatti -->
             <section id="fh5co-contact">
@@ -476,10 +578,34 @@
         <script src="js/main.js"></script>
         <script async src="//www.instagram.com/embed.js"></script>
         <script>
+            // Rileva modalità scura del dispositivo
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.classList.add('dark-mode');
+            }
+
             // Toggle modalità chiaro/scuro
             function toggleTheme() {
                 document.body.classList.toggle('dark-mode');
             }
+
+            // Toggle dropdown About
+            function toggleAbout() {
+                document.getElementById('aboutDropdown').classList.toggle('active');
+            }
+
+            // Toggle dropdown Galleria
+            function toggleGallery() {
+                document.querySelector('.gallery-dropdown').classList.toggle('active');
+            }
+
+            // Chiudi dropdown Galleria cliccando altrove
+            document.addEventListener('click', function(event) {
+                const galleryDropdown = document.querySelector('.gallery-dropdown');
+                const galleryLink = document.querySelector('.navbar ul li a[onclick="toggleGallery()"]');
+                if (!galleryDropdown.contains(event.target) && event.target !== galleryLink) {
+                    galleryDropdown.classList.remove('active');
+                }
+            });
         </script>
     </body>
 </html>
