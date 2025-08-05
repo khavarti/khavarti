@@ -2,7 +2,6 @@
 <html>
     <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Khavarti</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Photography and videography by Khavarti, capturing unseen moments with artistic vision." />
@@ -14,32 +13,17 @@
     <meta property="og:image" content="https://khavarti.com/images/valleranello/img_1.jpg" />
     <meta property="og:url" content="https://khavarti.com" />
     <meta property="og:type" content="website" />
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Khavarti" />
-    <meta name="twitter:description" content="Photography and videography by Khavarti, capturing unseen moments with artistic vision." />
-    <meta name="twitter:image" content="https://khavarti.com/images/valleranello/img_1.jpg" />
-    <meta name="twitter:site" content="@khavarti" />
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="expires" content="0">
-    <meta http-equiv="pragma" content="no-cache">
 
     <link rel="shortcut icon" href="favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
 
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <!--[if lt IE 9]>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-
     <style>
-        /* Stili generali */
         body {
             font-family: 'Varela Round', sans-serif;
             background: #f8f8f8;
@@ -54,7 +38,7 @@
             color: #fff;
         }
         .dark-mode footer {
-            background: #1a1a1a; /* Sfondo più scuro in modalità scura */
+            background: #1a1a1a;
             color: #fff;
         }
         .dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a {
@@ -92,7 +76,6 @@
             background: #777;
         }
 
-        /* Barra di navigazione */
         .navbar {
             position: fixed;
             top: 0;
@@ -109,10 +92,10 @@
             background: #333;
         }
         .navbar .logo img {
-            height: 96px; /* Altezza per desktop */
+            height: 96px;
             width: auto;
             vertical-align: middle;
-            user-select: none; /* Impedisce selezione */
+            user-select: none;
         }
         .navbar ul {
             list-style: none;
@@ -125,12 +108,12 @@
             position: relative;
         }
         .navbar ul li a {
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             text-decoration: none;
             font-size: 16px;
         }
         .dark-mode .navbar ul li a {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .navbar ul li a:hover {
             color: #555;
@@ -143,15 +126,12 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
-            margin-right: 0;
-            flex-shrink: 0;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
         }
         .dark-mode .hamburger {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
 
-        /* Dropdown About */
         .about-dropdown {
             display: none;
             position: fixed;
@@ -173,7 +153,6 @@
             margin: 60px auto;
             padding: 20px;
             border-radius: 4px;
-            position: relative;
             text-align: center;
         }
         .dark-mode .about-content {
@@ -182,33 +161,33 @@
         }
         .about-content h2 {
             font-size: 24px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             margin-bottom: 20px;
         }
         .dark-mode .about-content h2 {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .about-content p {
             font-size: 14px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
         }
         .dark-mode .about-content p {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .about-content p.copyright-extra {
-            font-size: 12px; /* Caratteri più piccoli per Designed by GetTemplates */
+            font-size: 12px;
         }
         .close-about {
             display: block;
             margin: 20px auto 0;
             font-size: 24px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             cursor: pointer;
             font-weight: bold;
             text-align: center;
         }
         .dark-mode .close-about {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .close-about:hover {
             color: #555;
@@ -218,14 +197,13 @@
         }
         .close-text {
             font-size: 12px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             margin-top: 5px;
         }
         .dark-mode .close-text {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
 
-        /* Dropdown Galleria */
         .gallery-dropdown {
             display: none;
             position: absolute;
@@ -246,13 +224,13 @@
         .gallery-dropdown a {
             display: block;
             padding: 10px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             text-decoration: none;
-            font-family: 'Roboto', sans-serif; /* Font diverso per Valleranello e No Pulizie */
+            font-family: 'Roboto', sans-serif;
             font-weight: normal;
         }
         .dark-mode .gallery-dropdown a {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .gallery-dropdown a:hover {
             background: #f8f8f8;
@@ -263,7 +241,6 @@
             color: #ccc;
         }
 
-        /* Contenitore video */
         .video-container {
             text-align: center;
             margin: 0 auto;
@@ -282,7 +259,6 @@
             margin-right: auto;
         }
 
-        /* Copertine album */
         .cover {
             text-align: center;
             margin: 0 auto;
@@ -298,7 +274,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            user-select: none; /* Impedisce selezione */
+            user-select: none;
         }
         .cover img:hover {
             opacity: 0.8;
@@ -308,21 +284,21 @@
             text-align: center;
             margin-top: 10px;
             font-size: 14px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
         }
         .dark-mode .cover-text {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .cover-text p {
             margin: 2px 0;
         }
         .cover-text a {
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             text-decoration: underline;
             transition: color 0.3s ease;
         }
         .dark-mode .cover-text a {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .cover-text a:hover {
             color: #555;
@@ -331,7 +307,6 @@
             color: #ccc;
         }
 
-        /* Foto singole */
         .single-photo {
             text-align: center;
             margin: 0 auto;
@@ -346,54 +321,53 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            user-select: none; /* Impedisce selezione */
+            user-select: none;
         }
         .photo-text {
             text-align: left;
             max-width: 400px;
             margin: 10px auto 0;
             font-size: 14px;
-            color: #000; /* Nero in modalità chiara */
-            font-family: 'Varela Round', sans-serif; /* Confermato font */
+            color: #000;
+            font-family: 'Varela Round', sans-serif;
         }
         .dark-mode .photo-text {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .photo-text h3 {
             font-size: 18px;
             font-weight: bold;
             margin: 0;
             display: inline;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
         }
         .dark-mode .photo-text h3 {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .photo-text p.subtitle {
             font-size: 12px;
             margin: 0 0 5px 10px;
             display: inline;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
         }
         .dark-mode .photo-text p.subtitle {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .photo-text p {
             margin: 5px 0;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
         }
         .dark-mode .photo-text p {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .photo-text a.sony-link {
-            color: #1e90ff; /* Blu in entrambe le modalità */
+            color: #1e90ff;
             text-decoration: underline;
         }
         .photo-text a.sony-link:hover {
             color: #005566;
         }
 
-        /* Griglia portfolio */
         #fh5co-image-grid {
             display: flex;
             justify-content: center;
@@ -410,14 +384,13 @@
             margin: 10px auto;
             font-weight: bold;
             font-size: 20px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             z-index: 2;
         }
         .dark-mode .album-title {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
 
-        /* Sezione attrezzatura */
         #fh5co-equipment {
             text-align: left;
             padding: 40px 15px;
@@ -427,19 +400,19 @@
         }
         #fh5co-equipment h2.english {
             font-size: 24px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             margin-bottom: 10px;
         }
         .dark-mode #fh5co-equipment h2.english {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         #fh5co-equipment h2.italian {
             font-size: 20px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             margin-bottom: 20px;
         }
         .dark-mode #fh5co-equipment h2.italian {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         #fh5co-equipment ul {
             list-style: none;
@@ -450,7 +423,7 @@
             margin-bottom: 10px;
         }
         #fh5co-equipment a {
-            color: #1e90ff; /* Blu in entrambe le modalità */
+            color: #1e90ff;
             text-decoration: underline;
         }
         #fh5co-equipment a:hover {
@@ -459,11 +432,11 @@
         #fh5co-equipment .disclaimer {
             margin-top: 20px;
             font-size: 12px;
-            color: #ff0000; /* Rosso in modalità chiara */
+            color: #ff0000;
             text-align: center;
         }
         .dark-mode #fh5co-equipment .disclaimer {
-            color: #ff6666; /* Rosso chiaro in modalità scura */
+            color: #ff6666;
         }
         .equipment-list-full {
             display: none;
@@ -488,7 +461,6 @@
             background: #555;
         }
 
-        /* Sezione contatti */
         #fh5co-contact {
             text-align: center;
             padding: 40px 15px;
@@ -498,17 +470,17 @@
         }
         #fh5co-contact h2 {
             font-size: 24px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             margin-bottom: 20px;
         }
         .dark-mode #fh5co-contact h2 {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         #fh5co-contact p {
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
         }
         .dark-mode #fh5co-contact p {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         #fh5co-contact form {
             max-width: 600px;
@@ -521,10 +493,10 @@
             border: 1px solid #333;
             border-radius: 4px;
             font-family: 'Varela Round', sans-serif;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
         }
         .dark-mode #fh5co-contact input, .dark-mode #fh5co-contact textarea {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         #fh5co-contact button {
             background: #333;
@@ -539,7 +511,6 @@
             background: #555;
         }
 
-        /* Sezione testimonianze */
         #fh5co-testimonials {
             text-align: center;
             padding: 40px 15px;
@@ -549,11 +520,11 @@
         }
         #fh5co-testimonials h2 {
             font-size: 24px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             margin-bottom: 20px;
         }
         .dark-mode #fh5co-testimonials h2 {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .testimonial {
             margin: 20px 0;
@@ -568,27 +539,26 @@
         }
         .testimonial p {
             font-style: italic;
-            color: #555; /* Grigio in modalità chiara */
+            color: #555;
         }
         .dark-mode .testimonial p {
-            color: #ccc; /* Grigio chiaro in modalità scura */
+            color: #ccc;
         }
         .testimonial cite {
             display: block;
             margin-top: 10px;
             font-size: 14px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
         }
         .dark-mode .testimonial cite {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             height: 60px;
             line-height: 60px;
-            background: #333; /* Sfondo in modalità chiara */
+            background: #333;
             color: #fff;
             font-size: 14px;
             width: 100%;
@@ -609,10 +579,9 @@
             height: 20px;
             vertical-align: middle;
             margin-left: 10px;
-            user-select: none; /* Impedisce selezione */
+            user-select: none;
         }
 
-        /* Instagram feed */
         .instagram-feed {
             max-width: 350px;
             margin: 60px auto;
@@ -621,26 +590,25 @@
         }
         .instagram-feed h2 {
             font-size: 16px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             margin-bottom: 10px;
         }
         .dark-mode .instagram-feed h2 {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .instagram-feed .arrow {
             display: block;
             font-size: 14px;
-            color: #000; /* Nero in modalità chiara */
+            color: #000;
             margin-bottom: 20px;
         }
         .dark-mode .instagram-feed .arrow {
-            color: #fff; /* Bianco in modalità scura */
+            color: #fff;
         }
         .instagram-feed .instagram-media {
             margin: 20px auto !important;
         }
 
-        /* Pulsante Torna su */
         .scroll-top-btn {
             position: fixed;
             bottom: 20px;
@@ -648,26 +616,25 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: #333; /* Sfondo in modalità chiara */
+            background: #333;
             color: #fff;
             font-size: 20px;
             border: none;
             cursor: pointer;
-            display: none; /* Nascosto di default */
+            display: none;
             z-index: 1000;
             transition: background 0.3s ease;
         }
         .dark-mode .scroll-top-btn {
-            background: #555; /* Sfondo in modalità scura */
+            background: #555;
         }
         .scroll-top-btn:hover {
-            background: #555; /* Hover in modalità chiara */
+            background: #555;
         }
         .dark-mode .scroll-top-btn:hover {
-            background: #777; /* Hover in modalità scura */
+            background: #777;
         }
 
-        /* Responsive */
         @media (min-width: 768px) {
             .cover img, .single-photo img {
                 max-width: 400px;
@@ -682,7 +649,7 @@
         @media (max-width: 767px) {
             .navbar {
                 justify-content: space-between;
-                padding: 15px 30px;
+                padding: 15px;
             }
             .navbar .logo {
                 margin-left: 0;
@@ -690,7 +657,7 @@
                 flex-grow: 1;
             }
             .navbar .logo img {
-                height: 72px; /* Ridotto per mobile */
+                height: 72px;
             }
             .navbar ul {
                 display: none;
@@ -699,7 +666,6 @@
                 top: 96px;
                 right: 0;
                 width: 70%;
-                height: auto;
                 background: #fff;
                 box-shadow: -2px 0 5px rgba(0,0,0,0.1);
                 padding: 20px;
@@ -717,8 +683,6 @@
             }
             .hamburger {
                 display: block;
-                margin-right: 0;
-                flex-shrink: 0;
             }
             .gallery-dropdown {
                 position: static;
@@ -730,7 +694,6 @@
     </head>
     <body>
     <div id="fh5co-page">
-        <!-- Barra di navigazione -->
         <nav class="navbar">
             <div class="logo"><img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false"></div>
             <ul>
@@ -738,8 +701,8 @@
                 <li><a href="#" onclick="toggleAbout()">About</a></li>
                 <li><a href="#" onclick="toggleGallery()">Gallery</a>
                     <div class="gallery-dropdown">
-                        <a href="valleranello.html" class="valleranello">Valleranello</a>
-                        <a href="no-pulizie.html" class="valleranello">No Pulizie</a>
+                        <a href="valleranello.html">Valleranello</a>
+                        <a href="no-pulizie.html">No Pulizie</a>
                     </div>
                 </li>
                 <li><a href="#fh5co-contact">Contact</a></li>
@@ -747,7 +710,6 @@
             <div class="hamburger" onclick="toggleMenu()">☰</div>
         </nav>
 
-        <!-- Dropdown About -->
         <div class="about-dropdown" id="aboutDropdown">
             <div class="about-content">
                 <h2>About Me</h2>
@@ -763,12 +725,10 @@
         </div>
 
         <div class="container-fluid" id="fh5co-image-grid">
-            <!-- Video Vimeo -->
             <div class="video-container">
                 <iframe title="vimeo-player" src="https://player.vimeo.com/video/432534671?h=ba7c212fa3&autoplay=1&muted=1" width="1200" height="675" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
             </div>
 
-            <!-- Album Valleranello -->
             <div class="cover">
                 <a href="valleranello.html">
                     <img src="images/valleranello/img_1.jpg" alt="Valleranello landscape, artistic photography" class="img-responsive" loading="lazy" draggable="false">
@@ -779,7 +739,6 @@
                     <p><a href="valleranello.html">Guarda altre foto di Valleranello</a></p>
                 </div>
             </div>
-            <!-- Album No Pulizie -->
             <div class="cover">
                 <a href="no-pulizie.html">
                     <img src="images/no-pulizie/cop.jpg" alt="No Pulizie, urban photography" class="img-responsive" loading="lazy" draggable="false">
@@ -791,12 +750,10 @@
                 </div>
             </div>
 
-            <!-- Foto Khavarti & Leica -->
             <div class="single-photo">
                 <img src="images/khavarti_leica.jpg?v=1" alt="Khavarti & Leica" loading="lazy" draggable="false">
             </div>
 
-            <!-- Foto Piazza di Spagna -->
             <div class="single-photo">
                 <img src="images/piazza_di_spagna.jpg?v=1" alt="Piazza di Spagna, Roma" loading="lazy" draggable="false">
                 <div class="photo-text">
@@ -805,22 +762,17 @@
                 </div>
             </div>
 
-            <!-- Instagram Posts -->
             <div class="instagram-feed">
                 <h2>From my Instagram</h2>
                 <span class="arrow">↓</span>
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 20px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
-                    <!-- Instagram embed code unchanged -->
                 </blockquote>
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cy7pMbmtttt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 20px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
-                    <!-- Instagram embed code unchanged -->
                 </blockquote>
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CBS2aRYHDf3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 20px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
-                    <!-- Instagram embed code unchanged -->
                 </blockquote>
             </div>
 
-            <!-- Sezione Testimonianze -->
             <section id="fh5co-testimonials">
                 <h2>Testimonials</h2>
                 <div class="testimonial">
@@ -833,7 +785,6 @@
                 </div>
             </section>
 
-            <!-- Sezione Attrezzatura -->
             <section id="fh5co-equipment">
                 <h2 class="english">My equipment and my advice for you:</h2>
                 <h2 class="italian">La mia attrezzatura e i miei consigli per te:</h2>
@@ -894,7 +845,6 @@
                 <p class="disclaimer">استفاده از این لینک ها, "به عنوان یک شرکت وابسته به آمازون، من از خریدهای واجد شرایط درآمد کسب می کنم"</p>
             </section>
 
-            <!-- Sezione Contatti -->
             <section id="fh5co-contact">
                 <h2>Contact</h2>
                 <p>For collaborations or inquiries, reach out!</p>
@@ -911,7 +861,6 @@
                 <p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy" draggable="false"></a></p>
             </footer>
 
-            <!-- Pulsante Torna su -->
             <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
         </div>
 
@@ -929,61 +878,41 @@
         <script src="js/main.js"></script>
         <script async src="//www.instagram.com/embed.js"></script>
         <script>
-            // Rileva modalità scura del dispositivo
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 document.body.classList.add('dark-mode');
             }
 
-            // Toggle dropdown About
             function toggleAbout() {
                 document.getElementById('aboutDropdown').classList.toggle('active');
             }
 
-            // Toggle dropdown Galleria
             function toggleGallery() {
                 document.querySelector('.gallery-dropdown').classList.toggle('active');
             }
 
-            // Toggle menu hamburger su mobile
             function toggleMenu() {
                 document.querySelector('.navbar ul').classList.toggle('active');
             }
 
-            // Toggle lista attrezzatura
             function toggleEquipment() {
                 const fullList = document.querySelector('.equipment-list-full');
                 const button = document.querySelector('.show-more-btn');
                 fullList.classList.toggle('active');
-                if (fullList.classList.contains('active')) {
-                    button.textContent = 'Hide / Nascondi';
-                } else {
-                    button.textContent = 'Show All / Mostra tutto';
-                }
+                button.textContent = fullList.classList.contains('active') ? 'Hide / Nascondi' : 'Show All / Mostra tutto';
             }
 
-            // Pulsante Torna su
             function scrollToTop() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Mostra/nascondi pulsante Torna su durante lo scroll
             window.addEventListener('scroll', function() {
-                const scrollTopBtn = document.querySelector('.scroll-top-btn');
-                if (window.scrollY > 200) {
-                    scrollTopBtn.style.display = 'block';
-                } else {
-                    scrollTopBtn.style.display = 'none';
-                }
+                document.querySelector('.scroll-top-btn').style.display = window.scrollY > 200 ? 'block' : 'none';
             });
 
-            // Impedisci menu contestuale sulle immagini
             document.querySelectorAll('img').forEach(img => {
-                img.addEventListener('contextmenu', function(e) {
-                    e.preventDefault();
-                });
+                img.addEventListener('contextmenu', e => e.preventDefault());
             });
 
-            // Chiudi menu mobile e dropdown Galleria cliccando altrove
             document.addEventListener('click', function(event) {
                 const menu = document.querySelector('.navbar ul');
                 const hamburger = document.querySelector('.hamburger');
