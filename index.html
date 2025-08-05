@@ -105,7 +105,7 @@
             background: #333;
         }
         .navbar .logo img {
-            height: 96px; /* 4 volte più grande rispetto a 24px */
+            height: 96px; /* Altezza per desktop */
             width: auto;
             vertical-align: middle;
         }
@@ -204,6 +204,14 @@
         .dark-mode .close-about:hover {
             color: #ccc;
         }
+        .close-text {
+            font-size: 12px;
+            color: #333;
+            margin-top: 5px;
+        }
+        .dark-mode .close-text {
+            color: #fff;
+        }
 
         /* Dropdown Galleria */
         .gallery-dropdown {
@@ -228,6 +236,8 @@
             padding: 10px;
             color: #333;
             text-decoration: none;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: normal;
         }
         .dark-mode .gallery-dropdown a {
             color: #fff;
@@ -239,14 +249,6 @@
         .dark-mode .gallery-dropdown a:hover {
             background: #444;
             color: #ccc;
-        }
-        .gallery-dropdown a.valleranello {
-            font-family: 'Varela Round', sans-serif;
-            font-weight: normal;
-        }
-        .gallery-dropdown a.no-pulizie {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 700;
         }
 
         /* Contenitore video */
@@ -335,11 +337,13 @@
             font-weight: bold;
             margin: 0;
             display: inline;
+            color: #fff;
         }
         .photo-text p.subtitle {
-            font-size: 14px;
+            font-size: 12px;
             margin: 0 0 5px 10px;
             display: inline;
+            color: #fff;
         }
         .photo-text p {
             margin: 5px 0;
@@ -359,7 +363,7 @@
             align-items: center;
             flex-direction: column;
             min-height: calc(100vh - 100px);
-            padding-top: 100px;
+            padding-top: 120px;
             padding-bottom: 60px;
             position: relative;
             z-index: 1;
@@ -414,6 +418,28 @@
         }
         .dark-mode #fh5co-equipment .disclaimer {
             color: #ff6666;
+        }
+        .equipment-list-full {
+            display: none;
+        }
+        .equipment-list-full.active {
+            display: block;
+        }
+        .show-more-btn {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .show-more-btn:hover {
+            background: #555;
         }
 
         /* Sezione contatti */
@@ -558,7 +584,7 @@
                 flex-grow: 1;
             }
             .navbar .logo img {
-                height: 72px; /* Ridotto a 3 volte in mobile per evitare sovrapposizioni */
+                height: 72px; /* Ridotto per mobile */
             }
             .navbar ul {
                 display: none;
@@ -607,7 +633,7 @@
                 <li><a href="#" onclick="toggleGallery()">Gallery</a>
                     <div class="gallery-dropdown">
                         <a href="valleranello.html" class="valleranello">Valleranello</a>
-                        <a href="no-pulizie.html" class="no-pulizie">No Pulizie</a>
+                        <a href="no-pulizie.html" class="valleranello">No Pulizie</a>
                     </div>
                 </li>
                 <li><a href="#fh5co-contact">Contact</a></li>
@@ -623,7 +649,10 @@
                 <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
                 <p class="copyright">&copy; 2025 Khavarti. All Rights Reserved.</p>
                 <p class="copyright-extra">Designed by <a href="http://gettemplates.co/">GetTemplates</a></p>
-                <span class="close-about" onclick="toggleAbout()">✕</span>
+                <div class="close-about" onclick="toggleAbout()">
+                    <span>✕</span>
+                    <div class="close-text">Close</div>
+                </div>
             </div>
         </div>
 
@@ -702,10 +731,12 @@
             <section id="fh5co-equipment">
                 <h2 class="english">WHAT DO I USE FOR PHOTOGRAPHY AND VIDEO?</h2>
                 <h2 class="italian">COSA USO PER FOTOGRAFIA E VIDEO?</h2>
-                <ul>
+                <ul class="equipment-list-short">
                     <li><a href="http://www.amazon.it/provaprime?tag=khavarti-21" target="_blank">Amazon Prime</a></li>
                     <li>1. Sony A7iik: <a href="https://amzn.to/3zP3Ovi" target="_blank">https://amzn.to/3zP3Ovi</a></li>
                     <li>2. Sony A7R III: <a href="https://amzn.to/3KUJbC2" target="_blank">https://amzn.to/3KUJbC2</a></li>
+                </ul>
+                <ul class="equipment-list-full">
                     <li>3. Sony 24-105 f4: <a href="https://amzn.to/3BUADrN" target="_blank">https://amzn.to/3BUADrN</a> | Sony 24-240mm: <a href="https://amzn.to/3JR2WsP" target="_blank">https://amzn.to/3JR2WsP</a></li>
                     <li>4. Sony 90mm macro: <a href="https://amzn.to/3Ekjg4a" target="_blank">https://amzn.to/3Ekjg4a</a></li>
                     <li>5. DJI RS 3 Pro Combo: <a href="https://amzn.to/3dxeUO6" target="_blank">https://amzn.to/3dxeUO6</a></li>
@@ -751,6 +782,7 @@
                     <li>39. Godox X3-S TTL Trigger Flash Wireless: <a href="https://amzn.to/4csymVB" target="_blank">https://amzn.to/4csymVB</a></li>
                     <li>40. Godox V1Pro-S Speedlite flash: <a href="https://amzn.to/3We5Q40" target="_blank">https://amzn.to/3We5Q40</a></li>
                 </ul>
+                <button class="show-more-btn" onclick="toggleEquipment()">Show All / Mostra tutto</button>
                 <p class="disclaimer">Using these links, "As an Amazon Affiliate I earn income from eligible purchases"</p>
                 <p class="disclaimer">Usando questi link, "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei"</p>
                 <p class="disclaimer">استفاده از این لینک ها, "به عنوان یک شرکت وابسته به آمازون، من از خریدهای واجد شرایط درآمد کسب می کنم"</p>
@@ -806,6 +838,18 @@
             // Toggle menu hamburger su mobile
             function toggleMenu() {
                 document.querySelector('.navbar ul').classList.toggle('active');
+            }
+
+            // Toggle lista attrezzatura
+            function toggleEquipment() {
+                const fullList = document.querySelector('.equipment-list-full');
+                const button = document.querySelector('.show-more-btn');
+                fullList.classList.toggle('active');
+                if (fullList.classList.contains('active')) {
+                    button.textContent = 'Hide / Nascondi';
+                } else {
+                    button.textContent = 'Show All / Mostra tutto';
+                }
             }
 
             // Chiudi menu mobile e dropdown Galleria cliccando altrove
