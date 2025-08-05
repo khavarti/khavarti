@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <title>Valleranello - Khavarti</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Valleranello photography collection by Khavarti, capturing unseen moments." />
-    <meta name="keywords" content="Valleranello, photography, Khavarti, Afghan photographer, landscape photography" />
+    <meta name="description" content="Valleranello photography project by Khavarti, capturing moments of isolation during quarantine." />
+    <meta name="keywords" content="Valleranello, photography, Khavarti, Afghan photographer, quarantine" />
     <meta name="author" content="Khavarti" />
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Valleranello - Khavarti" />
-    <meta property="og:description" content="Valleranello photography collection by Khavarti, capturing unseen moments." />
-    <meta property="og:image" content="https://khavarti.com/images/valleranello/img_1.jpg" />
+    <meta property="og:description" content="Valleranello photography project by Khavarti, capturing moments of isolation during quarantine." />
+    <meta property="og:image" content="https://khavarti.com/images/valleranello/cop.jpg" />
     <meta property="og:url" content="https://khavarti.com/valleranello.html" />
     <meta property="og:type" content="website" />
 
@@ -45,7 +45,7 @@
         .dark-mode .hamburger {
             color: #fff;
         }
-        .dark-mode .album-title {
+        .dark-mode .album-title, .dark-mode .intro-text, .dark-mode .project-text {
             color: #fff;
         }
         .dark-mode .about-dropdown {
@@ -225,6 +225,26 @@
             margin: 10px auto;
             z-index: 2;
         }
+        .intro-text, .project-text {
+            text-align: left;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 15px;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 16px;
+            color: #000;
+        }
+        .intro-text p {
+            margin: 5px 0;
+        }
+        .project-text h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+        }
+        .project-text p {
+            margin: 10px 0;
+        }
         .grid {
             display: flex;
             flex-direction: column;
@@ -232,7 +252,7 @@
             gap: 20px;
             padding: 0;
             width: 100%;
-            max-width: 960px;
+            max-width: 1280px;
             margin: 0 auto;
         }
         .grid-item {
@@ -245,7 +265,7 @@
         .grid-item img {
             max-width: 100%;
             height: auto;
-            max-height: 960px;
+            max-height: 720px;
             object-fit: contain;
             border: 2px solid #333;
             user-select: none;
@@ -308,249 +328,13 @@
             background: #777;
         }
 
-        @media (min-width: 768px) {
-            .album-title {
-                font-size: 24px;
-            }
-            .grid {
-                gap: 30px;
-            }
-            .grid-item {
-                min-width: 500px;
-            }
-        }
-        @media (max-width: 767px) {
-            .navbar {
-                justify-content: space-between;
-                padding: 15px;
-            }
-            .navbar .logo {
-                margin-left: 0;
-                text-align: left;
-                flex-grow: 1;
-            }
-            .navbar .logo img {
-                height: 72px;
-            }
-            .navbar ul {
-                display: none;
-                flex-direction: column;
-                position: fixed;
-                top: 96px;
-                right: 0;
-                width: 70%;
-                background: #fff;
-                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-                padding: 20px;
-                z-index: 1001;
-            }
-            .dark-mode .navbar ul {
-                background: #333;
-            }
-            .navbar ul.active {
-                display: flex;
-            }
-            .navbar ul li {
-                margin: 10px 0;
-                text-align: center;
-            }
-            .hamburger {
-                display: block;
-            }
-            .gallery-dropdown {
-                position: static;
-                box-shadow: none;
-                background: none;
-            }
-            .grid {
-                gap: 20px;
-                max-width: 480px;
-            }
-            .grid-item {
-                min-width: 300px;
-            }
-            .grid-item img {
-                max-height: 480px;
-            }
-        }
-    </style>
-    </head>
-    <body>
-    <div id="fh5co-page">
-        <nav class="navbar">
-            <div class="logo"><img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false"></div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#" onclick="toggleAbout()">About</a></li>
-                <li><a href="#" onclick="toggleGallery()">Gallery</a>
-                    <div class="gallery-dropdown">
-                        <a href="valleranello.html">Valleranello</a>
-                        <a href="no-pulizie.html">No Pulizie</a>
-                    </div>
-                </li>
-                <li><a href="index.html#fh5co-contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
-        </nav>
-
-        <div class="about-dropdown" id="aboutDropdown">
-            <div class="about-content">
-                <h2>About Me</h2>
-                <p>Born when there was war, raised while the war continued, I still live in a time when the war hasn't ended. I am an Afghan photographer and videomaker. My dream is to transform into images what others don't see.</p>
-                <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
-                <p class="copyright">&copy; 2025 Khavarti. All Rights Reserved.</p>
-                <p class="copyright-extra">Designed by GetTemplates</p>
-                <div class="close-about" onclick="toggleAbout()">
-                    <span>✕</span>
-                    <div class="close-text">Close</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid" id="fh5co-image-grid">
-            <h1 class="album-title">Valleranello</h1>
-            <div class="grid">
-                <div class="grid-sizer"></div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_1.jpg" alt="Photo 1" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_2.jpg" alt="Photo 2" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_3.jpg" alt="Photo 3" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_4.jpg" alt="Photo 4" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_5.jpg" alt="Photo 5" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_6.jpg" alt="Photo 6" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_7.jpg" alt="Photo 7" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_8.jpg" alt="Photo 8" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_9.jpg" alt="Photo 9" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_10.jpg" alt="Photo 10" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_11.jpg" alt="Photo 11" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_12.jpg" alt="Photo 12" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_13.jpg" alt="Photo 13" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_14.jpg" alt="Photo 14" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_15.jpg" alt="Photo 15" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_16.jpg" alt="Photo 16" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_17.jpg" alt="Photo 17" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_18.jpg" alt="Photo 18" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_19.jpg" alt="Photo 19" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_20.jpg" alt="Photo 20" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-                <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/valleranello/img_21.jpg" alt="Photo 21" class="img-responsive" loading="lazy" draggable="false">
-                </div>
-            </div>
-            <footer>
-                <p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy" draggable="false"></a></p>
-            </footer>
-        </div>
-
-        <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
-    </div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/magnific-popup-options.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/TweenLite.min.js"></script>
-    <script src="js/CSSPlugin.min.js"></script>
-    <script src="js/EasePack.min.js"></script>
-    <script src="js/main.js"></script>
-
-    <script>
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark-mode');
-        }
-
-        function toggleAbout() {
-            document.getElementById('aboutDropdown').classList.toggle('active');
-        }
-
-        function toggleGallery() {
-            document.querySelector('.gallery-dropdown').classList.toggle('active');
-        }
-
-        function toggleMenu() {
-            document.querySelector('.navbar ul').classList.toggle('active');
-        }
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        window.addEventListener('scroll', function() {
-            document.querySelector('.scroll-top-btn').style.display = window.scrollY > 200 ? 'block' : 'none';
-        });
-
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('contextmenu', e => e.preventDefault());
-        });
-
-        document.addEventListener('click', function(event) {
-            const menu = document.querySelector('.navbar ul');
-            const hamburger = document.querySelector('.hamburger');
-            const galleryDropdown = document.querySelector('.gallery-dropdown');
-            const galleryLink = document.querySelector('.navbar ul li a[onclick="toggleGallery()"]');
-            const aboutDropdown = document.getElementById('aboutDropdown');
-            const aboutContent = document.querySelector('.about-content');
-            if (!menu.contains(event.target) && event.target !== hamburger) {
-                menu.classList.remove('active');
-            }
-            if (!galleryDropdown.contains(event.target) && event.target !== galleryLink) {
-                galleryDropdown.classList.remove('active');
-            }
-            if (aboutDropdown.classList.contains('active') && !aboutContent.contains(event.target) && event.target !== document.querySelector('a[onclick="toggleAbout()"]')) {
-                aboutDropdown.classList.remove('active');
-            }
-        });
-
-        $(document).ready(function() {
-            $('.grid').isotope('destroy');
-            $('.grid-item img').each(function() {
-                if (!this.complete || this.naturalWidth === 0) {
-                    console.log('Errore caricamento immagine: ' + $(this).attr('src'));
-                }
-            });
-        });
-    </script>
-    </body>
-</html>
+        .copyright-notice {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-radius: 8
