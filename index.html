@@ -49,11 +49,15 @@
             background: #222;
             color: #fff;
         }
-        .dark-mode #fh5co-aside, .dark-mode footer, .dark-mode .instagram-feed {
+        .dark-mode #fh5co-aside, .dark-mode .instagram-feed {
             background: transparent;
             color: #fff;
         }
-        .dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a, .dark-mode .equipment a, .dark-mode .photo-text a:not(.sony-link) {
+        .dark-mode footer {
+            background: #1a1a1a; /* Sfondo più scuro in modalità scura */
+            color: #fff;
+        }
+        .dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a {
             color: #fff;
         }
         .dark-mode .album-title, .dark-mode .cover-text, .dark-mode .photo-text, .dark-mode .instagram-feed h2, .dark-mode .instagram-feed .arrow {
@@ -120,12 +124,12 @@
             position: relative;
         }
         .navbar ul li a {
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
             text-decoration: none;
             font-size: 16px;
         }
         .dark-mode .navbar ul li a {
-            color: #fff;
+            color: #fff; /* Bianco in modalità scura */
         }
         .navbar ul li a:hover {
             color: #555;
@@ -140,6 +144,10 @@
             cursor: pointer;
             margin-right: 0;
             flex-shrink: 0;
+            color: #000; /* Nero in modalità chiara */
+        }
+        .dark-mode .hamburger {
+            color: #fff; /* Bianco in modalità scura */
         }
 
         /* Dropdown About */
@@ -173,30 +181,30 @@
         }
         .about-content h2 {
             font-size: 24px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
             margin-bottom: 20px;
         }
         .dark-mode .about-content h2 {
-            color: #fff;
+            color: #fff; /* Bianco in modalità scura */
         }
         .about-content p {
             font-size: 14px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
         }
         .dark-mode .about-content p {
-            color: #fff;
+            color: #fff; /* Bianco in modalità scura */
         }
         .close-about {
             display: block;
             margin: 20px auto 0;
             font-size: 24px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
             cursor: pointer;
             font-weight: bold;
             text-align: center;
         }
         .dark-mode .close-about {
-            color: #fff;
+            color: #fff; /* Bianco in modalità scura */
         }
         .close-about:hover {
             color: #555;
@@ -206,11 +214,11 @@
         }
         .close-text {
             font-size: 12px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
             margin-top: 5px;
         }
         .dark-mode .close-text {
-            color: #fff;
+            color: #fff; /* Bianco in modalità scura */
         }
 
         /* Dropdown Galleria */
@@ -234,13 +242,13 @@
         .gallery-dropdown a {
             display: block;
             padding: 10px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
             text-decoration: none;
             font-family: 'Varela Round', sans-serif;
             font-weight: normal;
         }
         .dark-mode .gallery-dropdown a {
-            color: #fff;
+            color: #fff; /* Bianco in modalità scura */
         }
         .gallery-dropdown a:hover {
             background: #f8f8f8;
@@ -295,17 +303,26 @@
             text-align: center;
             margin-top: 10px;
             font-size: 14px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
+        }
+        .dark-mode .cover-text {
+            color: #fff; /* Bianco in modalità scura */
         }
         .cover-text p {
             margin: 2px 0;
         }
         .cover-text a {
-            color: #fff;
+            color: #000; /* Nero in modalità chiara */
             text-decoration: underline;
             transition: color 0.3s ease;
         }
+        .dark-mode .cover-text a {
+            color: #fff; /* Bianco in modalità scura */
+        }
         .cover-text a:hover {
+            color: #555;
+        }
+        .dark-mode .cover-text a:hover {
             color: #ccc;
         }
 
@@ -330,26 +347,39 @@
             max-width: 400px;
             margin: 10px auto 0;
             font-size: 14px;
-            color: #fff;
+            color: #000; /* Nero in modalità chiara */
+        }
+        .dark-mode .photo-text {
+            color: #fff; /* Bianco in modalità scura */
         }
         .photo-text h3 {
             font-size: 18px;
             font-weight: bold;
             margin: 0;
             display: inline;
-            color: #fff;
+            color: #000; /* Nero in modalità chiara */
+        }
+        .dark-mode .photo-text h3 {
+            color: #fff; /* Bianco in modalità scura */
         }
         .photo-text p.subtitle {
             font-size: 12px;
             margin: 0 0 5px 10px;
             display: inline;
-            color: #fff;
+            color: #000; /* Nero in modalità chiara */
+        }
+        .dark-mode .photo-text p.subtitle {
+            color: #fff; /* Bianco in modalità scura */
         }
         .photo-text p {
             margin: 5px 0;
+            color: #000; /* Nero in modalità chiara */
+        }
+        .dark-mode .photo-text p {
+            color: #fff; /* Bianco in modalità scura */
         }
         .photo-text a.sony-link {
-            color: #1e90ff;
+            color: #1e90ff; /* Blu in entrambe le modalità */
             text-decoration: underline;
         }
         .photo-text a.sony-link:hover {
@@ -373,8 +403,11 @@
             margin: 10px auto;
             font-weight: bold;
             font-size: 20px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
             z-index: 2;
+        }
+        .dark-mode .album-title {
+            color: #fff; /* Bianco in modalità scura */
         }
 
         /* Sezione attrezzatura */
@@ -387,13 +420,19 @@
         }
         #fh5co-equipment h2.english {
             font-size: 24px;
-            color: #fff;
+            color: #000; /* Nero in modalità chiara */
             margin-bottom: 10px;
+        }
+        .dark-mode #fh5co-equipment h2.english {
+            color: #fff; /* Bianco in modalità scura */
         }
         #fh5co-equipment h2.italian {
             font-size: 20px;
-            color: #fff;
+            color: #000; /* Nero in modalità chiara */
             margin-bottom: 20px;
+        }
+        .dark-mode #fh5co-equipment h2.italian {
+            color: #fff; /* Bianco in modalità scura */
         }
         #fh5co-equipment ul {
             list-style: none;
@@ -404,7 +443,7 @@
             margin-bottom: 10px;
         }
         #fh5co-equipment a {
-            color: #1e90ff;
+            color: #1e90ff; /* Blu in entrambe le modalità */
             text-decoration: underline;
         }
         #fh5co-equipment a:hover {
@@ -413,11 +452,11 @@
         #fh5co-equipment .disclaimer {
             margin-top: 20px;
             font-size: 12px;
-            color: #ff0000;
+            color: #ff0000; /* Rosso in modalità chiara */
             text-align: center;
         }
         .dark-mode #fh5co-equipment .disclaimer {
-            color: #ff6666;
+            color: #ff6666; /* Rosso chiaro in modalità scura */
         }
         .equipment-list-full {
             display: none;
@@ -452,8 +491,17 @@
         }
         #fh5co-contact h2 {
             font-size: 24px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
             margin-bottom: 20px;
+        }
+        .dark-mode #fh5co-contact h2 {
+            color: #fff; /* Bianco in modalità scura */
+        }
+        #fh5co-contact p {
+            color: #000; /* Nero in modalità chiara */
+        }
+        .dark-mode #fh5co-contact p {
+            color: #fff; /* Bianco in modalità scura */
         }
         #fh5co-contact form {
             max-width: 600px;
@@ -466,6 +514,10 @@
             border: 1px solid #333;
             border-radius: 4px;
             font-family: 'Varela Round', sans-serif;
+            color: #000; /* Nero in modalità chiara */
+        }
+        .dark-mode #fh5co-contact input, .dark-mode #fh5co-contact textarea {
+            color: #fff; /* Bianco in modalità scura */
         }
         #fh5co-contact button {
             background: #333;
@@ -490,8 +542,11 @@
         }
         #fh5co-testimonials h2 {
             font-size: 24px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
             margin-bottom: 20px;
+        }
+        .dark-mode #fh5co-testimonials h2 {
+            color: #fff; /* Bianco in modalità scura */
         }
         .testimonial {
             margin: 20px 0;
@@ -500,15 +555,25 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border-radius: 4px;
         }
+        .dark-mode .testimonial {
+            background: #444;
+            color: #fff;
+        }
         .testimonial p {
             font-style: italic;
-            color: #555;
+            color: #555; /* Grigio in modalità chiara */
+        }
+        .dark-mode .testimonial p {
+            color: #ccc; /* Grigio chiaro in modalità scura */
         }
         .testimonial cite {
             display: block;
             margin-top: 10px;
             font-size: 14px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
+        }
+        .dark-mode .testimonial cite {
+            color: #fff; /* Bianco in modalità scura */
         }
 
         /* Footer */
@@ -516,7 +581,7 @@
             text-align: center;
             height: 60px;
             line-height: 60px;
-            background: #333;
+            background: #333; /* Sfondo in modalità chiara */
             color: #fff;
             font-size: 14px;
             width: 100%;
@@ -524,12 +589,12 @@
             z-index: 0;
             margin-top: 60px;
         }
-        footer a, #fh5co-aside a {
+        footer a {
             color: #ccc;
             text-decoration: none;
             margin-left: 10px;
         }
-        footer a:hover, #fh5co-aside a:hover {
+        footer a:hover {
             text-decoration: underline;
         }
         footer img {
@@ -548,20 +613,20 @@
         }
         .instagram-feed h2 {
             font-size: 16px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
             margin-bottom: 10px;
         }
         .dark-mode .instagram-feed h2 {
-            color: #fff;
+            color: #fff; /* Bianco in modalità scura */
         }
         .instagram-feed .arrow {
             display: block;
             font-size: 14px;
-            color: #333;
+            color: #000; /* Nero in modalità chiara */
             margin-bottom: 20px;
         }
         .dark-mode .instagram-feed .arrow {
-            color: #fff;
+            color: #fff; /* Bianco in modalità scura */
         }
         .instagram-feed .instagram-media {
             margin: 20px auto !important;
