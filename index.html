@@ -112,6 +112,7 @@
             height: 96px; /* Altezza per desktop */
             width: auto;
             vertical-align: middle;
+            user-select: none; /* Impedisce selezione */
         }
         .navbar ul {
             list-style: none;
@@ -194,6 +195,9 @@
         .dark-mode .about-content p {
             color: #fff; /* Bianco in modalità scura */
         }
+        .about-content p.copyright-extra {
+            font-size: 12px; /* Caratteri più piccoli per Designed by GetTemplates */
+        }
         .close-about {
             display: block;
             margin: 20px auto 0;
@@ -244,7 +248,7 @@
             padding: 10px;
             color: #000; /* Nero in modalità chiara */
             text-decoration: none;
-            font-family: 'Varela Round', sans-serif;
+            font-family: 'Roboto', sans-serif; /* Font diverso per Valleranello e No Pulizie */
             font-weight: normal;
         }
         .dark-mode .gallery-dropdown a {
@@ -294,6 +298,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            user-select: none; /* Impedisce selezione */
         }
         .cover img:hover {
             opacity: 0.8;
@@ -341,6 +346,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            user-select: none; /* Impedisce selezione */
         }
         .photo-text {
             text-align: left;
@@ -348,6 +354,7 @@
             margin: 10px auto 0;
             font-size: 14px;
             color: #000; /* Nero in modalità chiara */
+            font-family: 'Varela Round', sans-serif; /* Confermato font */
         }
         .dark-mode .photo-text {
             color: #fff; /* Bianco in modalità scura */
@@ -602,6 +609,7 @@
             height: 20px;
             vertical-align: middle;
             margin-left: 10px;
+            user-select: none; /* Impedisce selezione */
         }
 
         /* Instagram feed */
@@ -630,6 +638,33 @@
         }
         .instagram-feed .instagram-media {
             margin: 20px auto !important;
+        }
+
+        /* Pulsante Torna su */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #333; /* Sfondo in modalità chiara */
+            color: #fff;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            display: none; /* Nascosto di default */
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+        .dark-mode .scroll-top-btn {
+            background: #555; /* Sfondo in modalità scura */
+        }
+        .scroll-top-btn:hover {
+            background: #555; /* Hover in modalità chiara */
+        }
+        .dark-mode .scroll-top-btn:hover {
+            background: #777; /* Hover in modalità scura */
         }
 
         /* Responsive */
@@ -697,7 +732,7 @@
     <div id="fh5co-page">
         <!-- Barra di navigazione -->
         <nav class="navbar">
-            <div class="logo"><img src="images/khavarti_logo.jpg?v=1" alt="Khavarti Logo"></div>
+            <div class="logo"><img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false"></div>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="#" onclick="toggleAbout()">About</a></li>
@@ -719,7 +754,7 @@
                 <p>Born when there was war, raised while the war continued, I still live in a time when the war hasn't ended. I am an Afghan photographer and videomaker. My dream is to transform into images what others don't see.</p>
                 <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
                 <p class="copyright">&copy; 2025 Khavarti. All Rights Reserved.</p>
-                <p class="copyright-extra">Designed by <a href="http://gettemplates.co/">GetTemplates</a></p>
+                <p class="copyright-extra">Designed by GetTemplates</p>
                 <div class="close-about" onclick="toggleAbout()">
                     <span>✕</span>
                     <div class="close-text">Close</div>
@@ -736,7 +771,7 @@
             <!-- Album Valleranello -->
             <div class="cover">
                 <a href="valleranello.html">
-                    <img src="images/valleranello/img_1.jpg" alt="Valleranello landscape, artistic photography" class="img-responsive" loading="lazy">
+                    <img src="images/valleranello/img_1.jpg" alt="Valleranello landscape, artistic photography" class="img-responsive" loading="lazy" draggable="false">
                 </a>
                 <h1 class="album-title">Valleranello</h1>
                 <div class="cover-text">
@@ -747,7 +782,7 @@
             <!-- Album No Pulizie -->
             <div class="cover">
                 <a href="no-pulizie.html">
-                    <img src="images/no-pulizie/cop.jpg" alt="No Pulizie, urban photography" class="img-responsive" loading="lazy">
+                    <img src="images/no-pulizie/cop.jpg" alt="No Pulizie, urban photography" class="img-responsive" loading="lazy" draggable="false">
                 </a>
                 <h1 class="album-title">No Pulizie</h1>
                 <div class="cover-text">
@@ -758,12 +793,12 @@
 
             <!-- Foto Khavarti & Leica -->
             <div class="single-photo">
-                <img src="images/khavarti_leica.jpg?v=1" alt="Khavarti & Leica" loading="lazy">
+                <img src="images/khavarti_leica.jpg?v=1" alt="Khavarti & Leica" loading="lazy" draggable="false">
             </div>
 
             <!-- Foto Piazza di Spagna -->
             <div class="single-photo">
-                <img src="images/piazza_di_spagna.jpg?v=1" alt="Piazza di Spagna, Roma" loading="lazy">
+                <img src="images/piazza_di_spagna.jpg?v=1" alt="Piazza di Spagna, Roma" loading="lazy" draggable="false">
                 <div class="photo-text">
                     <h3>Roma</h3><p class="subtitle">Piazza di Spagna</p>
                     <p>Used <a href="https://amzn.to/3Al1ME0" target="_blank" class="sony-link">Sony 14mm 1.8 GM</a> for this photo</p>
@@ -873,8 +908,11 @@
             </section>
 
             <footer>
-                <p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy"></a></p>
+                <p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy" draggable="false"></a></p>
             </footer>
+
+            <!-- Pulsante Torna su -->
+            <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
         </div>
 
         <script src="js/jquery.min.js"></script>
@@ -922,6 +960,28 @@
                     button.textContent = 'Show All / Mostra tutto';
                 }
             }
+
+            // Pulsante Torna su
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Mostra/nascondi pulsante Torna su durante lo scroll
+            window.addEventListener('scroll', function() {
+                const scrollTopBtn = document.querySelector('.scroll-top-btn');
+                if (window.scrollY > 200) {
+                    scrollTopBtn.style.display = 'block';
+                } else {
+                    scrollTopBtn.style.display = 'none';
+                }
+            });
+
+            // Impedisci menu contestuale sulle immagini
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
+                });
+            });
 
             // Chiudi menu mobile e dropdown Galleria cliccando altrove
             document.addEventListener('click', function(event) {
