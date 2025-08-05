@@ -144,6 +144,12 @@
             font-size: 16px;
             margin-right: 20px;
         }
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
 
         /* Dropdown About */
         .about-dropdown {
@@ -449,9 +455,26 @@
         @media (max-width: 767px) {
             .navbar ul {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             }
-            .navbar .logo {
-                font-size: 20px;
+            .dark-mode .navbar ul {
+                background: #333;
+            }
+            .navbar ul.active {
+                display: flex;
+            }
+            .navbar ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .hamburger {
+                display: block;
             }
         }
     </style>
@@ -464,21 +487,22 @@
             <ul>
                 <li><a href="/home">Home</a></li>
                 <li><a href="#" onclick="toggleAbout()">About</a></li>
-                <li><a href="#" onclick="toggleGallery()">Galleria</a>
+                <li><a href="#" onclick="toggleGallery()">Gallery</a>
                     <div class="gallery-dropdown">
                         <a href="valleranello.html">Valleranello</a>
                         <a href="no-pulizie.html">No Pulizie</a>
                     </div>
                 </li>
-                <li><a href="#fh5co-contact">Contatti</a></li>
+                <li><a href="#fh5co-contact">Contact</a></li>
             </ul>
             <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
         </nav>
 
         <!-- Dropdown About -->
         <div class="about-dropdown" id="aboutDropdown" onclick="toggleAbout()">
             <div class="about-content">
-                <h2>Chi Sono</h2>
+                <h2>About Me</h2>
                 <p>Born when there was war, raised while the war continued, I still live in a time when the war hasn't ended. I am an Afghan photographer and videomaker. My dream is to transform into images what others don't see.</p>
                 <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
                 <p class="copyright">&copy; 2025 KHAVARTI. All Rights Reserved.</p>
@@ -492,13 +516,10 @@
                 <iframe title="vimeo-player" src="https://player.vimeo.com/video/432534671?h=ba7c212fa3&autoplay=1&muted=1" width="1200" height="675" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
             </div>
 
-            <!-- CTA Button -->
-            <a href="#fh5co-contact" class="cta-button">Contattami</a>
-
             <!-- Album Valleranello -->
             <div class="cover">
                 <a href="valleranello.html">
-                    <img src="images/valleranello/img_1.jpg" alt="Paesaggio di Valleranello, fotografia artistica" class="img-responsive" loading="lazy">
+                    <img src="images/valleranello/img_1.jpg" alt="Valleranello landscape, artistic photography" class="img-responsive" loading="lazy">
                 </a>
                 <h1 class="album-title">Valleranello</h1>
                 <div class="cover-text">
@@ -509,7 +530,7 @@
             <!-- Album No Pulizie -->
             <div class="cover">
                 <a href="no-pulizie.html">
-                    <img src="images/no-pulizie/cop.jpg" alt="No Pulizie, fotografia urbana" class="img-responsive" loading="lazy">
+                    <img src="images/no-pulizie/cop.jpg" alt="No Pulizie, urban photography" class="img-responsive" loading="lazy">
                 </a>
                 <h1 class="album-title">No Pulizie</h1>
                 <div class="cover-text">
@@ -520,7 +541,7 @@
 
             <!-- Instagram Posts -->
             <div class="instagram-feed">
-                <h2>Dal mio Instagram</h2>
+                <h2>From Instagram</h2>
                 <span class="arrow">↓</span>
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: #f8f8f8; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15); margin: 60px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
                     <!-- Instagram embed code unchanged -->
@@ -535,32 +556,33 @@
 
             <!-- Sezione Testimonianze -->
             <section id="fh5co-testimonials">
-                <h2>Testimonianze</h2>
+                <h2>Testimonials</h2>
                 <div class="testimonial">
-                    <p>"Le foto di KHAVARTI catturano emozioni che non si possono descrivere a parole. Un vero artista!"</p>
-                    <cite>– Maria R., Cliente</cite>
+                    <p>"KHAVARTI's photos capture emotions that cannot be described in words. A true artist!"</p>
+                    <cite>– Maria R., Client</cite>
                 </div>
                 <div class="testimonial">
-                    <p>"Collaborare con KHAVARTI è stato un piacere. Professionalità e creatività senza pari."</p>
-                    <cite>– Luca B., Organizzatore di eventi</cite>
+                    <p>"Working with KHAVARTI was a pleasure. Unmatched professionalism and creativity."</p>
+                    <cite>– Luca B., Event Organizer</cite>
                 </div>
             </section>
 
             <!-- Sezione Contatti -->
             <section id="fh5co-contact">
-                <h2>Contattami</h2>
-                <p>Per collaborazioni o richieste, scrivimi!</p>
+                <h2>Contact</h2>
+                <p>For collaborations or inquiries, reach out!</p>
                 <form action="submit-form.php" method="POST">
-                    <input type="text" name="name" placeholder="Nome" required>
+                    <input type="text" name="name" placeholder="Name" required>
                     <input type="email" name="email" placeholder="Email" required>
-                    <textarea name="message" placeholder="Messaggio" required></textarea>
-                    <button type="submit">Invia</button>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
                 </form>
                 <p><a href="mailto:khavarti@yahoo.com">khavarti@yahoo.com</a> | <a href="https://www.instagram.com/khavarti" target="_blank">Instagram</a></p>
+                <a href="#fh5co-contact" class="cta-button">Contact Me</a>
             </section>
 
             <footer>
-                <p>&copy; 2025 KHAVARTI. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Icona Instagram" loading="lazy"></a></p>
+                <p>&copy; 2025 KHAVARTI. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy"></a></p>
             </footer>
         </div>
 
@@ -596,6 +618,11 @@
             // Toggle dropdown Galleria
             function toggleGallery() {
                 document.querySelector('.gallery-dropdown').classList.toggle('active');
+            }
+
+            // Toggle menu hamburger su mobile
+            function toggleMenu() {
+                document.querySelector('.navbar ul').classList.toggle('active');
             }
 
             // Chiudi dropdown Galleria cliccando altrove
