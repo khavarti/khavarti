@@ -49,7 +49,7 @@
             color: #fff;
         }
         .dark-mode #fh5co-aside, .dark-mode footer, .dark-mode .instagram-feed {
-            background: #333;
+            background: transparent;
             color: #fff;
         }
         .dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a {
@@ -290,7 +290,7 @@
             flex-direction: column;
             min-height: calc(100vh - 100px);
             padding-top: 100px;
-            padding-bottom: 40px;
+            padding-bottom: 60px;
             position: relative;
             z-index: 1;
         }
@@ -308,7 +308,7 @@
             text-align: center;
             padding: 40px 15px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 60px auto; /* Aggiunto margine inferiore */
             background: #f8f8f8;
         }
         #fh5co-contact h2 {
@@ -346,7 +346,7 @@
             text-align: center;
             padding: 40px 15px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 60px auto; /* Aggiunto margine inferiore */
             background: #f8f8f8;
         }
         #fh5co-testimonials h2 {
@@ -383,6 +383,7 @@
             width: 100%;
             position: relative;
             z-index: 0;
+            margin-top: 60px; /* Aggiunto margine superiore */
         }
         footer a, #fh5co-aside a {
             color: #000000;
@@ -404,6 +405,7 @@
             max-width: 350px;
             margin: 60px auto;
             text-align: center;
+            background: transparent; /* Rimosso sfondo */
         }
         .instagram-feed h2 {
             font-size: 16px;
@@ -415,6 +417,9 @@
             font-size: 14px;
             color: #333;
             margin-bottom: 20px;
+        }
+        .instagram-feed .instagram-media {
+            margin: 20px auto !important; /* Distanza tra i post */
         }
 
         /* Responsive */
@@ -432,10 +437,12 @@
         @media (max-width: 767px) {
             .navbar {
                 justify-content: space-between;
+                padding: 15px 30px; /* Aumentata spaziatura interna */
             }
             .navbar .logo {
-                margin-left: 15px;
+                margin-left: 0;
                 text-align: left;
+                flex-grow: 1; /* Spinge il logo verso sinistra */
             }
             .navbar ul {
                 display: none;
@@ -462,12 +469,8 @@
             }
             .hamburger {
                 display: block;
-                margin-right: 15px;
-            }
-            .gallery-dropdown {
-                position: static;
-                box-shadow: none;
-                background: none;
+                margin-right: 0;
+                flex-shrink: 0; /* Impedisce al pulsante di ridursi */
             }
         }
     </style>
@@ -535,13 +538,13 @@
             <div class="instagram-feed">
                 <h2>From Instagram</h2>
                 <span class="arrow">↓</span>
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: #f8f8f8; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 60px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 20px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
                     <!-- Instagram embed code unchanged -->
                 </blockquote>
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cy7pMbmtttt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: #f8f8f8; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 60px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cy7pMbmtttt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 20px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
                     <!-- Instagram embed code unchanged -->
                 </blockquote>
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CBS2aRYHDf3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: #f8f8f8; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 60px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CBS2aRYHDf3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 20px auto; max-width: 350px; min-width: 300px; padding: 0; width: 100%;">
                     <!-- Instagram embed code unchanged -->
                 </blockquote>
             </div>
