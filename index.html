@@ -53,8 +53,8 @@
             background: transparent;
             color: #fff;
         }
-        .dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a, .dark-mode .equipment a {
-            color: #1e90ff;
+        .dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a, .dark-mode .equipment a, .dark-mode .photo-text a:not(.sony-link) {
+            color: #fff;
         }
         .dark-mode .album-title, .dark-mode .cover-text, .dark-mode .photo-text, .dark-mode .instagram-feed h2, .dark-mode .instagram-feed .arrow {
             color: #fff;
@@ -105,7 +105,7 @@
             background: #333;
         }
         .navbar .logo img {
-            height: 24px;
+            height: 96px; /* 4 volte più grande rispetto a 24px */
             width: auto;
             vertical-align: middle;
         }
@@ -299,12 +299,12 @@
             margin: 2px 0;
         }
         .cover-text a {
-            color: #333;
+            color: #fff;
             text-decoration: underline;
             transition: color 0.3s ease;
         }
         .cover-text a:hover {
-            color: #555;
+            color: #ccc;
         }
 
         /* Foto singole */
@@ -328,25 +328,27 @@
             max-width: 400px;
             margin: 10px auto 0;
             font-size: 14px;
-            color: #333;
+            color: #fff;
         }
         .photo-text h3 {
             font-size: 18px;
             font-weight: bold;
             margin: 0;
+            display: inline;
         }
         .photo-text p.subtitle {
             font-size: 14px;
-            margin: 2px 0;
+            margin: 0 0 5px 10px;
+            display: inline;
         }
         .photo-text p {
             margin: 5px 0;
         }
-        .photo-text a {
+        .photo-text a.sony-link {
             color: #1e90ff;
             text-decoration: underline;
         }
-        .photo-text a:hover {
+        .photo-text a.sony-link:hover {
             color: #005566;
         }
 
@@ -381,12 +383,12 @@
         }
         #fh5co-equipment h2.english {
             font-size: 24px;
-            color: #333;
+            color: #fff;
             margin-bottom: 10px;
         }
         #fh5co-equipment h2.italian {
             font-size: 20px;
-            color: #333;
+            color: #fff;
             margin-bottom: 20px;
         }
         #fh5co-equipment ul {
@@ -555,11 +557,14 @@
                 text-align: left;
                 flex-grow: 1;
             }
+            .navbar .logo img {
+                height: 72px; /* Ridotto a 3 volte in mobile per evitare sovrapposizioni */
+            }
             .navbar ul {
                 display: none;
                 flex-direction: column;
                 position: fixed;
-                top: 60px;
+                top: 96px;
                 right: 0;
                 width: 70%;
                 height: auto;
@@ -595,7 +600,7 @@
     <div id="fh5co-page">
         <!-- Barra di navigazione -->
         <nav class="navbar">
-            <div class="logo"><img src="images/khavarti_logo.jpg" alt="Khavarti Logo"></div>
+            <div class="logo"><img src="images/khavarti_logo.jpg?v=1" alt="Khavarti Logo"></div>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="#" onclick="toggleAbout()">About</a></li>
@@ -653,16 +658,15 @@
 
             <!-- Foto Khavarti & Leica -->
             <div class="single-photo">
-                <img src="images/khavarti_leica.jpg" alt="Khavarti & Leica" loading="lazy">
+                <img src="images/khavarti_leica.jpg?v=1" alt="Khavarti & Leica" loading="lazy">
             </div>
 
             <!-- Foto Piazza di Spagna -->
             <div class="single-photo">
-                <img src="images/piazza_di_spagna.jpg" alt="Piazza di Spagna, Roma" loading="lazy">
+                <img src="images/piazza_di_spagna.jpg?v=1" alt="Piazza di Spagna, Roma" loading="lazy">
                 <div class="photo-text">
-                    <h3>Roma</h3>
-                    <p class="subtitle">Piazza di Spagna</p>
-                    <p><a href="https://amzn.to/3Al1ME0" target="_blank">used Sony 14mm 1.8 gm for this photo.</a></p>
+                    <h3>Roma</h3><p class="subtitle">Piazza di Spagna</p>
+                    <p>Used <a href="https://amzn.to/3Al1ME0" target="_blank" class="sony-link">Sony 14mm 1.8 GM</a> for this photo</p>
                 </div>
             </div>
 
