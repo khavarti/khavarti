@@ -328,6 +328,38 @@
             background: #777;
         }
 
+        .copyright-notice {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 3000;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .mfp-img {
+            user-select: none;
+        }
+        .mfp-figure {
+            position: relative;
+        }
+        .mfp-figure::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
         @media (min-width: 768px) {
             .album-title {
                 font-size: 24px;
@@ -430,6 +462,10 @@
             </div>
         </div>
 
+        <div class="copyright-notice" id="copyrightNotice">
+            Per motivi di copyright, non è possibile scaricare o fare screenshot delle immagini.
+        </div>
+
         <div class="container-fluid" id="fh5co-image-grid">
             <h1 class="album-title">No Pulizie</h1>
             <div class="intro-text">
@@ -439,82 +475,134 @@
             <div class="grid">
                 <div class="grid-sizer"></div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/1p.jpg" alt="Photo 1" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/1p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/1p.jpg" alt="Photo 1" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/2p.jpg" alt="Photo 2" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/2p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/2p.jpg" alt="Photo 2" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/3p.jpg" alt="Photo 3" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/3p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/3p.jpg" alt="Photo 3" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/4p.jpg" alt="Photo 4" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/4p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/4p.jpg" alt="Photo 4" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/5p.jpg" alt="Photo 5" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/5p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/5p.jpg" alt="Photo 5" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/6p.jpg" alt="Photo 6" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/6p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/6p.jpg" alt="Photo 6" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/7p.jpg" alt="Photo 7" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/7p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/7p.jpg" alt="Photo 7" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/8p.jpg" alt="Photo 8" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/8p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/8p.jpg" alt="Photo 8" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/9p.jpg" alt="Photo 9" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/9p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/9p.jpg" alt="Photo 9" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/10p.jpg" alt="Photo 10" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/10p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/10p.jpg" alt="Photo 10" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/11p.jpg" alt="Photo 11" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/11p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/11p.jpg" alt="Photo 11" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/12p.jpg" alt="Photo 12" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/12p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/12p.jpg" alt="Photo 12" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/13p.jpg" alt="Photo 13" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/13p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/13p.jpg" alt="Photo 13" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/14p.jpg" alt="Photo 14" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/14p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/14p.jpg" alt="Photo 14" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/15p.jpg" alt="Photo 15" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/15p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/15p.jpg" alt="Photo 15" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/16p.jpg" alt="Photo 16" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/16p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/16p.jpg" alt="Photo 16" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/17p.jpg" alt="Photo 17" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/17p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/17p.jpg" alt="Photo 17" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/18p.jpg" alt="Photo 18" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/18p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/18p.jpg" alt="Photo 18" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/19p.jpg" alt="Photo 19" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/19p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/19p.jpg" alt="Photo 19" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/20p.jpg" alt="Photo 20" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/20p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/20p.jpg" alt="Photo 20" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/21p.jpg" alt="Photo 21" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/21p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/21p.jpg" alt="Photo 21" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/22p.jpg" alt="Photo 22" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/22p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/22p.jpg" alt="Photo 22" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/23p.jpg" alt="Photo 23" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/23p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/23p.jpg" alt="Photo 23" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/24p.jpg" alt="Photo 24" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/24p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/24p.jpg" alt="Photo 24" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/25p.jpg" alt="Photo 25" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/25p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/25p.jpg" alt="Photo 25" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
-                    <img src="images/no-pulizie/26p.jpg" alt="Photo 26" class="img-responsive" loading="lazy" draggable="false">
+                    <a href="images/no-pulizie/26p.jpg" class="image-popup">
+                        <img src="images/no-pulizie/26p.jpg" alt="Photo 26" class="img-responsive" loading="lazy" draggable="false">
+                    </a>
                 </div>
             </div>
             <div class="project-text">
@@ -587,7 +675,14 @@
         });
 
         document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('contextmenu', e => e.preventDefault());
+            img.addEventListener('contextmenu', e => {
+                e.preventDefault();
+                const notice = document.getElementById('copyrightNotice');
+                notice.style.display = 'block';
+                setTimeout(() => {
+                    notice.style.display = 'none';
+                }, 3000);
+            });
         });
 
         document.addEventListener('click', function(event) {
@@ -613,6 +708,33 @@
             $('.grid-item img').each(function() {
                 if (!this.complete || this.naturalWidth === 0) {
                     console.log('Errore caricamento immagine: ' + $(this).attr('src'));
+                }
+            });
+
+            $('.grid').magnificPopup({
+                delegate: 'a.image-popup',
+                type: 'image',
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0, 1]
+                },
+                image: {
+                    titleSrc: function(item) {
+                        return '';
+                    }
+                },
+                callbacks: {
+                    open: function() {
+                        $('.mfp-img').on('contextmenu', function(e) {
+                            e.preventDefault();
+                            const notice = document.getElementById('copyrightNotice');
+                            notice.style.display = 'block';
+                            setTimeout(() => {
+                                notice.style.display = 'none';
+                            }, 3000);
+                        });
+                    }
                 }
             });
         });
