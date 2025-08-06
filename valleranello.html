@@ -28,6 +28,8 @@
             font-family: 'Varela Round', sans-serif;
             background: #f8f8f8;
             transition: background 0.3s ease;
+            margin: 0;
+            padding: 0;
         }
         .dark-mode {
             background: #222;
@@ -243,6 +245,7 @@
             width: 100%;
             max-width: 1280px;
             min-width: 300px;
+            margin: 0;
         }
         .grid-item img {
             max-width: 100%;
@@ -335,14 +338,6 @@
             max-width: 90vw !important;
             padding: 0 !important;
         }
-        .mfp-bg {
-            background: transparent !important;
-            opacity: 0 !important;
-        }
-        .mfp-container {
-            background: transparent !important;
-            padding: 0 !important;
-        }
         .mfp-figure {
             background: transparent !important;
             box-shadow: none !important;
@@ -353,7 +348,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 24px;
             font-family: 'Varela Round', sans-serif;
             pointer-events: none;
@@ -428,7 +423,7 @@
             .grid-item img {
                 max-height: 480px;
             }
-            .mfp-figure::after {
+            .mfp-figure:after {
                 font-size: 18px;
             }
         }
