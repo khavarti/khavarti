@@ -28,6 +28,8 @@
             font-family: 'Varela Round', sans-serif;
             background: #f8f8f8;
             transition: background 0.3s ease;
+            margin: 0;
+            padding: 0;
         }
         .dark-mode {
             background: #222;
@@ -261,13 +263,13 @@
             align-items: center;
             width: 100%;
             min-width: 300px;
+            margin: 0;
         }
         .grid-item img {
             max-width: 100%;
             height: auto;
             max-height: 720px;
             object-fit: contain;
-            border: 2px solid #333;
             user-select: none;
         }
         .grid-sizer {
@@ -348,11 +350,13 @@
             user-select: none;
             max-height: 90vh !important;
             max-width: 90vw !important;
+            padding: 0 !important;
         }
         .mfp-figure {
-            position: relative;
+            background: transparent !important;
+            box-shadow: none !important;
         }
-        .mfp-figure::after {
+        .mfp-figure:after {
             content: '© Khavarti 2025';
             position: absolute;
             top: 50%;
@@ -363,6 +367,8 @@
             font-family: 'Varela Round', sans-serif;
             pointer-events: none;
             z-index: 2;
+            background: transparent !important;
+            box-shadow: none !important;
         }
 
         @media (min-width: 768px) {
@@ -432,7 +438,7 @@
             .intro-text {
                 font-size: 14px;
             }
-            .mfp-figure::after {
+            .mfp-figure:after {
                 font-size: 18px;
             }
         }
