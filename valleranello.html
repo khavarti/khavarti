@@ -7,7 +7,6 @@
     <meta name="description" content="Valleranello photography project by Khavarti, capturing moments of isolation during quarantine." />
     <meta name="keywords" content="Valleranello, photography, Khavarti, Afghan photographer, quarantine" />
     <meta name="author" content="Khavarti" />
-    <!-- Open Graph Tags -->
     <meta property="og:title" content="Valleranello - Khavarti" />
     <meta property="og:description" content="Valleranello photography project by Khavarti, capturing moments of isolation during quarantine." />
     <meta property="og:image" content="https://khavarti.com/images/valleranello/cop.jpg" />
@@ -345,16 +344,26 @@
         .mfp-figure:after {
             content: '© Khavarti 2025';
             position: absolute;
-            top: 50%;
+            bottom: 10%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            color: rgba(255, 255, 255, 0.5);
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.1);
             font-size: 24px;
             font-family: 'Varela Round', sans-serif;
             pointer-events: none;
             z-index: 2;
             background: transparent !important;
             box-shadow: none !important;
+        }
+        .mfp-bottom-bar {
+            margin-top: 10px;
+            text-align: right;
+            padding-right: 20px;
+        }
+        .mfp-counter {
+            color: #fff;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 14px;
         }
 
         @media (min-width: 768px) {
