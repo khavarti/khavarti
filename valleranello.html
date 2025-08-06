@@ -45,7 +45,7 @@
         .dark-mode .hamburger {
             color: #fff;
         }
-        .dark-mode .album-title, .dark-mode .intro-text, .dark-mode .project-text {
+        .dark-mode .album-title {
             color: #fff;
         }
         .dark-mode .about-dropdown {
@@ -207,7 +207,7 @@
         }
 
         #fh5co-image-grid {
-            margin-top: 150px;
+            margin-top: 120px;
             padding-bottom: 60px;
             display: flex;
             justify-content: center;
@@ -222,7 +222,7 @@
             font-size: 20px;
             color: #000;
             text-align: center;
-            margin: 40px auto;
+            margin: 20px auto;
             z-index: 2;
         }
         .grid {
@@ -248,24 +248,11 @@
             height: auto;
             max-height: 720px;
             object-fit: contain;
-            border: 2px solid #333;
             user-select: none;
             transition: transform 0.3s ease;
         }
         .grid-item img:hover {
             transform: scale(1.05);
-        }
-        .grid-item::after {
-            content: '© Khavarti 2025';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: rgba(255, 255, 255, 0.1);
-            font-size: 24px;
-            font-family: 'Varela Round', sans-serif;
-            pointer-events: none;
-            z-index: 2;
         }
         .grid-sizer {
             display: none;
@@ -348,6 +335,7 @@
         }
         .mfp-figure {
             position: relative;
+            background: transparent !important;
         }
         .mfp-figure::after {
             content: '© Khavarti 2025';
@@ -469,6 +457,7 @@
         </div>
 
         <div class="container-fluid" id="fh5co-image-grid">
+            <h1 class="album-title">Valleranello</h1>
             <div class="grid">
                 <div class="grid-sizer"></div>
                 <div class="grid-item item animate-box" data-animate-effect="fadeIn">
@@ -562,7 +551,6 @@
                     </a>
                 </div>
             </div>
-            <h1 class="album-title">Valleranello</h1>
             <footer>
                 <p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy" draggable="false"></a></p>
             </footer>
