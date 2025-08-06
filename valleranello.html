@@ -234,7 +234,7 @@
             gap: 20px;
             padding: 0;
             width: 100%;
-            max-width: 1280px;
+            max-width: 960px;
             margin: 0 auto;
         }
         .grid-item {
@@ -242,12 +242,13 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            max-width: 1280px;
+            max-width: 960px;
             min-width: 300px;
-            margin: 0;
+            margin: 0 auto;
         }
         .grid-item img {
-            max-width: 100%;
+            width: 100%;
+            max-width: 960px;
             height: auto;
             max-height: 720px;
             object-fit: contain;
@@ -348,7 +349,7 @@
             left: 50%;
             transform: translateX(-50%);
             color: rgba(255, 255, 255, 0.1);
-            font-size: 24px;
+            font-size: 12px;
             font-family: 'Varela Round', sans-serif;
             pointer-events: none;
             z-index: 2;
@@ -376,7 +377,7 @@
             }
             .grid-item {
                 min-width: 500px;
-                max-width: 1280px;
+                max-width: 960px;
             }
         }
         @media (max-width: 767px) {
@@ -432,9 +433,11 @@
             }
             .grid-item img {
                 max-height: 480px;
+                width: 100%;
+                max-width: 480px;
             }
             .mfp-figure:after {
-                font-size: 18px;
+                font-size: 10px;
             }
         }
     </style>
