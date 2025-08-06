@@ -7,7 +7,6 @@
     <meta name="description" content="No Pulizie photography project by Khavarti, created between 2020 and 2022, capturing moments of isolation." />
     <meta name="keywords" content="No Pulizie, photography, Khavarti, Afghan photographer, Valleranello, quarantine" />
     <meta name="author" content="Khavarti" />
-    <!-- Open Graph Tags -->
     <meta property="og:title" content="No Pulizie - Khavarti" />
     <meta property="og:description" content="No Pulizie photography project by Khavarti, created between 2020 and 2022, capturing moments of isolation." />
     <meta property="og:image" content="https://khavarti.com/images/no-pulizie/cop.jpg" />
@@ -359,16 +358,26 @@
         .mfp-figure:after {
             content: '© Khavarti 2025';
             position: absolute;
-            top: 50%;
+            bottom: 10%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            color: rgba(255, 255, 255, 0.5);
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.1);
             font-size: 24px;
             font-family: 'Varela Round', sans-serif;
             pointer-events: none;
             z-index: 2;
             background: transparent !important;
             box-shadow: none !important;
+        }
+        .mfp-bottom-bar {
+            margin-top: 10px;
+            text-align: right;
+            padding-right: 20px;
+        }
+        .mfp-counter {
+            color: #fff;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 14px;
         }
 
         @media (min-width: 768px) {
