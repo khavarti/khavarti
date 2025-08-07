@@ -368,6 +368,28 @@
             color: #005566;
         }
 
+        .single-photo a[title] {
+            position: relative;
+        }
+        .single-photo a[title]:hover:after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            z-index: 10;
+        }
+        .dark-mode .single-photo a[title]:hover:after {
+            background: #555;
+            color: #fff;
+        }
+
         #fh5co-image-grid {
             display: flex;
             justify-content: center;
@@ -764,8 +786,12 @@
             </div>
 
             <div class="single-photo">
-                <img src="images/Morteza_Khaleghi.jpg" alt="Scatto per un Amico" loading="lazy" draggable="false">
-                <h1 class="album-title">Scatto per un Amico</h1>
+                <a href="https://khavarti.com/images/Morteza_Khaleghi.jpg" target="_blank" title="Clicca per condividere il link della foto">
+                    <img src="images/Morteza_Khaleghi.jpg" alt="Scatto per un Amico" loading="lazy" draggable="false">
+                </a>
+                <div class="photo-text">
+                    <p class="subtitle">(Scatto per un Amico)</p>
+                </div>
             </div>
 
             <div class="instagram-feed">
