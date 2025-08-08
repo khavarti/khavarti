@@ -7,13 +7,11 @@
     <meta name="description" content="Photography and videography by Khavarti, capturing unseen moments with artistic vision." />
     <meta name="keywords" content="Afghan photographer, wedding photography, artistic videography, Khavarti, portrait photography, landscape photography" />
     <meta name="author" content="Khavarti" />
-    <!-- Open Graph Tags -->
     <meta property="og:title" content="Khavarti" />
     <meta property="og:description" content="Photography and videography by Khavarti, capturing unseen moments with artistic vision." />
     <meta property="og:image" content="https://khavarti.com/images/valleranello/img_1.jpg" />
     <meta property="og:url" content="https://khavarti.com" />
     <meta property="og:type" content="website" />
-
     <link rel="shortcut icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
@@ -23,7 +21,6 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-
     <style>
         body {
             font-family: 'Varela Round', sans-serif;
@@ -512,228 +509,685 @@
         .album-title.amico-title {
             font-size: 16px !important;
         }
-                        <div class="single-photo">
-                    <img src="images/pioggia.jpg" alt="Pioggia" loading="lazy" draggable="false">
+        .instagram-feed {
+            max-width: 100%;
+            margin: 60px auto;
+            text-align: center;
+            background: transparent;
+            position: relative;
+            padding-top: 40px;
+        }
+        .instagram-feed h2 {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 10px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 100%;
+            text-align: center;
+        }
+        .dark-mode .instagram-feed h2 {
+            color: #fff;
+        }
+        .instagram-feed-wrapper {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: inline-flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin: 0 auto;
+            width: 100%;
+            justify-content: center;
+        }
+        .instagram-controls {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .instagram-controls button {
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+        .instagram-controls button:hover {
+            background: #555;
+        }
+        .dark-mode .instagram-controls button {
+            background: #555;
+            color: #fff;
+        }
+        .dark-mode .instagram-controls button:hover {
+            background: #777;
+        }
+        .instagram-feed .instagram-media {
+            display: inline-block;
+            margin: 0 10px;
+            vertical-align: top;
+            min-width: 300px;
+            max-width: 350px;
+        }
+        .instagram-media.mobile-only {
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .instagram-feed {
+                overflow-x: auto;
+            }
+            .instagram-feed-wrapper {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .instagram-controls {
+                display: none;
+            }
+            .instagram-feed h2 {
+                position: relative;
+                top: 0;
+                transform: none;
+                text-align: center;
+            }
+        }
+        @media (max-width: 767px) {
+            .instagram-feed-wrapper {
+                scroll-behavior: smooth;
+                overflow-x: auto;
+            }
+            .instagram-media.mobile-only {
+                display: inline-block;
+            }
+        }
+        #fh5co-equipment {
+            text-align: left;
+            padding: 40px 15px;
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+            background: #f8f8f8;
+        }
+        #fh5co-equipment h2.english {
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 10px;
+        }
+        .dark-mode #fh5co-equipment h2.english {
+            color: #fff;
+        }
+        #fh5co-equipment h2.italian {
+            font-size: 20px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .dark-mode #fh5co-equipment h2.italian {
+            color: #fff;
+        }
+        #fh5co-equipment ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #fh5co-equipment ul li {
+            margin-bottom: 10px;
+        }
+        #fh5co-equipment a {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+        #fh5co-equipment a:hover {
+            color: #005566;
+        }
+        #fh5co-equipment .disclaimer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #ff0000;
+            text-align: center;
+        }
+        .dark-mode #fh5co-equipment .disclaimer {
+            color: #ff6666;
+        }
+        .equipment-list-full {
+            display: none;
+        }
+        .equipment-list-full.active {
+            display: block;
+        }
+        .show-more-btn {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .show-more-btn:hover {
+            background: #555;
+        }
+        #fh5co-contact {
+            text-align: center;
+            padding: 40px 15px;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            background: #f8f8f8;
+        }
+        #fh5co-contact h2 {
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .dark-mode #fh5co-contact h2 {
+            color: #fff;
+        }
+        #fh5co-contact p {
+            color: #000;
+        }
+        .dark-mode #fh5co-contact p {
+            color: #fff;
+        }
+        #fh5co-contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #fh5co-contact input, #fh5co-contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            border-radius: 4px;
+            font-family: 'Varela Round', sans-serif;
+            color: #000;
+        }
+        .dark-mode #fh5co-contact input, .dark-mode #fh5co-contact textarea {
+            color: #fff;
+        }
+        #fh5co-contact button {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #fh5co-contact button:hover {
+            background: #555;
+        }
+        #fh5co-testimonials {
+            text-align: center;
+            padding: 40px 15px;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            background: #f8f8f8;
+        }
+        #fh5co-testimonials h2 {
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .dark-mode #fh5co-testimonials h2 {
+            color: #fff;
+        }
+        .testimonial {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        .dark-mode .testimonial {
+            background: #444;
+            color: #fff;
+        }
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+        }
+        .dark-mode .testimonial p {
+            color: #ccc;
+        }
+        .testimonial cite {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #000;
+        }
+        .dark-mode .testimonial cite {
+            color: #fff;
+        }
+        footer {
+            text-align: center;
+            height: 60px;
+            line-height: 60px;
+            background: #333;
+            color: #fff;
+            font-size: 14px;
+            width: 100%;
+            position: relative;
+            z-index: 0;
+            margin-top: 60px;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        footer img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 10px;
+            user-select: none;
+        }
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #333;
+            color: #fff;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+        .dark-mode .scroll-top-btn {
+            background: #555;
+        }
+        .scroll-top-btn:hover {
+            background: #555;
+        }
+        .dark-mode .scroll-top-btn:hover {
+            background: #777;
+        }
+        @media (min-width: 768px) {
+            .cover img, .single-photo img {
+                max-width: 400px;
+            }
+            .album-title {
+                font-size: 24px;
+            }
+            #fh5co-image-grid {
+                padding-top: 60px;
+            }
+        }
+        @media (max-width: 767px) {
+            .navbar {
+                justify-content: space-between;
+                padding: 10px;
+                z-index: 1000;
+            }
+            .navbar .logo {
+                margin-left: 0;
+                text-align: left;
+                flex-grow: 1;
+            }
+            .navbar .logo img {
+                height: 48px;
+            }
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 72px;
+                right: 0;
+                width: 70%;
+                background: #fff;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+                padding: 20px;
+                z-index: 1001;
+            }
+            .dark-mode .navbar ul {
+                background: #333;
+            }
+            .navbar ul.active {
+                display: flex;
+            }
+            .navbar ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .gallery-dropdown {
+                position: static;
+                box-shadow: none;
+                background: none;
+            }
+            .hamburger {
+                display: block !important;
+                font-size: 24px;
+                cursor: pointer;
+                color: #000;
+            }
+            .dark-mode .hamburger {
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="fh5co-page">
+        <nav class="navbar">
+            <div class="logo"><img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false"></div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#" onclick="toggleAbout()">About</a></li>
+                <li><a href="#" onclick="toggleGallery()">Gallery</a>
+                    <div class="gallery-dropdown">
+                        <a href="valleranello.html">Valleranello</a>
+                        <a href="no-pulizie.html">No Pulizie</a>
+                    </div>
+                </li>
+                <li><a href="#fh5co-contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </nav>
+
+        <section class="hero-section">
+            <img src="images/caffè.jpg" alt="Hero Image - Caffè" class="hero-image" loading="lazy" draggable="false">
+            <div class="hero-text">
+                <h1><span>Every shot</span><span>a story.</span></h1>
+            </div>
+            <div class="hero-scroll-indicator">
+                <div class="hero-scroll-indicator-dot"></div>
+            </div>
+        </section>
+
+        <div class="about-dropdown" id="aboutDropdown">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>Born when there was war, raised while the war continued, I still live in a time when the war hasn't ended. I am an Afghan photographer and videomaker. My dream is to transform into images what others don't see.</p>
+                <p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
+                <p class="copyright">&copy; 2025 Khavarti. All Rights Reserved.</p>
+                <p class="copyright-extra">Built on GetTemplates, personalized by Khavarti</p>
+                <div class="close-about" onclick="toggleAbout()">
+                    <span>✕</span>
+                    <div class="close-text">Close</div>
                 </div>
+            </div>
+        </div>
 
-                <div class="single-photo">
-                    <img src="images/Morteza_Khaleghi.jpg" alt="Scatto per un Amico" loading="lazy" draggable="false">
-                    <h1 class="album-title amico-title">Scatto per un Amico</h1>
-                </div>
-
-                <div class="instagram-feed">
-                    <h2>From my Instagram</h2>
-                    <div class="instagram-feed-wrapper">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cy7pMbmtttt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CBS2aRYHDf3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DEPK-9ltnZT/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cw3C2BDNoI_/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CEJj834HVAJ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BzvG7VBnzLS/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <!-- Duplica i post per il loop infinito solo su mobile -->
-                        <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/Cy7pMbmtttt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/CBS2aRYHDf3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/DEPK-9ltnZT/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/Cw3C2BDNoI_/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/CEJj834HVAJ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                        <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/BzvG7VBnzLS/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: 100%;"></blockquote>
-                    </div>
-                    <div class="instagram-controls">
-                        <button onclick="scrollInstagram(-1)">&lt;</button>
-                        <button onclick="scrollInstagram(1)">&gt;</button>
-                    </div>
-                </div>
-
-                <section id="fh5co-testimonials">
-                    <h2>Testimonials</h2>
-                    <div class="testimonial">
-                        <p>"Khavarti's photos capture emotions that cannot be described in words. A true artist!"</p>
-                        <cite>– Maria R., Client</cite>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Working with Khavarti was a pleasure. Unmatched professionalism and creativity."</p>
-                        <cite>– Luca B., Event Organizer</cite>
-                    </div>
-                </section>
-
-                <section id="fh5co-equipment">
-                    <h2 class="english">My equipment and my advice for you:</h2>
-                    <h2 class="italian">La mia attrezzatura e i miei consigli per te:</h2>
-                    <ul class="equipment-list-short">
-                        <li><a href="http://www.amazon.it/provaprime?tag=khavarti-21" target="_blank">Amazon Prime</a></li>
-                        <li>1. Sony A7iik: <a href="https://amzn.to/3zP3Ovi" target="_blank">https://amzn.to/3zP3Ovi</a></li>
-                        <li>2. Sony A7R III: <a href="https://amzn.to/3KUJbC2" target="_blank">https://amzn.to/3KUJbC2</a></li>
-                        <li>3. Sony 24-105 f4: <a href="https://amzn.to/3BUADrN" target="_blank">https://amzn.to/3BUADrN</a> | Sony 24-240mm: <a href="https://amzn.to/3JR2WsP" target="_blank">https://amzn.to/3JR2WsP</a></li>
-                        <li>4. Sony 90mm macro: <a href="https://amzn.to/3Ekjg4a" target="_blank">https://amzn.to/3Ekjg4a</a></li>
-                    </ul>
-                    <ul class="equipment-list-full">
-                        <li>5. DJI RS 3 Pro Combo: <a href="https://amzn.to/3dxeUO6" target="_blank">https://amzn.to/3dxeUO6</a></li>
-                        <li>6. Batteria per Sony A7ii: <a href="https://amzn.to/3Eq1jRB" target="_blank">https://amzn.to/3Eq1jRB</a> | <a href="https://amzn.to/3mnwIQ2" target="_blank">https://amzn.to/3mnwIQ2</a></li>
-                        <li>7. Batteria per Sony A7R III: <a href="https://amzn.to/3uPd68Y" target="_blank">https://amzn.to/3uPd68Y</a></li>
-                        <li>8. SanDisk Extreme PRO 64GB: <a href="https://amzn.to/3xGjsbE" target="_blank">https://amzn.to/3xGjsbE</a> | Lexar 128GB: <a href="https://amzn.to/406SdCM" target="_blank">https://amzn.to/406SdCM</a> | SABRENT Scheda SD 128GB v60: <a href="https://amzn.to/3QYTbiN" target="_blank">https://amzn.to/3QYTbiN</a></li>
-                        <li>9. Flash V1-S: <a href="https://amzn.to/3M284f8" target="_blank">https://amzn.to/3M284f8</a></li>
-                        <li>10. Godox X2T-S TTL: <a href="https://amzn.to/3Lwt0Mf" target="_blank">https://amzn.to/3Lwt0Mf</a></li>
-                        <li>11. Filtro ND (72mm): <a href="https://amzn.to/3rwlMiD" target="_blank">https://amzn.to/3rwlMiD</a></li>
-                        <li>12. Microfono Lavalier Wireless Hollyland Lark 150: <a href="https://amzn.to/40WOlW3" target="_blank">https://amzn.to/40WOlW3</a></li>
-                        <li>13. Treppiede: <a href="https://amzn.to/3vqmhvv" target="_blank">https://amzn.to/3vqmhvv</a> | <a href="https://amzn.to/40U6m7k" target="_blank">https://amzn.to/40U6m7k</a></li>
-                        <li>14. Mini proiettore portatile Wi-Fi: <a href="https://amzn.to/3qR3kSP" target="_blank">https://amzn.to/3qR3kSP</a></li>
-                        <li>15. Sgancio Rapido con Base per fotocamera: <a href="https://amzn.to/3C6N9FK" target="_blank">https://amzn.to/3C6N9FK</a> | <a href="https://amzn.to/3DOgZ2Y" target="_blank">https://amzn.to/3DOgZ2Y</a></li>
-                        <li>16. Laptop-Pc gaming potente: <a href="https://amzn.to/3yKvykI" target="_blank">https://amzn.to/3yKvykI</a></li>
-                        <li>17. Zaino: <a href="https://amzn.to/3MfK2i9" target="_blank">https://amzn.to/3MfK2i9</a></li>
-                        <li>18. Tablet 10': <a href="https://amzn.to/3FdApPv" target="_blank">https://amzn.to/3FdApPv</a></li>
-                        <li>19. Set Attrezzi: <a href="https://amzn.to/3DuhHQS" target="_blank">https://amzn.to/3DuhHQS</a></li>
-                        <li>20. Proiettore 4K Supporta 340 ANSI, Artlii: <a href="https://amzn.to/3Fky8Si" target="_blank">https://amzn.to/3Fky8Si</a></li>
-                        <li>21. Adattatore Attivo S/B per Apple Cinema Displays: <a href="https://amzn.to/3utS3aR" target="_blank">https://amzn.to/3utS3aR</a></li>
-                        <li>22. Ultra Wide-Angle Lens: <a href="https://amzn.to/3TZOpAo" target="_blank">https://amzn.to/3TZOpAo</a></li>
-                        <li>23. K&F Concept Nano-X Filtro ND2-32 Variabile (5 Stop): <a href="https://amzn.to/3HXG4ui" target="_blank">https://amzn.to/3HXG4ui</a></li>
-                        <li>24. MacBook Pro M2 display 13": <a href="https://amzn.to/3WRFGC0" target="_blank">https://amzn.to/3WRFGC0</a></li>
-                        <li>25. Mini Matte Box per DSLR mirrorless: <a href="https://amzn.to/3hNcrBg" target="_blank">https://amzn.to/3hNcrBg</a></li>
-                        <li>26. iPhone 14 Pro Max 128GB: <a href="https://amzn.to/3BI6CeC" target="_blank">https://amzn.to/3BI6CeC</a> | <a href="https://amzn.to/40wGCgc" target="_blank">https://amzn.to/40wGCgc</a></li>
-                        <li>27. Apple USB-C Power Adapter 20W White: <a href="https://amzn.to/3KeOGOf" target="_blank">https://amzn.to/3KeOGOf</a></li>
-                        <li>28. Triplo Monitor Portatile FHD 1080P 13.3": <a href="https://amzn.to/3KJf2rP" target="_blank">https://amzn.to/3KJf2rP</a></li>
-                        <li>29. MSI Notebook Gaming, 15.6" Intel I7 RAM 16GB DDR4, 512GB SSD: <a href="https://amzn.to/3xWAfqH" target="_blank">https://amzn.to/3xWAfqH</a></li>
-                        <li>30. Insta360 x3: <a href="https://amzn.to/44WG8U8" target="_blank">https://amzn.to/44WG8U8</a>
-                            <ul>
-                                <li>Protezione lenti: <a href="https://amzn.to/42zDvGd" target="_blank">https://amzn.to/42zDvGd</a></li>
-                                <li>Adesivi per lenti: <a href="https://amzn.to/3W2Gapr" target="_blank">https://amzn.to/3W2Gapr</a></li>
-                                <li>SD 128GB: <a href="https://amzn.to/3I6gbaZ" target="_blank">https://amzn.to/3I6gbaZ</a></li>
-                            </ul>
-                        </li>
-                        <li>31. Apple 2022 iPad 10.9" (Wi-Fi, 64GB) - Azzurro (10ª generazione): <a href="https://amzn.to/3rGdZ54" target="_blank">https://amzn.to/3rGdZ54</a></li>
-                        <li>32. DJI RSC 2 - Stabilizzatore Gimbal a 3 Assi: <a href="https://amzn.to/45qKstO" target="_blank">https://amzn.to/45qKstO</a></li>
-                        <li>33. SMALLRIG, Softbox a Griglia a Sgancio Rapido da 85 cm: <a href="https://amzn.to/48RuPib" target="_blank">https://amzn.to/48RuPib</a></li>
-                        <li>34. 7artisans, Cine Lens per Sony FULL FRAME, 50mm T2.0: <a href="https://amzn.to/47dFvGA" target="_blank">https://amzn.to/47dFvGA</a> | 35mm T2.0: <a href="https://amzn.to/46fVNNC" target="_blank">https://amzn.to/46fVNNC</a></li>
-                        <li>35. Zaino fotografico: <a href="https://amzn.to/49JlvNy" target="_blank">https://amzn.to/49JlvNy</a></li>
-                        <li>36. Sony FE 50mm f/1.4 Zeiss: <a href="https://amzn.to/3R8yoZl" target="_blank">https://amzn.to/3R8yoZl</a></li>
-                        <li>37. Monitor portatile per DSLR: <a href="https://amzn.to/47X8OwO" target="_blank">https://amzn.to/47X8OwO</a></li>
-                        <li>38. DJI Focus Pro Creator Combo: <a href="https://amzn.to/3LetUxG" target="_blank">https://amzn.to/3LetUxG</a></li>
-                        <li>39. Godox X3-S TTL Trigger Flash Wireless: <a href="https://amzn.to/4csymVB" target="_blank">https://amzn.to/4csymVB</a></li>
-                        <li>40. Godox V1Pro-S Speedlite flash: <a href="https://amzn.to/3We5Q40" target="_blank">https://amzn.to/3We5Q40</a></li>
-                    </ul>
-                    <button class="show-more-btn" onclick="toggleEquipment()">Show All / Mostra tutto</button>
-                    <p class="disclaimer">Using these links, "As an Amazon Affiliate I earn income from eligible purchases"</p>
-                    <p class="disclaimer">Usando questi link, "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei"</p>
-                    <p class="disclaimer">استفاده از این لینک ها, "به عنوان یک شرکت وابسته به آمازون، من از خریدهای واجد شرایط درآمد کسب می کنم"</p>
-                </section>
-
-                <section id="fh5co-contact">
-                    <h2>Contact</h2>
-                    <p>For collaborations or inquiries, reach out!</p>
-                    <form action="https://formsubmit.co/khavarti@yahoo.com" method="POST">
-                        <input type="text" name="name" placeholder="Name" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <textarea name="message" placeholder="Message" required></textarea>
-                        <input type="text" name="_honey" style="display:none">
-                        <button type="submit">Send</button>
-                    </form>
-                </section>
-
-                <footer>
-                    <p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy" draggable="false"></a></p>
-                </footer>
-
-                <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+        <div class="container-fluid" id="fh5co-image-grid">
+            <div class="video-container">
+                <iframe title="vimeo-player" src="https://player.vimeo.com/video/432534671?h=ba7c212fa3&autoplay=1&muted=1" width="1200" height="675" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
             </div>
 
-            <script src="js/jquery.min.js"></script>
-            <script src="js/jquery.easing.1.3.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/jquery.waypoints.min.js"></script>
-            <script src="js/jquery.magnific-popup.min.js"></script>
-            <script src="js/magnific-popup-options.js"></script>
-            <script src="js/isotope.pkgd.min.js"></script>
-            <script src="js/imagesloaded.pkgd.min.js"></script>
-            <script src="js/TweenLite.min.js"></script>
-            <script src="js/CSSPlugin.min.js"></script>
-            <script src="js/EasePack.min.js"></script>
-            <script src="js/main.js"></script>
-            <script async src="//www.instagram.com/embed.js"></script>
-            <script>
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.body.classList.add('dark-mode');
-                }
+            <div class="cover">
+                <a href="valleranello.html">
+                    <img src="images/valleranello/img_1.jpg" alt="Valleranello landscape, artistic photography" class="img-responsive" loading="lazy" draggable="false">
+                </a>
+                <h1 class="album-title">Valleranello</h1>
+                <div class="cover-text">
+                    <p><a href="valleranello.html">Click to view more photos from Valleranello</a></p>
+                    <p><a href="valleranello.html">Guarda altre foto di Valleranello</a></p>
+                </div>
+            </div>
+            <div class="cover">
+                <a href="no-pulizie.html">
+                    <img src="images/no-pulizie/cop.jpg" alt="No Pulizie, urban photography" class="img-responsive" loading="lazy" draggable="false">
+                </a>
+                <h1 class="album-title">No Pulizie</h1>
+                <div class="cover-text">
+                    <p><a href="no-pulizie.html">Click to view more photos from the No Pulizie project</a></p>
+                    <p><a href="no-pulizie.html">Guarda altre foto del progetto No Pulizie</a></p>
+                </div>
+            </div>
 
-                function toggleAbout() {
-                    document.getElementById('aboutDropdown').classList.toggle('active');
-                }
+            <div class="single-photo">
+                <img src="images/khavarti_leica.jpg?v=1" alt="Khavarti & Leica" loading="lazy" draggable="false">
+            </div>
 
-                function toggleGallery() {
-                    document.querySelector('.gallery-dropdown').classList.toggle('active');
-                }
+            <div class="single-photo">
+                <img src="images/piazza_di_spagna.jpg?v=1" alt="Piazza di Spagna, Roma" loading="lazy" draggable="false">
+                <div class="photo-text centered">
+                    <h3>Roma</h3>
+                    <p class="subtitle">Piazza di Spagna</p>
+                    <p>Used <a href="https://amzn.to/3Al1ME0" target="_blank" class="sony-link">Sony 14mm 1.8 GM</a> for this photo</p>
+                </div>
+            </div>
 
-                function toggleMenu() {
-                    document.querySelector('.navbar ul').classList.toggle('active');
-                }
+            <div class="single-photo">
+                <img src="images/pioggia.jpg" alt="Pioggia" loading="lazy" draggable="false">
+            </div>
 
-                function toggleEquipment() {
-                    const fullList = document.querySelector('.equipment-list-full');
-                    const button = document.querySelector('.show-more-btn');
-                    fullList.classList.toggle('active');
-                    button.textContent = fullList.classList.contains('active') ? 'Hide / Nascondi' : 'Show All / Mostra tutto';
-                }
+            <div class="single-photo">
+                <img src="images/Morteza_Khaleghi.jpg" alt="Scatto per un Amico" loading="lazy" draggable="false">
+                <h1 class="album-title amico-title">Scatto per un Amico</h1>
+            </div>
 
-                function scrollToTop() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
+            <div class="instagram-feed">
+                <h2>From my Instagram</h2>
+                <div class="instagram-feed-wrapper">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cy7pMbmtttt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CBS2aRYHDf3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DEPK-9ltnZT/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cw3C2BDNoI_/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CEJj834HVAJ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BzvG7VBnzLS/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/Cy7pMbmtttt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/CBS2aRYHDf3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/DEPK-9ltnZT/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/Cw3C2BDNoI_/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/CEJj834HVAJ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                    <blockquote class="instagram-media mobile-only" data-instgrm-permalink="https://www.instagram.com/p/BzvG7VBnzLS/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: transparent; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.1); margin: 0 10px; max-width: 350px; min-width: 300px; padding: 0; width: calc(100% - 20px);"></blockquote>
+                </div>
+                <div class="instagram-controls">
+                    <button onclick="scrollInstagram(-1)">&lt;</button>
+                    <button onclick="scrollInstagram(1)">&gt;</button>
+                </div>
+            </div>
 
-                window.addEventListener('scroll', function() {
-                    document.querySelector('.scroll-top-btn').style.display = window.scrollY > 200 ? 'block' : 'none';
+            <section id="fh5co-testimonials">
+                <h2>Testimonials</h2>
+                <div class="testimonial">
+                    <p>"Khavarti's photos capture emotions that cannot be described in words. A true artist!"</p>
+                    <cite>– Maria R., Client</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Working with Khavarti was a pleasure. Unmatched professionalism and creativity."</p>
+                    <cite>– Luca B., Event Organizer</cite>
+                </div>
+            </section>
+
+            <section id="fh5co-equipment">
+                <h2 class="english">My equipment and my advice for you:</h2>
+                <h2 class="italian">La mia attrezzatura e i miei consigli per te:</h2>
+                <ul class="equipment-list-short">
+                    <li><a href="http://www.amazon.it/provaprime?tag=khavarti-21" target="_blank">Amazon Prime</a></li>
+                    <li>1. Sony A7iik: <a href="https://amzn.to/3zP3Ovi" target="_blank">https://amzn.to/3zP3Ovi</a></li>
+                    <li>2. Sony A7R III: <a href="https://amzn.to/3KUJbC2" target="_blank">https://amzn.to/3KUJbC2</a></li>
+                    <li>3. Sony 24-105 f4: <a href="https://amzn.to/3BUADrN" target="_blank">https://amzn.to/3BUADrN</a> | Sony 24-240mm: <a href="https://amzn.to/3JR2WsP" target="_blank">https://amzn.to/3JR2WsP</a></li>
+                    <li>4. Sony 90mm macro: <a href="https://amzn.to/3Ekjg4a" target="_blank">https://amzn.to/3Ekjg4a</a></li>
+                </ul>
+                <ul class="equipment-list-full">
+                    <li>5. DJI RS 3 Pro Combo: <a href="https://amzn.to/3dxeUO6" target="_blank">https://amzn.to/3dxeUO6</a></li>
+                    <li>6. Batteria per Sony A7ii: <a href="https://amzn.to/3Eq1jRB" target="_blank">https://amzn.to/3Eq1jRB</a> | <a href="https://amzn.to/3mnwIQ2" target="_blank">https://amzn.to/3mnwIQ2</a></li>
+                    <li>7. Batteria per Sony A7R III: <a href="https://amzn.to/3uPd68Y" target="_blank">https://amzn.to/3uPd68Y</a></li>
+                    <li>8. SanDisk Extreme PRO 64GB: <a href="https://amzn.to/3xGjsbE" target="_blank">https://amzn.to/3xGjsbE</a> | Lexar 128GB: <a href="https://amzn.to/406SdCM" target="_blank">https://amzn.to/406SdCM</a> | SABRENT Scheda SD 128GB v60: <a href="https://amzn.to/3QYTbiN" target="_blank">https://amzn.to/3QYTbiN</a></li>
+                    <li>9. Flash V1-S: <a href="https://amzn.to/3M284f8" target="_blank">https://amzn.to/3M284f8</a></li>
+                    <li>10. Godox X2T-S TTL: <a href="https://amzn.to/3Lwt0Mf" target="_blank">https://amzn.to/3Lwt0Mf</a></li>
+                    <li>11. Filtro ND (72mm): <a href="https://amzn.to/3rwlMiD" target="_blank">https://amzn.to/3rwlMiD</a></li>
+                    <li>12. Microfono Lavalier Wireless Hollyland Lark 150: <a href="https://amzn.to/40WOlW3" target="_blank">https://amzn.to/40WOlW3</a></li>
+                    <li>13. Treppiede: <a href="https://amzn.to/3vqmhvv" target="_blank">https://amzn.to/3vqmhvv</a> | <a href="https://amzn.to/40U6m7k" target="_blank">https://amzn.to/40U6m7k</a></li>
+                    <li>14. Mini proiettore portatile Wi-Fi: <a href="https://amzn.to/3qR3kSP" target="_blank">https://amzn.to/3qR3kSP</a></li>
+                    <li>15. Sgancio Rapido con Base per fotocamera: <a href="https://amzn.to/3C6N9FK" target="_blank">https://amzn.to/3C6N9FK</a> | <a href="https://amzn.to/3DOgZ2Y" target="_blank">https://amzn.to/3DOgZ2Y</a></li>
+                    <li>16. Laptop-Pc gaming potente: <a href="https://amzn.to/3yKvykI" target="_blank">https://amzn.to/3yKvykI</a></li>
+                    <li>17. Zaino: <a href="https://amzn.to/3MfK2i9" target="_blank">https://amzn.to/3MfK2i9</a></li>
+                    <li>18. Tablet 10': <a href="https://amzn.to/3FdApPv" target="_blank">https://amzn.to/3FdApPv</a></li>
+                    <li>19. Set Attrezzi: <a href="https://amzn.to/3DuhHQS" target="_blank">https://amzn.to/3DuhHQS</a></li>
+                    <li>20. Proiettore 4K Supporta 340 ANSI, Artlii: <a href="https://amzn.to/3Fky8Si" target="_blank">https://amzn.to/3Fky8Si</a></li>
+                    <li>21. Adattatore Attivo S/B per Apple Cinema Displays: <a href="https://amzn.to/3utS3aR" target="_blank">https://amzn.to/3utS3aR</a></li>
+                    <li>22. Ultra Wide-Angle Lens: <a href="https://amzn.to/3TZOpAo" target="_blank">https://amzn.to/3TZOpAo</a></li>
+                    <li>23. K&F Concept Nano-X Filtro ND2-32 Variabile (5 Stop): <a href="https://amzn.to/3HXG4ui" target="_blank">https://amzn.to/3HXG4ui</a></li>
+                    <li>24. MacBook Pro M2 display 13": <a href="https://amzn.to/3WRFGC0" target="_blank">https://amzn.to/3WRFGC0</a></li>
+                    <li>25. Mini Matte Box per DSLR mirrorless: <a href="https://amzn.to/3hNcrBg" target="_blank">https://amzn.to/3hNcrBg</a></li>
+                    <li>26. iPhone 14 Pro Max 128GB: <a href="https://amzn.to/3BI6CeC" target="_blank">https://amzn.to/3BI6CeC</a> | <a href="https://amzn.to/40wGCgc" target="_blank">https://amzn.to/40wGCgc</a></li>
+                    <li>27. Apple USB-C Power Adapter 20W White: <a href="https://amzn.to/3KeOGOf" target="_blank">https://amzn.to/3KeOGOf</a></li>
+                    <li>28. Triplo Monitor Portatile FHD 1080P 13.3": <a href="https://amzn.to/3KJf2rP" target="_blank">https://amzn.to/3KJf2rP</a></li>
+                    <li>29. MSI Notebook Gaming, 15.6" Intel I7 RAM 16GB DDR4, 512GB SSD: <a href="https://amzn.to/3xWAfqH" target="_blank">https://amzn.to/3xWAfqH</a></li>
+                    <li>30. Insta360 x3: <a href="https://amzn.to/44WG8U8" target="_blank">https://amzn.to/44WG8U8</a>
+                        <ul>
+                            <li>Protezione lenti: <a href="https://amzn.to/42zDvGd" target="_blank">https://amzn.to/42zDvGd</a></li>
+                            <li>Adesivi per lenti: <a href="https://amzn.to/3W2Gapr" target="_blank">https://amzn.to/3W2Gapr</a></li>
+                            <li>SD 128GB: <a href="https://amzn.to/3I6gbaZ" target="_blank">https://amzn.to/3I6gbaZ</a></li>
+                        </ul>
+                    </li>
+                    <li>31. Apple 2022 iPad 10.9" (Wi-Fi, 64GB) - Azzurro (10ª generazione): <a href="https://amzn.to/3rGdZ54" target="_blank">https://amzn.to/3rGdZ54</a></li>
+                    <li>32. DJI RSC 2 - Stabilizzatore Gimbal a 3 Assi: <a href="https://amzn.to/45qKstO" target="_blank">https://amzn.to/45qKstO</a></li>
+                    <li>33. SMALLRIG, Softbox a Griglia a Sgancio Rapido da 85 cm: <a href="https://amzn.to/48RuPib" target="_blank">https://amzn.to/48RuPib</a></li>
+                    <li>34. 7artisans, Cine Lens per Sony FULL FRAME, 50mm T2.0: <a href="https://amzn.to/47dFvGA" target="_blank">https://amzn.to/47dFvGA</a> | 35mm T2.0: <a href="https://amzn.to/46fVNNC" target="_blank">https://amzn.to/46fVNNC</a></li>
+                    <li>35. Zaino fotografico: <a href="https://amzn.to/49JlvNy" target="_blank">https://amzn.to/49JlvNy</a></li>
+                    <li>36. Sony FE 50mm f/1.4 Zeiss: <a href="https://amzn.to/3R8yoZl" target="_blank">https://amzn.to/3R8yoZl</a></li>
+                    <li>37. Monitor portatile per DSLR: <a href="https://amzn.to/47X8OwO" target="_blank">https://amzn.to/47X8OwO</a></li>
+                    <li>38. DJI Focus Pro Creator Combo: <a href="https://amzn.to/3LetUxG" target="_blank">https://amzn.to/3LetUxG</a></li>
+                    <li>39. Godox X3-S TTL Trigger Flash Wireless: <a href="https://amzn.to/4csymVB" target="_blank">https://amzn.to/4csymVB</a></li>
+                    <li>40. Godox V1Pro-S Speedlite flash: <a href="https://amzn.to/3We5Q40" target="_blank">https://amzn.to/3We5Q40</a></li>
+                </ul>
+                <button class="show-more-btn" onclick="toggleEquipment()">Show All / Mostra tutto</button>
+                <p class="disclaimer">Using these links, "As an Amazon Affiliate I earn income from eligible purchases"</p>
+                <p class="disclaimer">Usando questi link, "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei"</p>
+                <p class="disclaimer">استفاده از این لینک ها, "به عنوان یک شرکت وابسته به آمازون، من از خریدهای واجد شرایط درآمد کسب می کنم"</p>
+            </section>
+
+            <section id="fh5co-contact">
+                <h2>Contact</h2>
+                <p>For collaborations or inquiries, reach out!</p>
+                <form action="https://formsubmit.co/khavarti@yahoo.com" method="POST">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <input type="text" name="_honey" style="display:none">
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+
+            <footer>
+                <p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy" draggable="false"></a></p>
+            </footer>
+
+            <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/magnific-popup-options.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/TweenLite.min.js"></script>
+        <script src="js/CSSPlugin.min.js"></script>
+        <script src="js/EasePack.min.js"></script>
+        <script src="js/main.js"></script>
+        <script async src="//www.instagram.com/embed.js"></script>
+        <script>
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.classList.add('dark-mode');
+            }
+
+            function toggleAbout() {
+                document.getElementById('aboutDropdown').classList.toggle('active');
+            }
+
+            function toggleGallery() {
+                document.querySelector('.gallery-dropdown').classList.toggle('active');
+            }
+
+            function toggleMenu() {
+                document.querySelector('.navbar ul').classList.toggle('active');
+            }
+
+            function toggleEquipment() {
+                const fullList = document.querySelector('.equipment-list-full');
+                const button = document.querySelector('.show-more-btn');
+                fullList.classList.toggle('active');
+                button.textContent = fullList.classList.contains('active') ? 'Hide / Nascondi' : 'Show All / Mostra tutto';
+            }
+
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            window.addEventListener('scroll', function() {
+                document.querySelector('.scroll-top-btn').style.display = window.scrollY > 200 ? 'block' : 'none';
+                const heroSection = document.querySelector('.hero-section');
+                const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                if (heroBottom < 0) {
+                    scrollIndicator.style.display = 'none';
+                } else {
+                    scrollIndicator.style.display = window.innerWidth < 768 ? 'block' : 'none';
+                }
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                if (window.innerWidth < 768) {
                     const heroSection = document.querySelector('.hero-section');
-                    const scrollIndicator = document.querySelector('.hero-scroll-indicator');
-                    const heroBottom = heroSection.getBoundingClientRect().bottom;
-                    if (heroBottom < 0) {
-                        scrollIndicator.style.display = 'none';
-                    } else {
-                        scrollIndicator.style.display = window.innerWidth < 768 ? 'block' : 'none';
-                    }
-                });
-
-                document.addEventListener('DOMContentLoaded', function() {
-                    if (window.innerWidth < 768) {
-                        const heroSection = document.querySelector('.hero-section');
-                        heroSection.scrollLeft = heroSection.scrollWidth; // Inizia dalla destra
-                    }
-                });
-
-                document.addEventListener('DOMContentLoaded', function() {
-                    if (window.innerWidth < 768) {
-                        const wrapper = document.querySelector('.instagram-feed-wrapper');
-                        wrapper.addEventListener('scroll', function() {
-                            const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
-                            if (wrapper.scrollLeft >= maxScroll) {
-                                wrapper.scrollLeft = 0; // Torna all'inizio
-                            } else if (wrapper.scrollLeft <= 0) {
-                                wrapper.scrollLeft = maxScroll; // Vai alla fine
-                            }
-                        });
-                    }
-                });
-
-                document.addEventListener('click', function(event) {
-                    const menu = document.querySelector('.navbar ul');
-                    const hamburger = document.querySelector('.hamburger');
-                    const galleryDropdown = document.querySelector('.gallery-dropdown');
-                    const galleryLink = document.querySelector('.navbar ul li a[onclick="toggleGallery()"]');
-                    const aboutDropdown = document.getElementById('aboutDropdown');
-                    const aboutContent = document.querySelector('.about-content');
-                    if (!menu.contains(event.target) && event.target !== hamburger) {
-                        menu.classList.remove('active');
-                    }
-                    if (!galleryDropdown.contains(event.target) && event.target !== galleryLink) {
-                        galleryDropdown.classList.remove('active');
-                    }
-                    if (aboutDropdown.classList.contains('active') && !aboutContent.contains(event.target) && event.target !== document.querySelector('a[onclick="toggleAbout()"]')) {
-                        aboutDropdown.classList.remove('active');
-                    }
-                });
-
-                function scrollInstagram(direction) {
-                    const wrapper = document.querySelector('.instagram-feed-wrapper');
-                    const scrollAmount = 350 * direction;
-                    wrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    heroSection.scrollLeft = heroSection.scrollWidth;
                 }
-            </script>
-        </body>
-    </html>
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                if (window.innerWidth < 768) {
+                    const wrapper = document.querySelector('.instagram-feed-wrapper');
+                    wrapper.addEventListener('scroll', function() {
+                        const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+                        if (wrapper.scrollLeft >= maxScroll) {
+                            wrapper.scrollLeft = 0;
+                        } else if (wrapper.scrollLeft <= 0) {
+                            wrapper.scrollLeft = maxScroll;
+                        }
+                    });
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                const menu = document.querySelector('.navbar ul');
+                const hamburger = document.querySelector('.hamburger');
+                const galleryDropdown = document.querySelector('.gallery-dropdown');
+                const galleryLink = document.querySelector('.navbar ul li a[onclick="toggleGallery()"]');
+                const aboutDropdown = document.getElementById('aboutDropdown');
+                const aboutContent = document.querySelector('.about-content');
+                if (!menu.contains(event.target) && event.target !== hamburger) {
+                    menu.classList.remove('active');
+                }
+                if (!galleryDropdown.contains(event.target) && event.target !== galleryLink) {
+                    galleryDropdown.classList.remove('active');
+                }
+                if (aboutDropdown.classList.contains('active') && !aboutContent.contains(event.target) && event.target !== document.querySelector('a[onclick="toggleAbout()"]')) {
+                    aboutDropdown.classList.remove('active');
+                }
+            });
+
+            function scrollInstagram(direction) {
+                const wrapper = document.querySelector('.instagram-feed-wrapper');
+                const scrollAmount = 350 * direction;
+                wrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        </script>
+    </body>
+</html>
