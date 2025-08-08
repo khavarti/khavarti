@@ -270,6 +270,17 @@
         .hero-text.visible {
             opacity: 1; /* Visibile con fade-in */
         }
+        .hero-text h1 {
+    color: #fff !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+.hero-text h1 span {
+    display: block;
+}
         .hero-scroll-indicator {
             position: absolute;
             bottom: 20px;
@@ -295,27 +306,27 @@
             50% { left: calc(100% - 8px); }
             100% { left: 0; }
         }
-        @media (max-width: 767px) {
-            .hero-section {
-                padding-top: 72px;
-                height: 80vh;
-                overflow-x: auto;
-                white-space: nowrap;
-                position: relative;
-            }
-            .hero-image {
-                width: 200%;
-                height: 100%;
-                object-fit: cover;
-                object-position: 80% center;
-                display: inline-block;
-            }
-            .hero-scroll-indicator {
-                display: block;
-                position: absolute;
-                bottom: 20px;
-                right: 20px;
-                z-index: 20;
+@media (max-width: 767px) {
+    .hero-section {
+        padding-top: 72px;
+        height: 80vh;
+        overflow-x: auto;
+        white-space: nowrap;
+        position: relative;
+    }
+    .hero-image {
+        width: 200%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 80% center;
+        display: inline-block;
+    }
+    .hero-scroll-indicator {
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        z-index: 20;
             }
             .hero-text {
                 opacity: 0; /* Inizialmente invisibile su mobile */
