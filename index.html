@@ -1138,6 +1138,12 @@
                 const scrollAmount = 350 * direction;
                 wrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             }
+            document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth < 768) {
+        const heroSection = document.querySelector('.hero-section');
+        heroSection.scrollLeft = heroSection.scrollWidth * 0.5; // Inizia dal centro
+    }
+});
         </script>
     </body>
 </html>
