@@ -279,18 +279,19 @@
         .hero-text h1 span {
             display: block;
         }
-        .hero-scroll-indicator {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 2px;
-            overflow: hidden;
-            display: none;
-        }
+.hero-scroll-indicator {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    overflow: hidden;
+    display: none;
+    z-index: 20;
+}
         .hero-scroll-indicator-dot {
             width: 8px;
             height: 8px;
