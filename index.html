@@ -368,13 +368,34 @@
             color: #005566;
         }
 
+        .hero-section {
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding-top: 120px;
+        }
+        .hero-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            max-height: 100vh;
+            display: block;
+            margin: 0 auto;
+            user-select: none;
+        }
+        .amico-title {
+            font-size: 16px;
+        }
+
         #fh5co-image-grid {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             min-height: calc(100vh - 100px);
-            padding-top: 120px;
+            padding-top: 60px; /* Ridotto per lasciare spazio all'immagine hero */
             padding-bottom: 60px;
             position: relative;
             z-index: 1;
@@ -644,7 +665,7 @@
                 font-size: 24px;
             }
             #fh5co-image-grid {
-                padding-top: 120px;
+                padding-top: 60px;
             }
         }
         @media (max-width: 767px) {
@@ -682,13 +703,19 @@
                 margin: 10px 0;
                 text-align: center;
             }
-            .hamburger {
-                display: block;
-            }
             .gallery-dropdown {
                 position: static;
                 box-shadow: none;
                 background: none;
+            }
+            .hero-section {
+                padding-top: 96px;
+            }
+            .hero-image {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                object-position: center top;
             }
         }
     </style>
@@ -710,6 +737,10 @@
             </ul>
             <div class="hamburger" onclick="toggleMenu()">☰</div>
         </nav>
+
+        <section class="hero-section">
+            <img src="images/caffè.jpg" alt="Hero Image - Caffè" class="hero-image" loading="lazy" draggable="false">
+        </section>
 
         <div class="about-dropdown" id="aboutDropdown">
             <div class="about-content">
@@ -764,8 +795,16 @@
             </div>
 
             <div class="single-photo">
+                <img src="images/pioggia.jpg" alt="Pioggia" loading="lazy" draggable="false">
+                <div class="photo-text">
+                    <h3>Pioggia</h3>
+                    <p>Scatto sotto la pioggia, catturando l'atmosfera unica.</p>
+                </div>
+            </div>
+
+            <div class="single-photo">
                 <img src="images/Morteza_Khaleghi.jpg" alt="Scatto per un Amico" loading="lazy" draggable="false">
-                <h1 class="album-title">Scatto per un Amico</h1>
+                <h1 class="album-title amico-title">Scatto per un Amico</h1>
             </div>
 
             <div class="instagram-feed">
@@ -813,7 +852,7 @@
                     <li>13. Treppiede: <a href="https://amzn.to/3vqmhvv" target="_blank">https://amzn.to/3vqmhvv</a> | <a href="https://amzn.to/40U6m7k" target="_blank">https://amzn.to/40U6m7k</a></li>
                     <li>14. Mini proiettore portatile Wi-Fi: <a href="https://amzn.to/3qR3kSP" target="_blank">https://amzn.to/3qR3kSP</a></li>
                     <li>15. Sgancio Rapido con Base per fotocamera: <a href="https://amzn.to/3C6N9FK" target="_blank">https://amzn.to/3C6N9FK</a> | <a href="https://amzn.to/3DOgZ2Y" target="_blank">https://amzn.to/3DOgZ2Y</a></li>
-                    <li>16. Laptop-Pc gaming potente: <a href="https://amzn.to/3yKvykI" target="_blank">https://amzn.to/3yKvykI</a></li>
+                    <li>16. Laptop-Pc gaming potente: <a href="https://amzn.to/3yKvykI" target="blank">https://amzn.to/3yKvykI</a></li>
                     <li>17. Zaino: <a href="https://amzn.to/3MfK2i9" target="_blank">https://amzn.to/3MfK2i9</a></li>
                     <li>18. Tablet 10': <a href="https://amzn.to/3FdApPv" target="_blank">https://amzn.to/3FdApPv</a></li>
                     <li>19. Set Attrezzi: <a href="https://amzn.to/3DuhHQS" target="_blank">https://amzn.to/3DuhHQS</a></li>
@@ -825,7 +864,7 @@
                     <li>25. Mini Matte Box per DSLR mirrorless: <a href="https://amzn.to/3hNcrBg" target="_blank">https://amzn.to/3hNcrBg</a></li>
                     <li>26. iPhone 14 Pro Max 128GB: <a href="https://amzn.to/3BI6CeC" target="_blank">https://amzn.to/3BI6CeC</a> | <a href="https://amzn.to/40wGCgc" target="_blank">https://amzn.to/40wGCgc</a></li>
                     <li>27. Apple USB-C Power Adapter 20W White: <a href="https://amzn.to/3KeOGOf" target="_blank">https://amzn.to/3KeOGOf</a></li>
-                    <li>28. Triplo Monitor Portatile FHD 1080P 13.3": <a href="https://amzn.to/3KJf2rP" target="_blank">https://amzn.to/3KJf2rP</a></li>
+                    <li>28. Triplo Monitor Portatile FHD 1080P 13.3": <a href="https://amzn.to/KJf2rP" target="_blank">https://amzn.to/3KJf2rP</a></li>
                     <li>29. MSI Notebook Gaming, 15.6" Intel I7 RAM 16GB DDR4, 512GB SSD: <a href="https://amzn.to/3xWAfqH" target="_blank">https://amzn.to/3xWAfqH</a></li>
                     <li>30. Insta360 x3: <a href="https://amzn.to/44WG8U8" target="_blank">https://amzn.to/44WG8U8</a>
                         <ul>
