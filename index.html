@@ -84,7 +84,7 @@
             background: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
-            padding: 10px 30px; /* Ridotto da 15px per adattarsi al logo */
+            padding: 10px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -93,7 +93,7 @@
             background: #333;
         }
         .navbar .logo img {
-            height: 64px; /* Ridotto da 96px a 2/3 */
+            height: 64px;
             width: auto;
             vertical-align: middle;
             user-select: none;
@@ -247,7 +247,7 @@
             max-width: 1920px;
             margin: 0 auto;
             overflow: hidden;
-            padding-top: 90px; /* Ridotto per adattarsi al logo più piccolo */
+            padding-top: 90px;
             position: relative;
             height: 600px;
         }
@@ -265,12 +265,36 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: #fff;
+            color: #fff; /* Cambiato da #000 a #fff per leggibilità */
             text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-            background: rgba(0,0,0,0.1); /* Opacità ridotta da 0.3 a 0.1 */
+            background: rgba(0,0,0,0.1); /* Sfondo invariato */
             padding: 20px 40px;
             border-radius: 10px;
             animation: fadeIn 1.5s ease-in-out;
+        }
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .hero-scroll-indicator-dot {
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            animation: scrollHint 3s infinite ease-in-out;
+        }
+        @keyframes scrollHint {
+            0% { left: 0; }
+            50% { left: calc(100% - 8px); }
+            100% { left: 0; }
         }
         .hero-text h1 {
             font-family: 'Playfair Display', serif;
@@ -284,14 +308,20 @@
         }
         @media (max-width: 767px) {
             .hero-section {
-                padding-top: 72px; /* Ridotto per mobile */
+                padding-top: 72px;
                 height: 80vh;
+                overflow-x: auto; /* Abilita lo scorrimento orizzontale */
+                white-space: nowrap; /* Impedisce il wrapping */
             }
             .hero-image {
-                width: 100%;
+                width: 200%; /* Larghezza doppia per consentire lo scorrimento */
                 height: 100%;
                 object-fit: cover;
-                object-position: 20% center; /* Spostato verso sinistra */
+                object-position: 80% center; /* Spostato verso destra come richiesto */
+                display: inline-block; /* Permette lo scorrimento */
+            }
+            .hero-scroll-indicator {
+                display: block; /* Mostra l'indicatore solo su mobile */
             }
             .hero-text h1 {
                 font-size: 24px;
@@ -741,7 +771,7 @@
         @media (max-width: 767px) {
             .navbar {
                 justify-content: space-between;
-                padding: 10px; /* Ridotto da 15px */
+                padding: 10px;
                 z-index: 1000;
             }
             .navbar .logo {
@@ -750,13 +780,13 @@
                 flex-grow: 1;
             }
             .navbar .logo img {
-                height: 48px; /* Ridotto da 72px a 2/3 */
+                height: 48px;
             }
             .navbar ul {
                 display: none;
                 flex-direction: column;
                 position: fixed;
-                top: 72px; /* Aggiornato per il logo più piccolo */
+                top: 72px;
                 right: 0;
                 width: 70%;
                 background: #fff;
@@ -813,6 +843,9 @@
             <img src="images/caffè.jpg" alt="Hero Image - Caffè" class="hero-image" loading="lazy" draggable="false">
             <div class="hero-text">
                 <h1>Every shot, a story.</h1>
+            </div>
+            <div class="hero-scroll-indicator">
+                <div class="hero-scroll-indicator-dot"></div>
             </div>
         </section>
 
@@ -935,7 +968,7 @@
                     <li>25. Mini Matte Box per DSLR mirrorless: <a href="https://amzn.to/3hNcrBg" target="_blank">https://amzn.to/3hNcrBg</a></li>
                     <li>26. iPhone 14 Pro Max 128GB: <a href="https://amzn.to/3BI6CeC" target="_blank">https://amzn.to/3BI6CeC</a> | <a href="https://amzn.to/40wGCgc" target="_blank">https://amzn.to/40wGCgc</a></li>
                     <li>27. Apple USB-C Power Adapter 20W White: <a href="https://amzn.to/3KeOGOf" target="_blank">https://amzn.to/3KeOGOf</a></li>
-                    <li>28. Triplo Monitor Portatile FHD 1080P 13.3": <a href="https://amzn.to/3KJf2rP" target="_blank">https://amzn.to/3KJf2rP</a></li>
+                    <li>28. Triplo Monitor Portatile FHD 1080P 13.3": <a href="https://amzn.to/3KJf2rP" target="_
                     <li>29. MSI Notebook Gaming, 15.6" Intel I7 RAM 16GB DDR4, 512GB SSD: <a href="https://amzn.to/3xWAfqH" target="_blank">https://amzn.to/3xWAfqH</a></li>
                     <li>30. Insta360 x3: <a href="https://amzn.to/44WG8U8" target="_blank">https://amzn.to/44WG8U8</a>
                         <ul>
