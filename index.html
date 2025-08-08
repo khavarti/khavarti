@@ -260,34 +260,28 @@
             text-align: center;
             color: #fff !important;
             text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.3);
             padding: 20px 40px;
             border-radius: 10px;
             z-index: 10;
+            opacity: 0; /* Inizialmente invisibile in entrambe le versioni */
+            transition: opacity 0.5s ease-in-out;
         }
-        .hero-text h1 {
-            color: #fff !important;
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            font-weight: 700;
-            margin: 0;
-            line-height: 1.2;
+        .hero-text.visible {
+            opacity: 1; /* Visibile con fade-in */
         }
-        .hero-text h1 span {
-            display: block;
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 2px;
+            overflow: hidden;
+            display: none;
+            z-index: 20;
         }
-.hero-scroll-indicator {
-    position: absolute;
-    bottom: 20px;
-    right: 20px; /* Sposta l'indicatore a destra */
-    width: 40px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 2px;
-    overflow: hidden;
-    display: none;
-    z-index: 20;
-}
         .hero-scroll-indicator-dot {
             width: 8px;
             height: 8px;
@@ -320,9 +314,14 @@
                 display: block;
                 position: absolute;
                 bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
+                right: 20px;
                 z-index: 20;
+            }
+            .hero-text {
+                opacity: 0; /* Inizialmente invisibile su mobile */
+            }
+            .hero-text.visible {
+                opacity: 1; /* Visibile quando si scorre a sinistra */
             }
         }
         .video-container {
@@ -1021,9 +1020,28 @@
             });
 
             document.addEventListener('DOMContentLoaded', function() {
+                const heroSection = document.querySelector('.hero-section');
+                const heroText = document.querySelector('.hero-text');
+
+                // Fade-in per la versione web
+                if (window.innerWidth >= 768) {
+                    setTimeout(() => {
+                        heroText.classList.add('visible');
+                    }, 100); // Ritardo minimo per l'animazione
+                }
+
+                // Fade-in per la versione mobile basato sullo scorrimento
                 if (window.innerWidth < 768) {
-                    const heroSection = document.querySelector('.hero-section');
-                    heroSection.scrollLeft = heroSection.scrollWidth;
+                    heroSection.scrollLeft = heroSection.scrollWidth; // Inizia dalla parte destra
+                    heroSection.addEventListener('scroll', function() {
+                        const scrollLeft = heroSection.scrollLeft;
+                        const maxScroll = heroSection.scrollWidth - heroSection.clientWidth;
+                        if (scrollLeft <= maxScroll / 2) {
+                            heroText.classList.add('visible');
+                        } else {
+                            heroText.classList.remove('visible');
+                        }
+                    });
                 }
             });
 
