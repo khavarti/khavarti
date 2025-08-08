@@ -829,6 +829,49 @@
 .dark-mode .instagram-scroll-indicator .hero-scroll-indicator-dot {
     background: #fff;
 }
+        .instagram-posts-section {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #FFF; /* Sfondo bianco */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Allinea i widget in alto */
+}
+.dark-mode .instagram-posts-section {
+    background: #333; /* Sfondo scuro per dark mode */
+}
+.instagram-post-box {
+    width: 100%;
+    padding: 20px 0;
+    overflow-x: auto; /* Abilita lo scorrimento orizzontale */
+    -webkit-overflow-scrolling: touch; /* Scorrimento fluido su mobile */
+    scrollbar-width: none; /* Nasconde la barra di scorrimento su Firefox */
+}
+.instagram-post-box::-webkit-scrollbar {
+    display: none; /* Nasconde la barra di scorrimento su Chrome/Safari */
+}
+.instagram-post-scroller {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Spazio di 10px tra i widget in orizzontale */
+    padding: 0 15px;
+    width: max-content; /* Adatta la larghezza al contenuto */
+}
+.instagram-post-item {
+    flex: 0 0 auto;
+    max-width: 540px;
+    min-width: 326px;
+    width: 100%;
+}
+.instagram-post-item .instagram-media {
+    margin: 0 !important; /* Rimuove margini extra del widget */
+    padding: 0;
+    width: 100% !important;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
+}
     </style>
 </head>
 <body>
