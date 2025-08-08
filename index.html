@@ -264,23 +264,23 @@
             padding: 20px 40px;
             border-radius: 10px;
             z-index: 10;
-            opacity: 0; /* Inizialmente invisibile in entrambe le versioni */
+            opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
         .hero-text.visible {
-            opacity: 1; /* Visibile con fade-in */
+            opacity: 1;
         }
         .hero-text h1 {
-    color: #fff !important;
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 700;
-    margin: 0;
-    line-height: 1.2;
-}
-.hero-text h1 span {
-    display: block;
-}
+            color: #fff !important;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .hero-text h1 span {
+            display: block;
+        }
         .hero-scroll-indicator {
             position: absolute;
             bottom: 20px;
@@ -306,33 +306,33 @@
             50% { left: calc(100% - 8px); }
             100% { left: 0; }
         }
-@media (max-width: 767px) {
-    .hero-section {
-        padding-top: 72px;
-        height: 80vh;
-        overflow-x: auto;
-        white-space: nowrap;
-        position: relative;
-    }
-    .hero-image {
-        width: 200%;
-        height: 100%;
-        object-fit: cover;
-        object-position: 80% center;
-        display: inline-block;
-    }
-    .hero-scroll-indicator {
-        display: block;
-        position: absolute;
-        bottom: 20px;
-        right: 10px; /* Posizionato a destra della viewport */
-        z-index: 20;
+        @media (max-width: 767px) {
+            .hero-section {
+                padding-top: 72px;
+                height: 80vh;
+                overflow-x: auto;
+                white-space: nowrap;
+                position: relative;
+            }
+            .hero-image {
+                width: 200%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 80% center;
+                display: inline-block;
+            }
+            .hero-scroll-indicator {
+                display: block;
+                position: absolute;
+                bottom: 20px;
+                right: 10px;
+                z-index: 20;
             }
             .hero-text {
-                opacity: 0; /* Inizialmente invisibile su mobile */
+                opacity: 0;
             }
             .hero-text.visible {
-                opacity: 1; /* Visibile quando si scorre a sinistra */
+                opacity: 1;
             }
         }
         .video-container {
@@ -795,83 +795,82 @@
                 color: #fff;
             }
         }
-.instagram-title-section {
-    text-align: center;
-    margin: 20px auto;
-    max-width: 1200px;
-    padding: 0 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto; /* Forza il centramento orizzontale */
-    gap: 20px; /* Spazio tra la frase e l'indicatore */
-}
-.instagram-scroll-indicator {
-    position: relative;
-    width: 40px;
-    height: 4px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
-    overflow: hidden;
-    z-index: 20;
-}
-.dark-mode .instagram-scroll-indicator {
-    background: rgba(255, 255, 255, 0.5);
-}
-.instagram-scroll-indicator .hero-scroll-indicator-dot {
-    width: 8px;
-    height: 8px;
-    background: #000;
-    border-radius: 50%;
-    position: absolute;
-    animation: scrollHint 3s infinite ease-in-out;
-}
-.dark-mode .instagram-scroll-indicator .hero-scroll-indicator-dot {
-    background: #fff;
-}
+        .instagram-title-section {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 0 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .instagram-scroll-indicator {
+            position: relative;
+            width: 40px;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 2px;
+            overflow: hidden;
+            z-index: 20;
+        }
+        .dark-mode .instagram-scroll-indicator {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .instagram-scroll-indicator .hero-scroll-indicator-dot {
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            animation: scrollHint 3s infinite ease-in-out;
+        }
+        .dark-mode .instagram-scroll-indicator .hero-scroll-indicator-dot {
+            background: #fff;
+        }
         .instagram-posts-section {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background: #FFF; /* Sfondo bianco */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Allinea i widget in alto */
-}
-.dark-mode .instagram-posts-section {
-    background: #333; /* Sfondo scuro per dark mode */
-}
-.instagram-post-box {
-    width: 100%;
-    padding: 20px 0;
-    overflow-x: auto; /* Abilita lo scorrimento orizzontale */
-    -webkit-overflow-scrolling: touch; /* Scorrimento fluido su mobile */
-    scrollbar-width: none; /* Nasconde la barra di scorrimento su Firefox */
-}
-.instagram-post-box::-webkit-scrollbar {
-    display: none; /* Nasconde la barra di scorrimento su Chrome/Safari */
-}
-.instagram-post-scroller {
-    display: flex;
-    flex-direction: row;
-    gap: 10px; /* Spazio di 10px tra i widget in orizzontale */
-    padding: 0 15px;
-    width: max-content; /* Adatta la larghezza al contenuto */
-}
-.instagram-post-item {
-    flex: 0 0 auto;
-    max-width: 540px;
-    min-width: 326px;
-    width: 100%;
-}
-.instagram-post-item .instagram-media {
-    margin: 0 !important; /* Rimuove margini extra del widget */
-    padding: 0;
-    width: 100% !important;
-    border: 0;
-    border-radius: 3px;
-    box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
-}
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background: #FFF;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .dark-mode .instagram-posts-section {
+            background: #333;
+        }
+        .instagram-post-box {
+            width: 100%;
+            padding: 20px 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .instagram-post-box::-webkit-scrollbar {
+            display: none;
+        }
+        .instagram-post-scroller {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            padding: 0 15px;
+            width: max-content;
+        }
+        .instagram-post-item {
+            flex: 0 0 auto;
+            max-width: 540px;
+            min-width: 326px;
+            width: 100%;
+        }
+        .instagram-post-item .instagram-media {
+            margin: 0 !important;
+            padding: 0;
+            width: 100% !important;
+            border: 0;
+            border-radius: 3px;
+            box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 <body>
@@ -963,60 +962,52 @@
                 <img src="images/Morteza_Khaleghi.jpg" alt="Scatto per un Amico" loading="lazy" draggable="false">
                 <h1 class="album-title amico-title">A shot for a friend</h1>
             </div>
+
             <div class="instagram-title-section">
-<div class="instagram-title-section">
-    <h1 class="album-title amico-title">From my Instagram</h1>
-    <div class="hero-scroll-indicator instagram-scroll-indicator">
-        <div class="hero-scroll-indicator-dot"></div>
-    </div>
-</div>
-<div class="instagram-posts-section">
-    <div class="instagram-post-box">
-        <div class="instagram-post-scroller">
-            <!-- Post 1 -->
-            <div class="instagram-post-item">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
-                </blockquote>
+                <h1 class="album-title amico-title">From my Instagram</h1>
+                <div class="hero-scroll-indicator instagram-scroll-indicator">
+                    <div class="hero-scroll-indicator-dot"></div>
+                </div>
             </div>
-            <!-- Post 2 -->
-            <div class="instagram-post-item">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CKGmtWnHxTW/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
-                </blockquote>
+            <div class="instagram-posts-section">
+                <div class="instagram-post-box">
+                    <div class="instagram-post-scroller">
+                        <div class="instagram-post-item">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CQgyfZss4xp/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
+                            </blockquote>
+                        </div>
+                        <div class="instagram-post-item">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CKGmtWnHxTW/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
+                            </blockquote>
+                        </div>
+                        <div class="instagram-post-item">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CNmgYB_Mivb/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
+                            </blockquote>
+                        </div>
+                        <div class="instagram-post-item">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/ByKlHr4nqSF/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
+                            </blockquote>
+                        </div>
+                        <div class="instagram-post-item">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cy7pMbmtttt/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
+                            </blockquote>
+                        </div>
+                        <div class="instagram-post-item">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CBS2aRYHDf3/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
+                            </blockquote>
+                        </div>
+                        <div class="instagram-post-item">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DEPK-9ltnZT/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
+                            </blockquote>
+                        </div>
+                        <div class="instagram-post-item">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cw3C2BDNoI_/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Post 3 -->
-            <div class="instagram-post-item">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CNmgYB_Mivb/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
-                </blockquote>
-            </div>
-            <!-- Post 4 -->
-            <div class="instagram-post-item">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/ByKlHr4nqSF/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
-                </blockquote>
-            </div>
-            <!-- Post 5 -->
-            <div class="instagram-post-item">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cy7pMbmtttt/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
-                </blockquote>
-            </div>
-            <!-- Post 6 -->
-            <div class="instagram-post-item">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CBS2aRYHDf3/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
-                </blockquote>
-            </div>
-            <!-- Post 7 -->
-            <div class="instagram-post-item">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DEPK-9ltnZT/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
-                </blockquote>
-            </div>
-            <!-- Post 8 -->
-            <div class="instagram-post-item">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cw3C2BDNoI_/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.15); max-width:540px; min-width:326px; padding:0; width:100%;">
-                </blockquote>
-            </div>
-        </div>
-    </div>
-</div>
-            
+
             <section id="fh5co-testimonials">
                 <h2>Testimonials</h2>
                 <div class="testimonial">
@@ -1164,16 +1155,14 @@
                 const heroSection = document.querySelector('.hero-section');
                 const heroText = document.querySelector('.hero-text');
 
-                // Fade-in per la versione web
                 if (window.innerWidth >= 768) {
                     setTimeout(() => {
                         heroText.classList.add('visible');
-                    }, 100); // Ritardo minimo per l'animazione
+                    }, 100);
                 }
 
-                // Fade-in per la versione mobile basato sullo scorrimento
                 if (window.innerWidth < 768) {
-                    heroSection.scrollLeft = heroSection.scrollWidth; // Inizia dalla parte destra
+                    heroSection.scrollLeft = heroSection.scrollWidth;
                     heroSection.addEventListener('scroll', function() {
                         const scrollLeft = heroSection.scrollLeft;
                         const maxScroll = heroSection.scrollWidth - heroSection.clientWidth;
@@ -1203,6 +1192,7 @@
                     aboutDropdown.classList.remove('active');
                 }
             });
-        </script async src="//www.instagram.com/embed.js"></script>
+        </script>
+        <script async src="https://www.instagram.com/embed.js"></script>
     </body>
 </html>
