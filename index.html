@@ -84,7 +84,7 @@
             background: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
-            padding: 15px 30px;
+            padding: 10px 30px; /* Ridotto da 15px per adattarsi al logo */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -93,7 +93,7 @@
             background: #333;
         }
         .navbar .logo img {
-            height: 96px;
+            height: 64px; /* Ridotto da 96px a 2/3 */
             width: auto;
             vertical-align: middle;
             user-select: none;
@@ -247,7 +247,7 @@
             max-width: 1920px;
             margin: 0 auto;
             overflow: hidden;
-            padding-top: 120px;
+            padding-top: 90px; /* Ridotto per adattarsi al logo più piccolo */
             position: relative;
             height: 600px;
         }
@@ -267,7 +267,7 @@
             text-align: center;
             color: #fff;
             text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.1); /* Opacità ridotta da 0.3 a 0.1 */
             padding: 20px 40px;
             border-radius: 10px;
             animation: fadeIn 1.5s ease-in-out;
@@ -284,14 +284,14 @@
         }
         @media (max-width: 767px) {
             .hero-section {
-                padding-top: 96px;
+                padding-top: 72px; /* Ridotto per mobile */
                 height: 80vh;
             }
             .hero-image {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                object-position: center;
+                object-position: 20% center; /* Spostato verso sinistra */
             }
             .hero-text h1 {
                 font-size: 24px;
@@ -741,7 +741,7 @@
         @media (max-width: 767px) {
             .navbar {
                 justify-content: space-between;
-                padding: 15px;
+                padding: 10px; /* Ridotto da 15px */
                 z-index: 1000;
             }
             .navbar .logo {
@@ -750,13 +750,13 @@
                 flex-grow: 1;
             }
             .navbar .logo img {
-                height: 72px;
+                height: 48px; /* Ridotto da 72px a 2/3 */
             }
             .navbar ul {
                 display: none;
                 flex-direction: column;
                 position: fixed;
-                top: 96px;
+                top: 72px; /* Aggiornato per il logo più piccolo */
                 right: 0;
                 width: 70%;
                 background: #fff;
