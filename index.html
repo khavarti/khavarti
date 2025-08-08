@@ -280,8 +280,8 @@
             display: block;
         }
 .hero-scroll-indicator {
-    position: fixed;
-    bottom: 10px;
+    position: absolute;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: 40px;
@@ -311,6 +311,7 @@
         height: 80vh;
         overflow-x: auto;
         white-space: nowrap;
+        position: relative; /* Aggiunto per contesto absolute */
     }
     .hero-image {
         width: 200%;
@@ -321,7 +322,11 @@
     }
     .hero-scroll-indicator {
         display: block;
-        bottom: 20px; /* Leggermente più alto per visibilità */
+        position: absolute; /* Rinforza il posizionamento */
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
     }
 }
         .video-container {
