@@ -795,6 +795,36 @@
                 color: #fff;
             }
         }
+        .instagram-title-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+.instagram-scroll-indicator {
+    position: relative;
+    width: 40px;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 10px auto;
+    z-index: 20;
+}
+.dark-mode .instagram-scroll-indicator {
+    background: rgba(255, 255, 255, 0.5);
+}
+.instagram-scroll-indicator .hero-scroll-indicator-dot {
+    width: 8px;
+    height: 8px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    animation: scrollHint 3s infinite ease-in-out;
+}
+.dark-mode .instagram-scroll-indicator .hero-scroll-indicator-dot {
+    background: #fff;
+}
     </style>
 </head>
 <body>
