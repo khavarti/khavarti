@@ -845,10 +845,7 @@
             padding: 20px 0;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-        .instagram-post-box::-webkit-scrollbar {
-            display: none;
+            scrollbar-width: auto;
         }
         .instagram-post-scroller {
             display: flex;
@@ -870,6 +867,12 @@
             border: 0;
             border-radius: 3px;
             box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
+        }
+        @media (max-width: 767px) {
+            .instagram-post-item {
+                max-width: 270px;
+                min-width: 163px;
+            }
         }
     </style>
 </head>
