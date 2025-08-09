@@ -90,13 +90,13 @@
             background: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
-            padding: 10px 30px;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .navbar .logo img {
-            height: 64px;
+            height: 96px;
             width: auto;
             vertical-align: middle;
             user-select: none;
@@ -126,9 +126,7 @@
             cursor: pointer;
             color: #000;
         }
-        .dark-mode .hamburger {
-            color: #fff;
-        }
+
         .about-dropdown {
             display: none;
             position: fixed;
@@ -152,24 +150,14 @@
             border-radius: 4px;
             text-align: center;
         }
-        .dark-mode .about-content {
-            background: #333;
-            color: #fff;
-        }
         .about-content h2 {
             font-size: 24px;
             color: #000;
             margin-bottom: 20px;
         }
-        .dark-mode .about-content h2 {
-            color: #fff;
-        }
         .about-content p {
             font-size: 14px;
             color: #000;
-        }
-        .dark-mode .about-content p {
-            color: #fff;
         }
         .about-content p.copyright-extra {
             font-size: 12px;
@@ -183,25 +171,17 @@
             font-weight: bold;
             text-align: center;
         }
-        .dark-mode .close-about {
-            color: #fff;
-        }
         .close-about:hover {
             color: #555;
-        }
-        .dark-mode .close-about:hover {
-            color: #ccc;
         }
         .close-text {
             font-size: 12px;
             color: #000;
             margin-top: 5px;
         }
-        .dark-mode .close-text {
-            color: #fff;
-        }
+
         .gallery-dropdown {
-            display: none !important;
+            display: none;
             position: absolute;
             top: 100%;
             left: 0;
@@ -210,13 +190,9 @@
             z-index: 1001;
             padding: 10px;
             border-radius: 4px;
-            min-width: 150px;
-        }
-        .dark-mode .gallery-dropdown {
-            background: #333;
         }
         .gallery-dropdown.active {
-            display: block !important;
+            display: block;
         }
         .gallery-dropdown a {
             display: block;
@@ -226,19 +202,9 @@
             font-family: 'Roboto', sans-serif;
             font-weight: normal;
         }
-        .dark-mode .gallery-dropdown a {
-            color: #fff;
-        }
         .gallery-dropdown a:hover {
             background: #f8f8f8;
             color: #555;
-        }
-        .dark-mode .gallery-dropdown a:hover {
-            background: #444;
-            color: #ccc;
-        }
-        .gallery-dropdown a.active {
-            font-weight: bold;
         }
 
         #fh5co-image-grid {
@@ -317,7 +283,7 @@
             color: #fff;
             font-size: 14px;
             width: 100%;
-            position: relative;
+            position: look;
             z-index: 0;
             margin-top: 60px;
         }
@@ -429,8 +395,7 @@
         @media (max-width: 767px) {
             .navbar {
                 justify-content: space-between;
-                padding: 10px;
-                z-index: 1000;
+                padding: 15px;
             }
             .navbar .logo {
                 margin-left: 0;
@@ -438,13 +403,13 @@
                 flex-grow: 1;
             }
             .navbar .logo img {
-                height: 48px;
+                height: 72px;
             }
             .navbar ul {
                 display: none;
                 flex-direction: column;
                 position: fixed;
-                top: 72px;
+                top: 96px;
                 right: 0;
                 width: 70%;
                 background: #fff;
@@ -463,21 +428,12 @@
                 text-align: center;
             }
             .hamburger {
-                display: block !important;
-                font-size: 24px;
-                cursor: pointer;
-                color: #000;
-            }
-            .dark-mode .hamburger {
-                color: #fff;
+                display: block;
             }
             .gallery-dropdown {
                 position: static;
                 box-shadow: none;
                 background: none;
-            }
-            .gallery-dropdown.active {
-                display: block !important;
             }
             .grid {
                 gap: 20px;
@@ -501,18 +457,14 @@
     <body>
     <div id="fh5co-page">
         <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false">
-                </a>
-            </div>
+            <div class="logo"><img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false"></div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="javascript:void(0)" onclick="toggleAbout()">About</a></li>
-                <li><a href="javascript:void(0)" onclick="toggleGallery()">Gallery</a>
+                <li><a href="#" onclick="toggleAbout()">About</a></li>
+                <li><a href="#" onclick="toggleGallery()">Gallery</a>
                     <div class="gallery-dropdown">
                         <a href="valleranello.html">Valleranello</a>
-                        <a href="no-pulizie.html" class="active">No Pulizie</a>
+                        <a href="no-pulizie.html">No Pulizie</a>
                     </div>
                 </li>
                 <li><a href="index.html#fh5co-contact">Contact</a></li>
@@ -705,8 +657,6 @@
             </footer>
         </div>
 
-        <button class="scroll-top-btn"
-
         <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
     </div>
 
@@ -731,8 +681,7 @@
             document.getElementById('aboutDropdown').classList.toggle('active');
         }
 
-        function toggleGallery(event) {
-            event.preventDefault();
+        function toggleGallery() {
             document.querySelector('.gallery-dropdown').classList.toggle('active');
         }
 
