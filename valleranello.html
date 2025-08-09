@@ -201,7 +201,7 @@
             color: #fff;
         }
         .gallery-dropdown {
-            display: none;
+            display: none !important;
             position: absolute;
             top: 100%;
             left: 0;
@@ -210,12 +210,13 @@
             z-index: 1001;
             padding: 10px;
             border-radius: 4px;
+            min-width: 150px;
         }
         .dark-mode .gallery-dropdown {
             background: #333;
         }
         .gallery-dropdown.active {
-            display: block;
+            display: block !important;
         }
         .gallery-dropdown a {
             display: block;
@@ -235,6 +236,9 @@
         .dark-mode .gallery-dropdown a:hover {
             background: #444;
             color: #ccc;
+        }
+        .gallery-dropdown a.active {
+            font-weight: bold;
         }
 
         #fh5co-image-grid {
@@ -446,11 +450,6 @@
                 margin: 10px 0;
                 text-align: center;
             }
-            .gallery-dropdown {
-                position: static;
-                box-shadow: none;
-                background: none;
-            }
             .hamburger {
                 display: block !important;
                 font-size: 24px;
@@ -459,6 +458,14 @@
             }
             .dark-mode .hamburger {
                 color: #fff;
+            }
+            .gallery-dropdown {
+                position: static;
+                box-shadow: none;
+                background: none;
+            }
+            .gallery-dropdown.active {
+                display: block !important;
             }
             .grid {
                 gap: 20px;
@@ -492,7 +499,7 @@
                 <li><a href="javascript:void(0)" onclick="toggleAbout()">About</a></li>
                 <li><a href="javascript:void(0)" onclick="toggleGallery()">Gallery</a>
                     <div class="gallery-dropdown">
-                        <a href="valleranello.html">Valleranello</a>
+                        <a href="valleranello.html" class="active">Valleranello</a>
                         <a href="no-pulizie.html">No Pulizie</a>
                     </div>
                 </li>
@@ -645,10 +652,12 @@
 
         function toggleGallery(event) {
             event.preventDefault();
+            console.log('toggleGallery called'); // Debug
             document.querySelector('.gallery-dropdown').classList.toggle('active');
         }
 
         function toggleMenu() {
+            console.log('toggleMenu called'); // Debug
             document.querySelector('.navbar ul').classList.toggle('active');
         }
 
@@ -687,6 +696,14 @@
             if (aboutDropdown.classList.contains('active') && !aboutContent.contains(event.target) && event.target !== document.querySelector('a[onclick="toggleAbout()"]')) {
                 aboutDropdown.classList.remove('active');
             }
+        });
+
+        // Chiudi il dropdown quando si clicca su un link
+        document.querySelectorAll('.gallery-dropdown a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.gallery-dropdown').classList.remove('active');
+                document.querySelector('.navbar ul').classList.remove('active');
+            });
         });
 
         $(document).ready(function() {
