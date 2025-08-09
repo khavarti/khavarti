@@ -811,29 +811,6 @@ footer img {
     align-items: center;
     gap: 20px;
 }
-.instagram-scroll-indicator {
-    position: relative;
-    width: 40px;
-    height: 4px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
-    overflow: hidden;
-    z-index: 20;
-}
-.dark-mode .instagram-scroll-indicator {
-    background: rgba(255, 255, 255, 0.5);
-}
-.instagram-scroll-indicator .hero-scroll-indicator-dot {
-    width: 8px;
-    height: 8px;
-    background: #000;
-    border-radius: 50%;
-    position: absolute;
-    animation: scrollHint 3s infinite ease-in-out;
-}
-.dark-mode .instagram-scroll-indicator .hero-scroll-indicator-dot {
-    background: #fff;
-}
 .instagram-posts-section {
     margin: 0;
     padding: 0;
@@ -852,12 +829,14 @@ footer img {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: auto;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-left: 10px;
 }
 .instagram-post-scroller {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    padding: 0 15px;
+    gap: 5px;
+    padding: 0 5px;
     width: max-content;
     white-space: nowrap;
 }
@@ -866,7 +845,8 @@ footer img {
     max-width: 540px;
     min-width: 326px;
     width: 100%;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 .instagram-post-item .instagram-media {
     margin: 0 !important;
@@ -970,9 +950,6 @@ footer img {
 
 <div class="instagram-title-section">
 <h1 class="album-title amico-title">From my Instagram</h1>
-<div class="hero-scroll-indicator instagram-scroll-indicator">
-<div class="hero-scroll-indicator-dot"></div>
-</div>
 </div>
 <div class="instagram-posts-section">
 <div class="instagram-post-box">
