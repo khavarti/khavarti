@@ -67,7 +67,6 @@
         }
         .dark-mode .gallery-dropdown {
             background: #333;
-            border: 1px solid #555;
         }
         .dark-mode .gallery-dropdown a {
             color: #fff;
@@ -96,9 +95,6 @@
             justify-content: space-between;
             align-items: center;
         }
-        .navbar .logo {
-            z-index: 1001;
-        }
         .navbar .logo img {
             height: 64px;
             width: auto;
@@ -110,7 +106,6 @@
             margin: 0;
             padding: 0;
             display: flex;
-            z-index: 1002;
         }
         .navbar ul li {
             margin-left: 20px;
@@ -130,11 +125,8 @@
             font-size: 24px;
             cursor: pointer;
             color: #000;
-            z-index: 1002;
         }
-        .dark-mode .hamburger {
-            color: #fff;
-        }
+
         .about-dropdown {
             display: none;
             position: fixed;
@@ -158,24 +150,14 @@
             border-radius: 4px;
             text-align: center;
         }
-        .dark-mode .about-content {
-            background: #333;
-            color: #fff;
-        }
         .about-content h2 {
             font-size: 24px;
             color: #000;
             margin-bottom: 20px;
         }
-        .dark-mode .about-content h2 {
-            color: #fff;
-        }
         .about-content p {
             font-size: 14px;
             color: #000;
-        }
-        .dark-mode .about-content p {
-            color: #fff;
         }
         .about-content p.copyright-extra {
             font-size: 12px;
@@ -189,45 +171,28 @@
             font-weight: bold;
             text-align: center;
         }
-        .dark-mode .close-about {
-            color: #fff;
-        }
         .close-about:hover {
             color: #555;
-        }
-        .dark-mode .close-about:hover {
-            color: #ccc;
         }
         .close-text {
             font-size: 12px;
             color: #000;
             margin-top: 5px;
         }
-        .dark-mode .close-text {
-            color: #fff;
-        }
+
         .gallery-dropdown {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
             background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            z-index: 3000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1001;
             padding: 10px;
             border-radius: 4px;
-            min-width: 150px;
-            border: 1px solid #ccc;
-            transition: opacity 0.2s ease;
-            opacity: 0;
         }
         .gallery-dropdown.active {
-            display: block !important;
-            opacity: 1;
-        }
-        .dark-mode .gallery-dropdown {
-            background: #333;
-            border: 1px solid #555;
+            display: block;
         }
         .gallery-dropdown a {
             display: block;
@@ -237,23 +202,9 @@
             font-family: 'Roboto', sans-serif;
             font-weight: normal;
         }
-        .dark-mode .gallery-dropdown a {
-            color: #fff;
-        }
         .gallery-dropdown a:hover {
             background: #f8f8f8;
             color: #555;
-        }
-        .dark-mode .gallery-dropdown a:hover {
-            background: #444;
-            color: #ccc;
-        }
-        .gallery-dropdown a.active {
-            font-weight: bold;
-            color: #000;
-        }
-        .dark-mode .gallery-dropdown a.active {
-            color: #fff;
         }
 
         #fh5co-image-grid {
@@ -388,7 +339,7 @@
             color: #fff;
             padding: 20px;
             border-radius: 8px;
-            z-index: 4000;
+            z-index: 3000;
             font-family: 'Varela Round', sans-serif;
             font-size: 16px;
             text-align: center;
@@ -445,7 +396,6 @@
             .navbar {
                 justify-content: space-between;
                 padding: 10px;
-                z-index: 1000;
             }
             .navbar .logo {
                 margin-left: 0;
@@ -465,7 +415,7 @@
                 background: #fff;
                 box-shadow: -2px 0 5px rgba(0,0,0,0.1);
                 padding: 20px;
-                z-index: 1002;
+                z-index: 1001;
             }
             .dark-mode .navbar ul {
                 background: #333;
@@ -479,26 +429,11 @@
             }
             .hamburger {
                 display: block;
-                font-size: 24px;
-                cursor: pointer;
-                color: #000;
-            }
-            .dark-mode .hamburger {
-                color: #fff;
             }
             .gallery-dropdown {
                 position: static;
                 box-shadow: none;
                 background: none;
-                border: none;
-                opacity: 1;
-            }
-            .gallery-dropdown.active {
-                display: block !important;
-            }
-            .dark-mode .gallery-dropdown {
-                background: none;
-                border: none;
             }
             .grid {
                 gap: 20px;
@@ -522,18 +457,14 @@
     <body>
     <div id="fh5co-page">
         <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false">
-                </a>
-            </div>
+            <div class="logo"><a href="index.html"><img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false"></a></div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="javascript:void(0)" onclick="toggleAbout()">About</a></li>
-                <li><a href="javascript:void(0)" onclick="toggleGallery()">Gallery</a>
+                <li><a href="#" onclick="toggleAbout()">About</a></li>
+                <li><a href="#" onclick="toggleGallery()">Gallery</a>
                     <div class="gallery-dropdown">
                         <a href="valleranello.html">Valleranello</a>
-                        <a href="no-pulizie.html" class="active">No Pulizie</a>
+                        <a href="no-pulizie.html">No Pulizie</a>
                     </div>
                 </li>
                 <li><a href="index.html#fh5co-contact">Contact</a></li>
@@ -747,27 +678,15 @@
         }
 
         function toggleAbout() {
-            console.log('toggleAbout called');
             document.getElementById('aboutDropdown').classList.toggle('active');
         }
 
-        function toggleGallery(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            console.log('toggleGallery called');
-            const dropdown = document.querySelector('.gallery-dropdown');
-            dropdown.classList.toggle('active');
-            console.log('Dropdown classList:', dropdown.classList.toString());
+        function toggleGallery() {
+            document.querySelector('.gallery-dropdown').classList.toggle('active');
         }
 
         function toggleMenu() {
-            console.log('toggleMenu called');
-            const menu = document.querySelector('.navbar ul');
-            const dropdown = document.querySelector('.gallery-dropdown');
-            menu.classList.toggle('active');
-            dropdown.classList.remove('active');
-            console.log('Menu classList:', menu.classList.toString());
-            console.log('Dropdown classList:', dropdown.classList.toString());
+            document.querySelector('.navbar ul').classList.toggle('active');
         }
 
         function scrollToTop() {
@@ -796,24 +715,15 @@
             const galleryLink = document.querySelector('.navbar ul li a[onclick="toggleGallery()"]');
             const aboutDropdown = document.getElementById('aboutDropdown');
             const aboutContent = document.querySelector('.about-content');
-            
-            if (!menu.contains(event.target) && event.target !== hamburger && !galleryDropdown.contains(event.target) && event.target !== galleryLink) {
+            if (!menu.contains(event.target) && event.target !== hamburger) {
                 menu.classList.remove('active');
+            }
+            if (!galleryDropdown.contains(event.target) && event.target !== galleryLink) {
                 galleryDropdown.classList.remove('active');
-                console.log('Closed menu and dropdown via document click');
             }
             if (aboutDropdown.classList.contains('active') && !aboutContent.contains(event.target) && event.target !== document.querySelector('a[onclick="toggleAbout()"]')) {
                 aboutDropdown.classList.remove('active');
-                console.log('Closed about dropdown');
             }
-        });
-
-        document.querySelectorAll('.gallery-dropdown a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.gallery-dropdown').classList.remove('active');
-                document.querySelector('.navbar ul').classList.remove('active');
-                console.log('Clicked dropdown link, closed dropdown and menu');
-            });
         });
 
         $(document).ready(function() {
