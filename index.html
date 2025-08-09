@@ -1152,7 +1152,8 @@ function toggleAbout() {
     document.getElementById('aboutDropdown').classList.toggle('active');
 }
 
-function toggleGallery() {
+function toggleGallery(event) {
+    event.preventDefault(); // Blocca lo scroll in alto
     document.querySelector('.gallery-dropdown').classList.toggle('active');
 }
 
