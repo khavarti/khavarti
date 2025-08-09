@@ -201,7 +201,7 @@
             color: #fff;
         }
         .gallery-dropdown {
-            display: none;
+            display: none !important;
             position: absolute;
             top: 100%;
             left: 0;
@@ -210,12 +210,13 @@
             z-index: 1001;
             padding: 10px;
             border-radius: 4px;
+            min-width: 150px;
         }
         .dark-mode .gallery-dropdown {
             background: #333;
         }
         .gallery-dropdown.active {
-            display: block;
+            display: block !important;
         }
         .gallery-dropdown a {
             display: block;
@@ -475,6 +476,9 @@
                 box-shadow: none;
                 background: none;
             }
+            .gallery-dropdown.active {
+                display: block !important;
+            }
             .grid {
                 gap: 20px;
                 max-width: 480px;
@@ -700,6 +704,8 @@
                 <p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy" draggable="false"></a></p>
             </footer>
         </div>
+
+        <button class="scroll-top-btn"
 
         <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
     </div>
