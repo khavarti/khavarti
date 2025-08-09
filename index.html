@@ -868,12 +868,19 @@
         }
         @media (max-width: 767px) {
     .instagram-post-item {
-        max-width: 270px;
-        min-width: 163px;
-        margin-right: 10px; /* Aggiungi margine destro per spazio extra */
+        max-width: 200px !important; /* Forza dimensioni */
+        min-width: 120px !important;
+        margin-right: 10px; /* Spazio extra */
+        flex-shrink: 0; /* Impedisce ai widget di restringersi */
     }
     .instagram-post-scroller {
-        gap: 10px; /* Riafferma il gap per sicurezza */
+        gap: 15px !important; /* Aumenta leggermente lo spazio */
+        width: max-content !important; /* Forza larghezza per tutti i widget */
+        flex-wrap: nowrap; /* Impedisce l'impilamento verticale */
+    }
+    .instagram-post-box {
+        min-width: 0; /* Evita restrizioni del contenitore */
+        width: 100% !important; /* Occupa tutta la larghezza disponibile */
     }
 }
     </style>
