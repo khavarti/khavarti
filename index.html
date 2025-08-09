@@ -910,18 +910,20 @@ footer img {
 <nav class="navbar">
 <div class="logo"><img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false"></div>
 <ul>
-<li><a href="/">Home</a></li>
-<li><a href="#" onclick="toggleAbout()">About</a></li>
-<li><a href="#" onclick="toggleGallery()">Gallery</a>
-<div class="gallery-dropdown">
-<a href="valleranello.html">Valleranello</a>
-<a href="no-pulizie.html">No Pulizie</a>
-</div>
-</li>
-<li><a href="#fh5co-contact">Contact</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="#" onclick="event.preventDefault(); toggleAbout()">About</a></li>
+  <li>
+    <a href="#" onclick="event.preventDefault(); toggleGallery(this)">Gallery</a>
+    <div class="gallery-dropdown">
+      <a href="valleranello.html">Valleranello</a>
+      <a href="no-pulizie.html">No Pulizie</a>
+    </div>
+  </li>
+  <li><a href="#fh5co-contact">Contact</a></li>
 </ul>
 <div class="hamburger" onclick="toggleMenu()">☰</div>
 </nav>
+
 
 <section class="hero-section">
 <img src="images/caffè.jpg" alt="Hero Image - Caffè" class="hero-image" loading="lazy" draggable="false">
