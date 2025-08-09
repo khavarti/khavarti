@@ -795,6 +795,11 @@ footer img {
     .dark-mode .hamburger {
         color: #fff;
     }
+    .instagram-post-item {
+        width: calc(100vw - 30px);
+        min-width: 326px;
+        max-width: 540px;
+    }
 }
 .instagram-title-section {
     text-align: center;
@@ -846,6 +851,7 @@ footer img {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: auto;
+    scroll-snap-type: x mandatory;
 }
 .instagram-post-scroller {
     display: flex;
@@ -860,6 +866,7 @@ footer img {
     max-width: 540px;
     min-width: 326px;
     width: 100%;
+    scroll-snap-align: start;
 }
 .instagram-post-item .instagram-media {
     margin: 0 !important;
@@ -868,12 +875,6 @@ footer img {
     border: 0;
     border-radius: 3px;
     box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
-}
-@media (max-width: 767px) {
-    .instagram-post-item {
-    max-width: 540px;
-    min-width: 326px;
-}
 }
 </style>
 </head>
