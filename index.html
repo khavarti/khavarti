@@ -795,11 +795,6 @@ footer img {
     .dark-mode .hamburger {
         color: #fff;
     }
-    .instagram-post-item {
-        width: 300px;
-        min-width: 326px;
-        max-width: 400px;
-    }
 }
 .instagram-title-section {
     text-align: center;
@@ -870,6 +865,16 @@ footer img {
     width: 100%;
     scroll-snap-align: center;
     scroll-snap-stop: always;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    will-change: filter, transform;
+}
+.instagram-post-item.active {
+    filter: blur(0);
+    transform: scale(1.05);
+}
+.instagram-post-item.blurred {
+    filter: blur(3px);
+    transform: scale(1);
 }
 .instagram-post-item .instagram-media {
     margin: 0 !important;
@@ -887,6 +892,8 @@ footer img {
     .instagram-post-item {
         scroll-snap-align: start;
         scroll-snap-stop: none;
+        filter: blur(0) !important;
+        transform: scale(1) !important;
     }
 }
 @media (max-width: 767px) {
@@ -1197,6 +1204,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 heroText.classList.remove('visible');
             }
         });
+    }
+
+    if (window.innerWidth < 768) {
+        const postBox = document.querySelector('.instagram-post-box');
+        const postItems = document.querySelectorAll('.instagram-post-item');
+
+        function updateBlur() {
+            const boxRect = postBox.getBoundingClientRect();
+            const viewportCenter = boxRect.left + boxRect.width / 2;
+
+            postItems.forEach(item => {
+                const itemRect = item.getBoundingClientRect();
+                const itemCenter = itemRect.left + itemRect.width / 2;
+                const distanceFromCenter = Math.abs(viewportCenter - itemCenter);
+
+                if (distanceFromCenter < itemRect.width / 2) {
+                    item.classList.add('active');
+                    item.classList.remove('blurred');
+                } else {
+                    item.classList.add('blurred');
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        postBox.addEventListener('scroll', updateBlur);
+        updateBlur();
     }
 });
 
