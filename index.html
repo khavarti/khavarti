@@ -835,6 +835,7 @@
     width: 100%;
     background: #FFF; /* Sfondo bianco fisso, anche in dark mode */
     display: block;
+    position: relative;
 }
 
 .instagram-post-box {
@@ -842,14 +843,15 @@
     padding: 20px 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin; /* Rende la scrollbar più discreta */
-    scrollbar-color: #ccc #f8f8f8; /* Migliora l'estetica della scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f8f8f8;
+    position: relative;
 }
 
 .instagram-post-scroller {
     display: flex;
     flex-direction: row;
-    gap: 15px; /* Spaziatura uniforme tra i widget */
+    gap: 15px;
     padding: 0 15px;
     width: max-content;
     flex-wrap: nowrap;
@@ -857,30 +859,47 @@
 
 .instagram-post-item {
     flex: 0 0 auto;
-    max-width: 540px; /* Larghezza massima per desktop */
-    min-width: 280px; /* Larghezza minima per leggibilità su desktop */
+    width: 280px; /* Larghezza fissa per evitare accavallamenti */
+    min-width: 280px !important; /* Forza la larghezza minima */
+    max-width: 280px !important; /* Limita la larghezza massima */
     flex-shrink: 0;
 }
 
 .instagram-post-item .instagram-media {
     margin: 0 !important;
     padding: 0;
-    width: 100% !important;
+    width: 100% !important; /* Garantisce che il contenuto interno si adatti */
     border: 0;
     border-radius: 3px;
     box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
 }
 
-/* Testo esplicito per invitare allo scroll */
-.instagram-scroll-hint {
-    text-align: center;
-    font-size: 14px;
-    color: #555;
-    margin: 10px 0;
-    font-family: 'Varela Round', sans-serif;
+/* Indicatore di scroll simile a quello desktop */
+.instagram-scroll-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    width: 40px;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    overflow: hidden;
+    display: none; /* Nascondi di default */
+    z-index: 20;
 }
-.dark-mode .instagram-scroll-hint {
-    color: #ccc;
+.dark-mode .instagram-scroll-indicator {
+    background: rgba(255, 255, 255, 0.5);
+}
+.instagram-scroll-indicator .hero-scroll-indicator-dot {
+    width: 8px;
+    height: 8px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    animation: scrollHint 3s infinite ease-in-out;
+}
+.dark-mode .instagram-scroll-indicator .hero-scroll-indicator-dot {
+    background: #fff;
 }
 
 @media (max-width: 767px) {
@@ -890,7 +909,7 @@
     .instagram-post-box {
         width: 100% !important;
         overflow-x: auto;
-        padding-right: 30px; /* Spazio extra a destra per mostrare il widget successivo */
+        padding-right: 50px; /* Spazio extra per mostrare il widget successivo */
     }
     .instagram-post-scroller {
         gap: 15px !important;
@@ -898,18 +917,29 @@
         flex-wrap: nowrap !important;
     }
     .instagram-post-item {
-        max-width: 280px !important; /* Larghezza minima per leggibilità su mobile */
-        min-width: 280px !important; /* Evita dimensioni troppo piccole */
+        width: 280px !important; /* Larghezza fissa su mobile */
+        min-width: 280px !important;
+        max-width: 280px !important;
         flex-shrink: 0 !important;
     }
-    /* Nasconde la scrollbar su mobile per un aspetto più pulito */
     .instagram-post-box::-webkit-scrollbar {
         display: none;
     }
     .instagram-post-box {
-        -ms-overflow-style: none; /* Per Edge */
-        scrollbar-width: none; /* Per Firefox */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
+    /* Mostra l'indicatore di scroll su mobile */
+    .instagram-scroll-indicator {
+        display: block;
+    }
+}
+
+/* Animazione per l'indicatore */
+@keyframes scrollHint {
+    0% { left: 0; }
+    50% { left: calc(100% - 8px); }
+    100% { left: 0; }
 }
     </style>
 </head>
