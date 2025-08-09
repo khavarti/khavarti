@@ -852,12 +852,14 @@ footer img {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: auto;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-left: 10px;
 }
 .instagram-post-scroller {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    padding: 0 15px;
+    gap: 5px;
+    padding: 0 5px;
     width: max-content;
     white-space: nowrap;
 }
@@ -866,7 +868,8 @@ footer img {
     max-width: 540px;
     min-width: 326px;
     width: 100%;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 .instagram-post-item .instagram-media {
     margin: 0 !important;
@@ -875,6 +878,23 @@ footer img {
     border: 0;
     border-radius: 3px;
     box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
+}
+@media (min-width: 768px) {
+    .instagram-post-scroller {
+        gap: 10px;
+        padding: 0 15px;
+    }
+    .instagram-post-item {
+        scroll-snap-align: start;
+        scroll-snap-stop: none;
+    }
+}
+@media (max-width: 767px) {
+    .instagram-post-item {
+        width: 300px;
+        min-width: 326px;
+        max-width: 400px;
+    }
 }
 </style>
 </head>
