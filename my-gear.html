@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/magnific-popup.css">
 <style>
-/* Stesso CSS della Home */
 body {
     font-family: 'Varela Round', sans-serif;
     background: #f8f8f8;
@@ -32,19 +31,12 @@ body {
     background: #222;
     color: #fff;
 }
-.dark-mode #fh5co-aside, .dark-mode footer {
-    background: transparent;
-    color: #fff;
-}
 .dark-mode footer {
     background: #1a1a1a;
     color: #fff;
 }
-.dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a {
-    color: #fff;
-}
-.dark-mode .album-title, .dark-mode .cover-text, .dark-mode .photo-text {
-    color: #fff;
+.dark-mode footer a {
+    color: #ccc;
 }
 .dark-mode #fh5co-equipment {
     background: #333;
@@ -52,6 +44,9 @@ body {
 }
 .dark-mode #fh5co-equipment h2 {
     color: #fff;
+}
+.dark-mode .navbar {
+    background: #333;
 }
 .navbar {
     position: fixed;
@@ -64,9 +59,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.dark-mode .navbar {
-    background: #333;
 }
 .navbar .logo img {
     height: 64px;
@@ -370,7 +362,7 @@ footer img {
 <body>
 <div id="fh5co-page">
 <nav class="navbar">
-<div class="logo"><img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false"></div>
+<div class="logo"><a href="/"><img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false"></a></div>
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="#" onclick="toggleAbout()">About</a></li>
