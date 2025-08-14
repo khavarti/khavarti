@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/magnific-popup.css">
 <style>
-/* Stesso CSS della Home */
 body {
     font-family: 'Varela Round', sans-serif;
     background: #f8f8f8;
@@ -32,18 +31,14 @@ body {
     background: #222;
     color: #fff;
 }
-.dark-mode #fh5co-aside, .dark-mode footer {
-    background: transparent;
-    color: #fff;
-}
 .dark-mode footer {
     background: #1a1a1a;
     color: #fff;
 }
-.dark-mode .cover-text a, .dark-mode footer a, .dark-mode #fh5co-aside a {
-    color: #fff;
+.dark-mode footer a {
+    color: #ccc;
 }
-.dark-mode .album-title {
+.dark-mode .coming-soon {
     color: #fff;
 }
 .navbar {
@@ -89,4 +84,340 @@ body {
     color: #555;
     text-decoration: underline;
 }
-.dark
+.dark-mode .navbar ul li a:hover {
+    color: #ccc;
+}
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+}
+.dark-mode .hamburger {
+    color: #fff;
+}
+.about-dropdown {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 20px;
+}
+.about-dropdown.active {
+    display: block;
+}
+.about-content {
+    background: #fff;
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+.dark-mode .about-content {
+    background: #333;
+    color: #fff;
+}
+.about-content h2 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 20px;
+}
+.dark-mode .about-content h2 {
+    color: #fff;
+}
+.about-content p {
+    font-size: 14px;
+    color: #000;
+}
+.dark-mode .about-content p {
+    color: #fff;
+}
+.about-content p.copyright-extra {
+    font-size: 12px;
+}
+.close-about {
+    display: block;
+    margin: 20px auto 0;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+.dark-mode .close-about {
+    color: #fff;
+}
+.close-about:hover {
+    color: #555;
+}
+.dark-mode .close-about:hover {
+    color: #ccc;
+}
+.close-text {
+    font-size: 12px;
+    color: #000;
+    margin-top: 5px;
+}
+.dark-mode .close-text {
+    color: #fff;
+}
+.gallery-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1001;
+    padding: 10px;
+    border-radius: 4px;
+}
+.dark-mode .gallery-dropdown {
+    background: #333;
+}
+.gallery-dropdown.active {
+    display: block;
+}
+.gallery-dropdown a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+.dark-mode .gallery-dropdown a {
+    color: #fff;
+}
+.gallery-dropdown a:hover {
+    background: #f8f8f8;
+    color: #555;
+}
+.dark-mode .gallery-dropdown a:hover {
+    background: #444;
+    color: #ccc;
+}
+.coming-soon {
+    text-align: center;
+    padding: 100px 15px;
+    max-width: 600px;
+    margin: 60px auto;
+    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    color: #000;
+}
+footer {
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    margin-top: 60px;
+}
+footer a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 10px;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 10px;
+    user-select: none;
+}
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+.dark-mode .scroll-top-btn {
+    background: #555;
+}
+.scroll-top-btn:hover {
+    background: #555;
+}
+.dark-mode .scroll-top-btn:hover {
+    background: #777;
+}
+@media (max-width: 767px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 10px;
+        z-index: 1000;
+    }
+    .navbar .logo {
+        margin-left: 0;
+        text-align: left;
+        flex-grow: 1;
+    }
+    .navbar .logo img {
+        height: 48px;
+    }
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 72px;
+        right: 0;
+        width: 70%;
+        background: #fff;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        padding: 20px;
+        z-index: 1001;
+    }
+    .dark-mode .navbar ul {
+        background: #333;
+    }
+    .navbar ul.active {
+        display: flex;
+    }
+    .navbar ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    .gallery-dropdown {
+        position: static;
+        box-shadow: none;
+        background: none;
+    }
+    .hamburger {
+        display: block !important;
+        font-size: 24px;
+        cursor: pointer;
+        color: #000;
+    }
+    .dark-mode .hamburger {
+        color: #fff;
+    }
+    .coming-soon {
+        font-size: 24px;
+        padding: 60px 15px;
+    }
+}
+</style>
+</head>
+<body>
+<div id="fh5co-page">
+<nav class="navbar">
+<div class="logo"><a href="/"><img src="images/khavarti_logo.jpg?v=2" alt="Khavarti Logo" draggable="false"></a></div>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="#" onclick="toggleAbout()">About</a></li>
+<li><a href="#" onclick="toggleGallery()">Gallery</a>
+<div class="gallery-dropdown">
+<a href="valleranello.html">Valleranello</a>
+<a href="no-pulizie.html">No Pulizie</a>
+</div>
+</li>
+<li><a href="my-gear.html">My Gear</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="/#fh5co-contact">Contact</a></li>
+</ul>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="about-dropdown" id="aboutDropdown">
+<div class="about-content">
+<h2>About Me</h2>
+<p>Born when there was war, raised while the war continued, I still live in a time when the war hasn't ended. I am an Afghan photographer and videomaker. My dream is to transform into images what others don't see.</p>
+<p>Nato quando c'era la guerra, cresciuto mentre la guerra continuava, vivo ancora oggi in un tempo in cui la guerra non è finita. Sono un fotografo e videomaker afgano, il mio sogno è trasformare in immagini ciò che gli altri non vedono.</p>
+<p class="copyright">&copy; 2025 Khavarti. All Rights Reserved.</p>
+<p class="copyright-extra">Built on GetTemplates, personalized by Khavarti</p>
+<div class="close-about" onclick="toggleAbout()">
+<span>✕</span>
+<div class="close-text">Close</div>
+</div>
+</div>
+</div>
+
+<div class="coming-soon">Coming Soon</div>
+
+<footer>
+<p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy" draggable="false"></a></p>
+</footer>
+
+<button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/TweenLite.min.js"></script>
+<script src="js/CSSPlugin.min.js"></script>
+<script src="js/EasePack.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark-mode');
+}
+
+function toggleAbout() {
+    document.getElementById('aboutDropdown').classList.toggle('active');
+}
+
+function toggleGallery() {
+    document.querySelector('.gallery-dropdown').classList.toggle('active');
+}
+
+function toggleMenu() {
+    document.querySelector('.navbar ul').classList.toggle('active');
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('scroll', function() {
+    document.querySelector('.scroll-top-btn').style.display = window.scrollY > 200 ? 'block' : 'none';
+});
+
+document.addEventListener('click', function(event) {
+    const menu = document.querySelector('.navbar ul');
+    const hamburger = document.querySelector('.hamburger');
+    const galleryDropdown = document.querySelector('.gallery-dropdown');
+    const galleryLink = document.querySelector('.navbar ul li a[onclick="toggleGallery()"]');
+    const aboutDropdown = document.getElementById('aboutDropdown');
+    const aboutContent = document.querySelector('.about-content');
+    if (!menu.contains(event.target) && event.target !== hamburger) {
+        menu.classList.remove('active');
+    }
+    if (!galleryDropdown.contains(event.target) && event.target !== galleryLink) {
+        galleryDropdown.classList.remove('active');
+    }
+    if (aboutDropdown.classList.contains('active') && !aboutContent.contains(event.target) && event.target !== document.querySelector('a[onclick="toggleAbout()"]')) {
+        aboutDropdown.classList.remove('active');
+    }
+});
+</script>
+</body>
+</html>
