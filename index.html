@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/magnific-popup.css">
 <style>
-/* Stesso CSS della versione originale */
 body {
     font-family: 'Varela Round', sans-serif;
     background: #f8f8f8;
@@ -220,21 +219,21 @@ body {
 .gallery-dropdown a {
     display: block;
     padding: 10px;
-    color: #000;
+    color: #1e90ff; /* Colore blu per Valleranello e No Pulizie */
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
 }
 .dark-mode .gallery-dropdown a {
-    color: #fff;
+    color: #1e90ff; /* Colore blu anche in dark mode */
 }
 .gallery-dropdown a:hover {
     background: #f8f8f8;
-    color: #555;
+    color: #005566; /* Blu scuro su hover */
 }
 .dark-mode .gallery-dropdown a:hover {
     background: #444;
-    color: #ccc;
+    color: #87cefa; /* Blu chiaro in dark mode su hover */
 }
 .hero-section {
     width: 100%;
@@ -252,6 +251,10 @@ body {
     object-position: center;
     display: block;
     user-select: none;
+    transition: filter 0.3s ease; /* Transizione per lo sfocatura */
+}
+.hero-section.scrolled .hero-image {
+    filter: blur(2px); /* Sfocatura leggera quando scorre */
 }
 .hero-text {
     position: absolute;
@@ -285,7 +288,7 @@ body {
 .hero-scroll-indicator {
     position: absolute;
     bottom: 20px;
-    right: 10px;
+    left: 10px; /* Posizionato a sinistra */
     width: 40px;
     height: 4px;
     background: rgba(255, 255, 255, 0.5);
@@ -326,7 +329,7 @@ body {
         display: block;
         position: absolute;
         bottom: 20px;
-        right: 10px;
+        left: 10px; /* Posizionato a sinistra su mobile */
         z-index: 20;
     }
     .hero-text {
@@ -1118,67 +1121,34 @@ function scrollToTop() {
 }
 
 window.addEventListener('scroll', function() {
-    document.querySelector('.scroll-top-btn').style.display = window.scrollY > 200 ? 'block' : 'none';
     const heroSection = document.querySelector('.hero-section');
-    const scrollIndicator = document.querySelector('.hero-scroll-indicator');
-    const heroBottom = heroSection.getBoundingClientRect().bottom;
-    if (heroBottom < 0) {
-        scrollIndicator.style.display = 'none';
+    const heroImage = document.querySelector('.hero-image');
+    if (window.scrollY > 0) {
+        heroSection.classList.add('scrolled');
     } else {
-        scrollIndicator.style.display = window.innerWidth < 768 ? 'block' : 'none';
+        heroSection.classList.remove('scrolled');
     }
+    document.querySelector('.scroll-top-btn').style.display = window.scrollY > 200 ? 'block' : 'none';
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+// Scorrimento continuo della hero su mobile
+function autoScrollHero() {
     const heroSection = document.querySelector('.hero-section');
-    const heroText = document.querySelector('.hero-text');
-
-    if (window.innerWidth >= 768) {
-        setTimeout(() => {
-            heroText.classList.add('visible');
-        }, 100);
-    }
-
-    if (window.innerWidth < 768) {
-        heroSection.scrollLeft = heroSection.scrollWidth;
-        heroSection.addEventListener('scroll', function() {
-            const scrollLeft = heroSection.scrollLeft;
-            const maxScroll = heroSection.scrollWidth - heroSection.clientWidth;
-            if (scrollLeft <= maxScroll / 2) {
-                heroText.classList.add('visible');
-            } else {
-                heroText.classList.remove('visible');
+    if (window.innerWidth <= 767 && heroSection) {
+        let scrollPosition = 0;
+        const scrollSpeed = 1; // Velocità dello scorrimento
+        function scroll() {
+            scrollPosition += scrollSpeed;
+            if (scrollPosition >= heroSection.scrollWidth / 2) {
+                scrollPosition = 0; // Riavvia da capo
             }
-        });
-    }
-
-    if (window.innerWidth < 768) {
-        const postBox = document.querySelector('.instagram-post-box');
-        const postItems = document.querySelectorAll('.instagram-post-item');
-
-        function updateBlur() {
-            const boxRect = postBox.getBoundingClientRect();
-            const viewportCenter = boxRect.left + boxRect.width / 2;
-
-            postItems.forEach(item => {
-                const itemRect = item.getBoundingClientRect();
-                const itemCenter = itemRect.left + itemRect.width / 2;
-                const distanceFromCenter = Math.abs(viewportCenter - itemCenter);
-
-                if (distanceFromCenter < itemRect.width / 2) {
-                    item.classList.add('active');
-                    item.classList.remove('blurred');
-                } else {
-                    item.classList.add('blurred');
-                    item.classList.remove('active');
-                }
-            });
+            heroSection.scrollLeft = scrollPosition;
+            requestAnimationFrame(scroll);
         }
-
-        postBox.addEventListener('scroll', updateBlur);
-        updateBlur();
+        requestAnimationFrame(scroll);
     }
-});
+}
+autoScrollHero();
 
 document.addEventListener('click', function(event) {
     const menu = document.querySelector('.navbar ul');
@@ -1197,7 +1167,11 @@ document.addEventListener('click', function(event) {
         aboutDropdown.classList.remove('active');
     }
 });
+
+window.addEventListener('load', function() {
+    const heroText = document.querySelector('.hero-text');
+    setTimeout(() => heroText.classList.add('visible'), 500);
+});
 </script>
-<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
