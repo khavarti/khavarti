@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <title>Khavarti - Shop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Shop for photography prints by Khavarti, coming soon." />
+<meta name="description" content="Shop for photography prints by Khavarti" />
 <meta name="keywords" content="photography prints, Khavarti, art prints, buy photography" />
 <meta name="author" content="Khavarti" />
 <meta property="og:title" content="Khavarti - Shop" />
-<meta property="og:description" content="Shop for photography prints by Khavarti, coming soon." />
+<meta property="og:description" content="Shop for photography prints by Khavarti." />
 <meta property="og:image" content="https://khavarti.com/images/coffe_vertical.jpg" />
 <meta property="og:url" content="https://khavarti.com/shop.html" />
 <meta property="og:type" content="website" />
@@ -21,303 +21,55 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/magnific-popup.css">
+
+<!-- ✅ Snipcart CSS -->
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+
 <style>
-body {
-    font-family: 'Varela Round', sans-serif;
-    background: #f8f8f8;
-    transition: background 0.3s ease;
+/* ... tuo CSS invariato sopra ... */
+
+.shop-container {
+    max-width: 1200px;
+    margin: 120px auto 60px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
-.dark-mode {
-    background: #222;
-    color: #fff;
-}
-.dark-mode footer {
-    background: #1a1a1a;
-    color: #fff;
-}
-.dark-mode footer a {
-    color: #ccc;
-}
-.dark-mode .coming-soon {
-    color: #fff;
-}
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
+.shop-item {
     background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.dark-mode .navbar {
-    background: #333;
-}
-.navbar .logo img {
-    height: 64px;
-    width: auto;
-    vertical-align: middle;
-    user-select: none;
-}
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-.navbar ul li {
-    margin-left: 20px;
-    position: relative;
-}
-.navbar ul li a {
-    color: #000;
-    text-decoration: none;
-    font-size: 16px;
-}
-.dark-mode .navbar ul li a {
-    color: #fff;
-}
-.navbar ul li a:hover {
-    color: #555;
-    text-decoration: underline;
-}
-.dark-mode .navbar ul li a:hover {
-    color: #ccc;
-}
-.hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #000;
-}
-.dark-mode .hamburger {
-    color: #fff;
-}
-.about-dropdown {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 2000;
-    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
     padding: 20px;
 }
-.about-dropdown.active {
-    display: block;
-}
-.about-content {
-    background: #fff;
-    max-width: 600px;
-    margin: 60px auto;
-    padding: 20px;
-    border-radius: 4px;
-    text-align: center;
-}
-.dark-mode .about-content {
-    background: #333;
-    color: #fff;
-}
-.about-content h2 {
-    font-size: 24px;
-    color: #000;
-    margin-bottom: 20px;
-}
-.dark-mode .about-content h2 {
-    color: #fff;
-}
-.about-content p {
-    font-size: 14px;
-    color: #000;
-}
-.dark-mode .about-content p {
-    color: #fff;
-}
-.about-content p.copyright-extra {
-    font-size: 12px;
-}
-.close-about {
-    display: block;
-    margin: 20px auto 0;
-    font-size: 24px;
-    color: #000;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: center;
-}
-.dark-mode .close-about {
-    color: #fff;
-}
-.close-about:hover {
-    color: #555;
-}
-.dark-mode .close-about:hover {
-    color: #ccc;
-}
-.close-text {
-    font-size: 12px;
-    color: #000;
-    margin-top: 5px;
-}
-.dark-mode .close-text {
-    color: #fff;
-}
-.gallery-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1001;
-    padding: 10px;
-    border-radius: 4px;
-}
-.dark-mode .gallery-dropdown {
-    background: #333;
-}
-.gallery-dropdown.active {
-    display: block;
-}
-.gallery-dropdown a {
-    display: block;
-    padding: 10px;
-    color: #000;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
-}
-.dark-mode .gallery-dropdown a {
-    color: #fff;
-}
-.gallery-dropdown a:hover {
-    background: #f8f8f8;
-    color: #555;
-}
-.dark-mode .gallery-dropdown a:hover {
-    background: #444;
-    color: #ccc;
-}
-.coming-soon {
-    text-align: center;
-    padding: 100px 15px;
-    max-width: 600px;
-    margin: 60px auto;
-    font-size: 36px;
-    font-family: 'Playfair Display', serif;
-    color: #000;
-}
-footer {
-    text-align: center;
-    height: 60px;
-    line-height: 60px;
-    background: #333;
-    color: #fff;
-    font-size: 14px;
+.shop-item img {
     width: 100%;
-    position: relative;
-    z-index: 0;
-    margin-top: 60px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 6px;
 }
-footer a {
-    color: #ccc;
-    text-decoration: none;
-    margin-left: 10px;
+.shop-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
-footer a:hover {
-    text-decoration: underline;
+.shop-item p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
 }
-footer img {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-left: 10px;
-    user-select: none;
-}
-.scroll-top-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.shop-item button {
     background: #333;
     color: #fff;
-    font-size: 20px;
     border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
     cursor: pointer;
-    display: none;
-    z-index: 1000;
-    transition: background 0.3s ease;
+    transition: background .2s;
 }
-.dark-mode .scroll-top-btn {
+.shop-item button:hover {
     background: #555;
-}
-.scroll-top-btn:hover {
-    background: #555;
-}
-.dark-mode .scroll-top-btn:hover {
-    background: #777;
-}
-@media (max-width: 767px) {
-    .navbar {
-        justify-content: space-between;
-        padding: 10px;
-        z-index: 1000;
-    }
-    .navbar .logo {
-        margin-left: 0;
-        text-align: left;
-        flex-grow: 1;
-    }
-    .navbar .logo img {
-        height: 48px;
-    }
-    .navbar ul {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 72px;
-        right: 0;
-        width: 70%;
-        background: #fff;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-        padding: 20px;
-        z-index: 1001;
-    }
-    .dark-mode .navbar ul {
-        background: #333;
-    }
-    .navbar ul.active {
-        display: flex;
-    }
-    .navbar ul li {
-        margin: 10px 0;
-        text-align: center;
-    }
-    .gallery-dropdown {
-        position: static;
-        box-shadow: none;
-        background: none;
-    }
-    .hamburger {
-        display: block !important;
-        font-size: 24px;
-        cursor: pointer;
-        color: #000;
-    }
-    .dark-mode .hamburger {
-        color: #fff;
-    }
-    .coming-soon {
-        font-size: 24px;
-        padding: 60px 15px;
-    }
 }
 </style>
 </head>
@@ -337,10 +89,12 @@ footer img {
 <li><a href="my-gear.html">My Gear</a></li>
 <li><a href="shop.html">Shop</a></li>
 <li><a href="/#fh5co-contact">Contact</a></li>
+<li><button class="snipcart-checkout">🛒 Cart</button></li>
 </ul>
 <div class="hamburger" onclick="toggleMenu()">☰</div>
 </nav>
 
+<!-- ABOUT -->
 <div class="about-dropdown" id="aboutDropdown">
 <div class="about-content">
 <h2>About Me</h2>
@@ -355,7 +109,42 @@ footer img {
 </div>
 </div>
 
-<div class="coming-soon">Coming Soon</div>
+<!-- ✅ SHOP SECTION -->
+<div class="shop-container">
+    <div class="shop-item">
+        <img src="images/coffe_vertical.jpg" alt="Coffee Print">
+        <h3>Coffee Print</h3>
+        <p>Fine art photography print.</p>
+        <p><strong>€50.00</strong></p>
+        <button 
+            class="snipcart-add-item"
+            data-item-id="coffee-print"
+            data-item-name="Coffee Print"
+            data-item-price="50.00"
+            data-item-url="/shop.html"
+            data-item-description="Fine art photography print by Khavarti"
+        >
+        Add to Cart
+        </button>
+    </div>
+
+    <div class="shop-item">
+        <img src="images/valleranello.jpg" alt="Valleranello Print">
+        <h3>Valleranello</h3>
+        <p>Photography print on fine art paper.</p>
+        <p><strong>€60.00</strong></p>
+        <button 
+            class="snipcart-add-item"
+            data-item-id="valleranello-print"
+            data-item-name="Valleranello Print"
+            data-item-price="60.00"
+            data-item-url="/shop.html"
+            data-item-description="Photography print on fine art paper by Khavarti"
+        >
+        Add to Cart
+        </button>
+    </div>
+</div>
 
 <footer>
 <p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy" draggable="false"></a></p>
@@ -376,47 +165,29 @@ footer img {
 <script src="js/CSSPlugin.min.js"></script>
 <script src="js/EasePack.min.js"></script>
 <script src="js/main.js"></script>
+
+<!-- ✅ Snipcart JS -->
+<div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY"></div>
+<script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+
 <script>
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.body.classList.add('dark-mode');
 }
-
 function toggleAbout() {
     document.getElementById('aboutDropdown').classList.toggle('active');
 }
-
 function toggleGallery() {
     document.querySelector('.gallery-dropdown').classList.toggle('active');
 }
-
 function toggleMenu() {
     document.querySelector('.navbar ul').classList.toggle('active');
 }
-
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 window.addEventListener('scroll', function() {
     document.querySelector('.scroll-top-btn').style.display = window.scrollY > 200 ? 'block' : 'none';
-});
-
-document.addEventListener('click', function(event) {
-    const menu = document.querySelector('.navbar ul');
-    const hamburger = document.querySelector('.hamburger');
-    const galleryDropdown = document.querySelector('.gallery-dropdown');
-    const galleryLink = document.querySelector('.navbar ul li a[onclick="toggleGallery()"]');
-    const aboutDropdown = document.getElementById('aboutDropdown');
-    const aboutContent = document.querySelector('.about-content');
-    if (!menu.contains(event.target) && event.target !== hamburger) {
-        menu.classList.remove('active');
-    }
-    if (!galleryDropdown.contains(event.target) && event.target !== galleryLink) {
-        galleryDropdown.classList.remove('active');
-    }
-    if (aboutDropdown.classList.contains('active') && !aboutContent.contains(event.target) && event.target !== document.querySelector('a[onclick="toggleAbout()"]')) {
-        aboutDropdown.classList.remove('active');
-    }
 });
 </script>
 </body>
