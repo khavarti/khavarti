@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <title>Khavarti - Shop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Shop for photography prints by Khavarti." />
+<meta name="description" content="Shop for photography prints by Khavarti, coming soon." />
 <meta name="keywords" content="photography prints, Khavarti, art prints, buy photography" />
 <meta name="author" content="Khavarti" />
 <meta property="og:title" content="Khavarti - Shop" />
-<meta property="og:description" content="Shop for photography prints by Khavarti." />
+<meta property="og:description" content="Shop for photography prints by Khavarti, coming soon." />
 <meta property="og:image" content="https://khavarti.com/images/coffe_vertical.jpg" />
 <meta property="og:url" content="https://khavarti.com/shop.html" />
 <meta property="og:type" content="website" />
@@ -37,6 +37,9 @@ body {
 }
 .dark-mode footer a {
     color: #ccc;
+}
+.dark-mode .coming-soon {
+    color: #fff;
 }
 .navbar {
     position: fixed;
@@ -200,46 +203,14 @@ body {
     background: #444;
     color: #ccc;
 }
-.shop-gallery {
-    max-width: 1200px;
-    margin: 80px auto 60px;
-    padding: 0 15px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+.coming-soon {
     text-align: center;
-}
-.photo-item {
-    margin: 0 auto;
-}
-.photo-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-.photo-item h3 {
+    padding: 100px 15px;
+    max-width: 600px;
+    margin: 60px auto;
+    font-size: 36px;
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    margin: 10px 0;
     color: #000;
-}
-.dark-mode .photo-item h3 {
-    color: #fff;
-}
-.buy-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #0070ba;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-.buy-button:hover {
-    background: #005ea6;
 }
 footer {
     text-align: center;
@@ -343,8 +314,9 @@ footer img {
     .dark-mode .hamburger {
         color: #fff;
     }
-    .shop-gallery {
-        margin: 60px auto;
+    .coming-soon {
+        font-size: 24px;
+        padding: 60px 15px;
     }
 }
 </style>
@@ -383,13 +355,7 @@ footer img {
 </div>
 </div>
 
-<div class="shop-gallery">
-  <div class="photo-item">
-    <img src="images/foto1-preview.jpg" alt="Foto 1" loading="lazy">
-    <h3>Stampa su tela, 30x40 cm, €40</h3>
-    <a href="#" class="buy-button" onclick="alert('Simulazione acquisto: verrai reindirizzato a PayPal')">Compra Ora (PayPal)</a>
-  </div>
-</div>
+<div class="coming-soon">Coming Soon</div>
 
 <footer>
 <p>&copy; 2025 Khavarti. All Rights Reserved. <a href="https://www.instagram.com/khavarti" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy" draggable="false"></a></p>
